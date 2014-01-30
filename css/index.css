@@ -77,7 +77,6 @@ body{
     margin: 100px auto 10px auto;
     width: 90%;
     height: 1000px;
-   // display: flex;
     background-color: white;
     opacity: 0.5;
     border-radius: 10px;
@@ -93,11 +92,18 @@ body{
 }
 
 .ui-dialog-title {
-float: left;
-margin: .1em 0;
-white-space: nowrap;
-width: 90%;
-overflow: hidden;
-text-overflow: ellipsis;
-font-family: cursive;
+    float: left;
+    margin: .1em 0;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: cursive;
+}
+
+#menu-lateral{
+/*    width: 300px;
+    height: 600px;
+    border: 3px dashed black;*/
+    /*margin-top: 200px;*/
 }
