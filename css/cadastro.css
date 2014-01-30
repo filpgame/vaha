@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/01/2014, 19:47:56
+    Author     : Cristian
+*/
+
+
+input[type="email"], input[type="password"], input[type="text"]{
+    width: 30%;
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px auto auto auto;
+    font-size: 20px;
+}
+
+input[name="nome"] {
+    margin-top: 150px;
+}
+
+input[type="button"]{
+    margin: 30px auto auto auto;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+.in{
+    text-align: center;
+}
+
+
+form span{
+    color: red;
+    font-style: oblique;
+    font-size: 12px;
+    height: 12px;
+    font-family: cursive;
+}
+
+#conteudo {
+    background-color: #CCC;
+}
+
+#cadastro{
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
+
+#env_cad{
+    width: 120px;
+    height: 40px;
+    text-align: center;    
+}
+
+#msg {
+    color:red;
+}
+el.error{
+    background-color: red;
+}
+
+el.ok{
+    color: green;
+}

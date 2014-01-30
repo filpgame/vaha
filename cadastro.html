@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>PI</title>
+        <script src="js/jquery-1.10.1.js"></script>
+        <link href="css/cadastro.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+        <link href="css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
+        <script src="js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/autenticacao.js"></script>
+        <script src="js/additional-methods.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $("#enter-button").click(function() {
+                    $("#modal-login").dialog({
+                        beforeClose: function() {
+                            $("#lgn-status").toggle("blind", 500);
+                        },
+                        show: {
+                            effect: "fade",
+                            duration: 500
+                        },
+                        title: "Efetue o Login",
+                        modal: true,
+                        height: 265,
+                        width: 400,
+                        buttons: {
+                            "Esqueceu sua senha?": function() {
+                            },
+                            "Logar": function() {
+                                $.ajax({
+                                    //pegando a url apartir da action do form
+                                    url: "login.php",
+                                    data: $("#frm-login").serialize(),
+                                    type: 'POST',
+                                    success: function(saida) {
+                                        data = JSON.parse(saida);
+                                        if (data.resp.status) {
+                                            document.location = data.resp.local;
+                                        } else {
+                                            $("#lgn-status").html(data.resp.mensagem);
+                                            $("#lgn-status").toggle("blind", 500);
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                });
+                $("#data").datepicker({
+                    dateFormat: "yy-mm-dd",
+                    monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+                    dayNamesMin: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+                    dayNamesShort: ["D", "S", "T", "Q", "Q", "S", "S"]
+                });
+                
+                $('#telefone').hide();
+                $('#inst').hide();
+                
+                $("#cbox").change(function() {
+                    if($('#cbox').prop("checked")){
+                        $('#valorCad').text("2");
+                        $('#telefone').fadeIn(500);
+                        $('#inst').fadeIn(500);
+                    }else{
+                        $('#valorCad').text("1");
+                        $('#telefone').fadeOut(500);
+                        $('#vrf_telefone').fadeOut(500);
+                        $('#vrf_inst').fadeOut(500);
+                        $('#inst').fadeOut(500);
+                    }
+                });
+
+
+
+            });
+
+        </script>
+
+    </head>
+    <body>
+        <!-- Início cabeçalho -->
+        <div id="modal-login" style="display: none">
+            <form id="frm-login" action="login.php" method="POST">
+                <input type="text" name="login" class="input" placeholder="Seu login">
+                <input type="password" name="pass" class="input" placeholder="Sua Senha">
+            </form>
+            <span id="lgn-status"></span>
+        </div>
+
+        <div id="modal-confirm">
+            <p>Agora você já pode logar e ser feliz =]</p>        
+        </div>
+
+        <div id="navigator">
+            <div id="navigator-style">
+                <div id="navigation">
+                    <button id="enter-button">Entrar</button>
+                    <div id="navigator-content"> Aluno? Comece aqui </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim cabeçalho -->
+        <div id="div-content">
+            <div id="blank">
+                <div id="cadastro">
+                    <form id="frmcad">
+                        <label>&nbsp;</label>
+                        <div class="in"><input type="text" id="nome" name="nome" placeholder="Nome"> </div><span id='vrf_nome'> </span>
+                        <div class="in"><input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome"> </div> <span id='vrf_sobrenome'> </span>
+                        <div class="in" ><input type="text" id="usuario" name="usuario" placeholder="Usuário"> </div><span id='vrf_usuario'> </span>
+                        <div class="in" ><input type="password" id="pas" name="pas" placeholder="Senha"> </div><span id='vrf_pas'> </span>
+                        <div class="in" ><input type="password" id="pas_conf" name="pas_conf" placeholder="Confirmar senha"> </div><span id='vrf_pas_conf'> </span>
+                        <div class="in" ><input id="data" name="dtnasc" type="text" placeholder="Data de Nascimento"></div><span id='vrf_data'> </span>
+                        <div class="in" ><input type="email" id="email" name="email" placeholder="E-mail"> </div><span id='vrf_email'> </span>
+                        
+                        <div class="in"><input type="checkbox" id="cbox" value="2" /><span>Sou Professor</span></div>
+                        <div><input type="hidden" id="valorCad" value="1"/></div>
+                        <div class="in" ><input type="text" id="telefone" placeholder="Telefone"  /><br/><span id='vrf_telefone'> </span></div>
+                        <div class="in" ><input type="text" id="inst" placeholder="Instituição de Ensino"/><br/><span id='vrf_inst'> </span></div>
+                                                
+                        <div class="in" ><input type="button" id="env_cad" value="Cadastrar" name="cadastro"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--<h1>Sistema de Lecionamento de Hardware</h1>-->
+
+
+    </body>
+</html>
+
