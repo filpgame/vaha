@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>PI</title>
+        <script src="js/jquery-1.10.1.js"></script>
+        <link href="css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+        <script src="js/jquery-ui-1.10.3.custom.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#enter-button").click(function() {
+                    $("#modal-login").dialog({
+                        beforeClose:function(){
+                            $("#lgn-status").toggle("blind", 500 );
+                        },
+                        show: {
+                            effect: "fade",
+                            duration: 500
+                        },
+                        title: "Efetue o Login",
+                        modal: true,
+                        height: 265,
+                        width: 400,
+                        buttons: {
+                            "Esqueceu sua senha?": function() {
+                            },
+                            "Logar": function() {
+                                $.ajax({
+                                    //pegando a url apartir da action do form
+                                    url: "login.php",
+                                    data: $("#frm-login").serialize(),
+                                    type: 'POST',
+                                    success: function(saida) {
+                                        data = JSON.parse(saida);
+                                        if(data.resp.status){
+                                            document.location = data.resp.local;
+                                        }else{
+                                            $("#lgn-status").html(data.resp.mensagem);
+                                            $( "#lgn-status" ).toggle("blind", 500 );
+                                        }
+                                    }
+                                });
+                            }
+                        }
+
+                    });
+                });
+            });
+        </script>
+        <style>
+            .input{
+                width: 100%;
+                border-radius: 10px;
+                height: 30px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <div id="navigator">
+            <div id="navigator-style">
+                <div id="navigation">
+                    <button id="enter-button">Entrar</button>
+                    <div id="navigator-content"> Aluno? Comece aqui </div>
+                </div>
+            </div>
+        </div>
+        <div id="div-content">
+            <h1>Sistema sei lá o Quê</h1>
+                </div>
+
+        <!--<h1>Sistema de Lecionamento de Hardware</h1>-->
+                <div id="modal-login" style="display: none">
+                <form id="frm-login" action="login.php" method="POST">
+                    <input type="text" name="login" class="input" placeholder="Seu login">
+                    <input type="password" name="pass" class="input" placeholder="Sua Senha">
+                </form>
+                    <span id="lgn-status"></span>
+            </div>
+        </div>
+    </body>
+</html>
