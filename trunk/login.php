@@ -18,11 +18,12 @@ if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
             //$_SESSION["logado"]["usuario"] = $linha["usuario"];
             $_SESSION["logado"]["email"] = $linha["email"];
             $_SESSION["logado"]["sobrenome"] = $linha["sobrenome"];
-            $_SESSION["logado"]["tipo"] = $linha["ID_tp_usuario"];
+            //$_SESSION["logado"]["tipo"] = $linha["ID_tp_usuario"]; <------------ Descomentar, quando colocar o ID_tp_usuario novamente ...
             //$_SESSION["logado"]["ID"] = $linha["ID_usuario"];
             
             $saida["resp"]["status"] = true;
-            $saida["resp"]["local"] = "logado/index.php";
+            //$saida["resp"]["local"] = "logado/index.php";
+            $saida["resp"]["local"] = "telaInicialAluno.php";
             echo json_encode($saida);
         } else {
             $saida["resp"]["status"] = false;
