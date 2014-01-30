@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <style>
             #mobo{
-                background-image: url('boardb.jpg');
+                background-image: url('img/boardb.jpg');
                 background-size: 800px 600px;
                 background-repeat: no-repeat;
                 border: 2px solid black;
