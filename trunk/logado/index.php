@@ -5,7 +5,7 @@ include("includes/info_logado.php");
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Membros</title>
     </head>
     <body>
         <?php
