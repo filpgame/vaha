@@ -14,14 +14,14 @@ include ("./logado/includes/banco.php");
     $conf_senha = $_GET["pas_conf"];
     $data_nasc = $_GET["dtnasc"];
     $email = $_GET["email"];
-    /*$id_Tipo = $_GET["valorCad"];*/
+    $id_Tipo = $_GET["valorCad"];
     
     // $query = "INSERT INTO usuario VALUE(1, $usuario, $senha, $nome, $sobrenome, $data_nasc, $email)";
     
     $saida["resp"]["status"] = false;
     
     
-    $resultado = mysqli_query($conn, "INSERT INTO usuario VALUES(null,'1', '$usuario', '$senha', '$nome', '$sobrenome', '$data_nasc', '$email')");
+    $resultado = mysqli_query($conn, "INSERT INTO usuario VALUES(null,'$id_Tipo', '$usuario', '$senha', '$nome', '$sobrenome', '$data_nasc', '$email')");
     
     if ($resultado) {
         $saida["resp"]["status"] = true;
