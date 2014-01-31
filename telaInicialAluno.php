@@ -2,14 +2,8 @@
     include("./logado/includes/info_logado.php");
     echo "Bem Vindo $nome $sobrenome";
     
-    $usuario = "$nome $sobrenome";
-    
+    $usuario = "$nome $sobrenome";    
 ?>
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -31,31 +25,33 @@
                 color: white;
                 float: left;
                 margin-top: 18px;
-                margin-left: -8.5%;
+                margin-left: 90px;
             }
         </style>
     </head>
     <body>
         <div>
             <div id="navigator">
+                <div id="teste">Bem Vindo, <?=$usuario?></div>
                 <div id="navigator-style">
                     <div id="navigation">
-                        <div id="teste">Bem Vindo, <?=$usuario?></div>
+                        
                         <div style="text-align: center;">
-                                <li style="list-style: none" class="menu-sup">Home</li>
-                                <li style="list-style: none" class="menu-sup" >Perfil</li>
-                                <li style="list-style: none" class="menu-sup" >Comece a Estudar</li>
-                                <li style="list-style: none" class="menu-sup">Game</li>
+                            <a><li style="list-style: none;" class="menu-sup" >Home</li></a>
+                                <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
+                                <a><li style="list-style: none;" class="menu-sup" >Comece a Estudar</li></a>
+                                <a><li style="list-style: none;" class="menu-sup">Game</li></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="div-content">                
+            <div id="div-content">
                 <div id="menu-lateral">
-                    <div class="op-lateral"><p class="nomes">Acertos</p></div>
-                    <div class="op-lateral"><p class="nomes">Erros</p></div>
-                    <div class="op-lateral"><p class="nomes">Sei lá</p></div>
+                    <br/><div style="font-family: cursive; font-size: 22px;">Confira aqui suas estatísticas:</div><br/>
+                    <div><img src="logado/img/lapis.png"></div><br/><br/>
+                    <div><img src="logado/img/lapis.png"></div><br/><br/>
+                    <div><img src="logado/img/lapis.png"></div>
                 </div>                
                 
             </div>
