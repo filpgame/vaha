@@ -14,7 +14,7 @@ include ("./logado/includes/banco.php");
     $conf_senha = $_GET["pas_conf"];
     $data_nasc = $_GET["dtnasc"];
     $email = $_GET["email"];
-    $id_Tipo = $_GET["valorCad"];
+    $id_Tipo = 1;
     
     // $query = "INSERT INTO usuario VALUE(1, $usuario, $senha, $nome, $sobrenome, $data_nasc, $email)";
     
