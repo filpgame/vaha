@@ -60,6 +60,19 @@ body{
     color: white;
 }
 
+.menu-sup{
+    font-family: cursive;
+    font-size: 18px;
+    background-color: #ba1726;
+    border: 1px solid #e32133;
+    color: white;
+    width: 200px;
+    display: inline-block;
+/*    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);*/
+}
+
 #register-button{
     font-family: cursive;
     font-size: 18px;
@@ -102,8 +115,23 @@ body{
 }
 
 #menu-lateral{
-/*    width: 300px;
+    width: 300px;
     height: 600px;
-    border: 3px dashed black;*/
+    border: 3px dashed black;
     /*margin-top: 200px;*/
+}
+
+.op-lateral{
+    background-color: #cdd5da;
+    width: 300px;
+    height: 60px;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+}
+
+.nomes{
+    font-family: cursive;
+    font-size: 22px;
+    margin-left: 35%;
 }
