@@ -31,7 +31,7 @@
                 color: white;
                 float: left;
                 margin-top: 18px;
-                margin-left: -370px;
+                margin-left: -8.5%;
             }
         </style>
     </head>
@@ -41,13 +41,11 @@
                 <div id="navigator-style">
                     <div id="navigation">
                         <div id="teste">Bem Vindo, <?=$usuario?></div>
-                        <div style="text-align: center">
-<!--                            <ul>
+                        <div style="text-align: center;">
                                 <li style="list-style: none" class="menu-sup">Home</li>
-                                <li style="list-style: none" class="menu-sup">Perfil</li>
-                                <li style="list-style: none" class="menu-sup">Comece a Estudar</li>
+                                <li style="list-style: none" class="menu-sup" >Perfil</li>
+                                <li style="list-style: none" class="menu-sup" >Comece a Estudar</li>
                                 <li style="list-style: none" class="menu-sup">Game</li>
-                            </ul>-->
                         </div>
                     </div>
                 </div>

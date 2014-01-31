@@ -15,10 +15,10 @@ if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
         if (mysqli_num_rows($result) == 1) {
             $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $_SESSION["logado"]["nome"] = $linha["nome"];
-            //$_SESSION["logado"]["usuario"] = $linha["usuario"];
+            $_SESSION["logado"]["usuario"] = $linha["usuario"];
             $_SESSION["logado"]["email"] = $linha["email"];
             $_SESSION["logado"]["sobrenome"] = $linha["sobrenome"];
-            //$_SESSION["logado"]["tipo"] = $linha["ID_tp_usuario"]; <------------ Descomentar, quando colocar o ID_tp_usuario novamente ...
+            $_SESSION["logado"]["tipo"] = $linha["ID_tp_usuario"];// <------------ Descomentar, quando colocar o ID_tp_usuario novamente ...
             //$_SESSION["logado"]["ID"] = $linha["ID_usuario"];
             
             $saida["resp"]["status"] = true;
