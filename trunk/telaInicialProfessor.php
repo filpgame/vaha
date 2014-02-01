@@ -1,6 +1,5 @@
 <?php
     include("./logado/includes/info_logado.php");
-    echo "Bem Vindo $nome $sobrenome";
     
     $usuario = "$nome $sobrenome";    
 ?>
@@ -21,11 +20,11 @@
             }
             #teste{
                 font-family: cursive;
-                font-size: 18px;
+                font-size: 14px;
                 color: white;
                 float: left;
-                margin-top: 18px;
-                margin-left: 90px;
+                margin-top: 40px;
+                margin-left: 65px;
             }
         </style>
     </head>
@@ -41,6 +40,7 @@
                                 <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
                                 <a><li style="list-style: none;" class="menu-sup" >Conteúdo</li></a>
                                 <a><li style="list-style: none;" class="menu-sup">Game</li></a>
+                                <a><li style="list-style: none;" class="menu-sup">Sobre</li></a>
                         </div>
                     </div>
                 </div>

@@ -23,10 +23,7 @@
                         height: 265,
                         width: 400,
                         buttons: {
-                            "Esqueceu sua senha?": function() {
-                                //Não faz nada ainda
-                            },
-                            "Logar": function() {
+                    "Logar": function(){
                                 $.ajax({
                                     //pegando a url apartir da action do form
                                     url: "login.php",
@@ -42,6 +39,9 @@
                                         }
                                     }
                                 });
+                            },
+                            "Esqueceu sua senha?": function() {
+                                //Não faz nada ainda
                             }
                         }
 

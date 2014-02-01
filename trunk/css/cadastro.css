@@ -10,7 +10,7 @@ and open the template in the editor.
 
 
 input[type="email"], input[type="password"], input[type="text"]{
-    width: 30%;
+    width: 350px;
     border-radius: 10px;
     height: 40px;
     margin: 10px auto auto auto;
@@ -28,9 +28,8 @@ input[type="button"]{
 }
 
 .in{
-    text-align: center;
+    /*text-align: center;*/
 }
-
 
 form span{
     color: red;
