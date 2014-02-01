@@ -1,6 +1,5 @@
 <?php
     include("./logado/includes/info_logado.php");
-    echo "Bem Vindo $nome $sobrenome";
     
     $usuario = "$nome $sobrenome";    
 ?>
@@ -21,11 +20,11 @@
             }
             #teste{
                 font-family: cursive;
-                font-size: 18px;
+                font-size: 14px;
                 color: white;
                 float: left;
-                margin-top: 18px;
-                margin-left: 90px;
+                margin-top: 40px;
+                margin-left: 65px;
             }
         </style>
     </head>
@@ -48,7 +47,7 @@
 
             <div id="div-content">
                 <div id="menu-lateral">
-                    <br/><div style="font-family: cursive; font-size: 22px;">Confira aqui suas estatísticas:</div><br/>
+                    <br/><div style="margin-left: 20px; font-family: cursive; font-size: 22px;">Confira aqui suas estatísticas:</div><br/>
                     <div><img src="logado/img/lapis.png"></div><br/><br/>
                     <div><img src="logado/img/lapis.png"></div><br/><br/>
                     <div><img src="logado/img/lapis.png"></div>
