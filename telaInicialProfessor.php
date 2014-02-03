@@ -26,6 +26,11 @@
                 margin-top: 40px;
                 margin-left: 65px;
             }
+            
+            a:visited{ 
+               color: black;
+            }
+            
         </style>
     </head>
     <body>
@@ -36,10 +41,10 @@
                     <div id="navigation">
                         
                         <div style="text-align: center;">
-                            <a><li style="list-style: none;" class="menu-sup" >Home</li></a>
+                            <a href="telaInicialProfessor.php"><li style="list-style: none;" class="menu-sup" >Home</li></a>
                                 <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
                                 <a><li style="list-style: none;" class="menu-sup" >Conteúdo</li></a>
-                                <a><li style="list-style: none;" class="menu-sup">Game</li></a>
+                                <a href="cadastroPerguntas.php"><li style="list-style: none;" class="menu-sup">Game</li></a>
                                 <a><li style="list-style: none;" class="menu-sup">Sobre</li></a>
                         </div>
                     </div>
