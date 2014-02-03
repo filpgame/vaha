@@ -93,6 +93,11 @@
                         }
                     }
                 });
+				$('element_to_pop_up').bPopup({
+					content:'iframe',
+					contentContainer:'.content',
+					loadUrl:'teste.html' //Uses jQuery.load()
+				});
             });
 
         </script>
