@@ -11,6 +11,7 @@
         <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="../css/index.css" rel="stylesheet">
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../js/jquery.bpopup.min.js"></script>
         <link href="css/baloon.css" rel="stylesheet">
         <style>
             .input{
@@ -93,11 +94,13 @@
                         }
                     }
                 });
-				$('element_to_pop_up').bPopup({
-					content:'iframe',
+				$(".area").click(function(){
+                                    $('#explicacao').bPopup({
+					content:'image',
 					contentContainer:'.content',
-					loadUrl:'teste.html' //Uses jQuery.load()
+					loadUrl:'img/boardb.jpg' //Uses jQuery.load()
 				});
+                                });
             });
 
         </script>
@@ -131,5 +134,6 @@
 			</div>
             </div>
         </div>
+        <div id="explicacao" class="content" ><span>X</span> </div>
     </body>
 </html>
