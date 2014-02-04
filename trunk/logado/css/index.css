@@ -1,0 +1,129 @@
+/* 
+    Document   : index
+    Created on : 09/01/2014, 14:22:20
+    Author     : Cristian
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html{
+    margin: 0 0 0 0;
+    height: 100%;
+}
+
+body{
+    margin: 0 0 0 0;
+    background-image: url('../../css/start/images/wallpaper.jpg');
+    background-size: 100% 100%;
+}
+
+#navigator{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+}
+
+#navigator-style{
+    background-color: #373737;
+    width: 100%;
+    height: 60px;
+}
+
+#navigation{
+    margin-left: auto;
+    margin-right: auto;
+    width: 970px;
+    height: 60px;
+}
+
+#navigator-content{
+    font-family: cursive;
+    font-size: 18px;
+    color: white;
+    float: right;
+    margin-top: 18px;
+    margin-right: 10px;
+}
+
+#enter-button{
+    font-family: cursive;
+    font-size: 18px;
+    float: right;
+    margin-top: 12px;
+    width: 100px;
+    line-height: 30px;
+    background-color: #ba1726;
+    border: 1px solid #e32133;
+    color: white;
+}
+
+.menu-sup{
+    display: inline-block;
+    font-family: cursive;
+    font-size: 22px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.menu-sup:hover{
+    display: inline-block;
+    font-family: cursive;
+    font-size: 30px;
+    margin-top: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+#div-content{
+    margin: 70px auto 10px auto;
+    width: 90%;
+    height: 90%;
+    background-image: url('../../css/start/images/opacity.png');
+    background-repeat: repeat;
+    border-radius: 10px;
+}
+
+#lgn-status{
+    color: red;
+    font-weight: bold;
+    margin: auto;
+    display:none;
+    font-family: cursive;
+}
+
+.ui-dialog-title {
+    float: left;
+    margin: .1em 0;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: cursive;
+}
+
+img:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+img{
+    opacity: 0.8;
+    margin-left: 20px;
+}
+
+.op-lateral{
+    background-color: #cdd5da;
+    width: 300px;
+    height: 60px;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+}
+
+.nomes{
+    font-family: cursive;
+    font-size: 22px;
+    margin-left: 35%;
+}
