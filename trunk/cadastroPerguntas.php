@@ -1,7 +1,10 @@
 <?php
-    include("./logado/includes/info_logado.php");
-    
-    $usuario = "$nome $sobrenome";    
+include("./logado/includes/info_logado.php");
+include ("./logado/includes/banco.php");
+
+$usuario = "$nome $sobrenome";
+
+$query = mysqli_query($conn, "SELECT nome FROM comp_pc");
 ?>
 <html lang="pt-br">
     <head>
@@ -28,42 +31,55 @@
                 margin-top: 40px;
                 margin-left: 65px;
             }
-            
+
             a:visited{ 
-               color: black;
+                color: black;
             }
-            
+
         </style>
     </head>
     <body>
         <div>
             <div id="navigator">
-                <div id="teste">Bem Vindo, <?=$usuario?></div>
+                <div id="teste">Bem Vindo, <?= $usuario ?></div>
                 <div id="navigator-style">
                     <div id="navigation">
-                        
+
                         <div style="text-align: center;">
                             <a href="telaInicialProfessor.php"><li style="list-style: none;" class="menu-sup" >Home</li></a>
-                                <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                                <a><li style="list-style: none;" class="menu-sup" >Conteúdo</li></a>
-                                <a href="cadastroPerguntas.php"><li style="list-style: none;" class="menu-sup">Game</li></a>
-                                <a><li style="list-style: none;" class="menu-sup">Sobre</li></a>
+                            <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
+                            <a><li style="list-style: none;" class="menu-sup" >Conteúdo</li></a>
+                            <a href="cadastroPerguntas.php"><li style="list-style: none;" class="menu-sup">Game</li></a>
+                            <a><li style="list-style: none;" class="menu-sup">Sobre</li></a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="div-content"> 
-                
+
                 <span style="margin: 50px auto 50px 30% ;color: white; font-size: 70px;">EM BREVE!</span>
-                
-                <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
-                <span class="escrita">Aqui você pode cadastrar uma pergunta</span>
-                <div><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
-                <br>
-                <span class="escrita">Selecione a resposta para a pergunta acima</span>
-                <div><select style="width: 200px" id="pergunta" style="resize: none" class="quest"></select></div>
-                
+
+                <form method="GET">
+                    <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
+                    <span class="escrita">Aqui você pode cadastrar uma pergunta</span>
+                    <div><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
+                    <br>
+                    <span class="escrita">Selecione a resposta para a pergunta acima</span>
+                    <div>
+
+                        <select style="width: 200px" text="aushausahsuh" id="comboResposta" style="resize: none" class="quest">
+                            <?php
+                            while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                                echo "<option>".$row['nome']."</option>";
+                            }
+                            ?>
+                        </select></div>
+                    <br>
+                    <span class="escrita">Alguma dica para essa pergunta?</span>
+                    <div><textarea cols="40" rows="4" id="dica" style="resize: none" class="quest"></textarea></div>
+                </form>
+
             </div>
         </div>
     </body>
