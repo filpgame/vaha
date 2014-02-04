@@ -1,7 +1,7 @@
 <?php
-    include("./includes/info_logado.php");
-    
-    $usuario = "$nome $sobrenome";    
+include("./includes/info_logado.php");
+
+$usuario = "$nome $sobrenome";
 ?>
 <html lang="pt-br">
     <head>
@@ -28,15 +28,15 @@
                 margin-top: 40px;
                 margin-left: 65px;
             }
-			#mobo{
+            #mobo{
                 background-image: url('img/boardb.jpg');
                 background-size: 800px 600px;
                 background-repeat: no-repeat;
                 border: 2px solid black;
                 width: 800px;
                 height: 600px;
-				margin-left: 50px;
-				margin-top: 150px;
+                margin-left: 50px;
+                margin-top: 150px;
             }
             .area{
                 border: 2px solid white;
@@ -77,8 +77,15 @@
                 width: 327px;
                 height: 43px;
             }
+            #explicacao{
+                width: 640px; 
+                height: 480px; 
+                display: none;
+                border-radius: 10px;
+                background-color: whitesmoke;
+            }
         </style>
-		<script>
+        <script>
             $(function() {
                 $(document).tooltip({
                     position: {
@@ -94,13 +101,15 @@
                         }
                     }
                 });
-				$(".area").click(function(){
-                                    $('#explicacao').bPopup({
-					content:'image',
-					contentContainer:'.content',
-					loadUrl:'img/boardb.jpg' //Uses jQuery.load()
-				});
-                                });
+
+                $(".area").click(function() {
+                    var caminho = $(this).attr("id");
+                    $('#explicacao').bPopup({
+                        content: 'iframe',
+                        contentContainer: '.content',
+                        loadUrl: 'pecas/' + caminho + '.html'//Uses jQuery.load()
+                    });
+                });
             });
 
         </script>
@@ -108,32 +117,34 @@
     <body>
         <div>
             <div id="navigator">
-                <div id="teste">Bem Vindo, <?=$usuario?></div>
+                <div id="teste">Bem Vindo, <?= $usuario ?></div>
                 <div id="navigator-style">
                     <div id="navigation">
-                        
+
                         <div style="text-align: center;">
                             <a><li style="list-style: none;" class="menu-sup" >Home</li></a>
-                                <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                                <a><li style="list-style: none;" class="menu-sup" >Comece a Estudar</li></a>
-                                <a><li style="list-style: none;" class="menu-sup">Game</li></a>
+                            <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
+                            <a><li style="list-style: none;" class="menu-sup" >Comece a Estudar</li></a>
+                            <a><li style="list-style: none;" class="menu-sup">Game</li></a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="div-content">  
-<span>&nbsp;<span>			
-            <div id="mobo">
-				<div class="area" id="processador" title="Este é o processador"></div>
-				<div class="area" id="chipset-norte" title="Este é o chipsetNorte"></div>
-				<div class="area" id="pciexpress" title="Este é o PCI"></div>
-				<div class="area" id="bateria" title="Este é o bateria"></div>
-				<div class="area" id="sata" title="Este é o SATA"></div>
-				<div class="area" id="memoria" title="Este é o Memoria"></div>
-			</div>
+                <span>&nbsp;</span>			
+                <div id="mobo">
+                    <div class="area" id="processador" title="Este é o processador"></div>
+                    <div class="area" id="chipset-norte" title="Este é o chipsetNorte"></div>
+                    <div class="area" id="pciexpress" title="Este é o PCI"></div>
+                    <div class="area" id="bateria" title="Este é o bateria"></div>
+                    <div class="area" id="sata" title="Este é o SATA"></div>
+                    <div class="area" id="memoria" title="Este é o Memoria"></div>
+                </div>
             </div>
         </div>
-        <div id="explicacao" class="content" ><span>X</span> </div>
+        <div id="explicacao" >
+            <div class="content"></div>
+        </div>
     </body>
 </html>
