@@ -55,9 +55,14 @@
 
             <div id="div-content"> 
                 
-                <span style="margin: 50px auto 50px 30% ;color: white; font-size: 70px; font-family: sans-serif;">EM BREVE!</span>
+                <span style="margin: 50px auto 50px 30% ;color: white; font-size: 70px;">EM BREVE!</span>
                 
                 <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
+                <span class="escrita">Aqui você pode cadastrar uma pergunta</span>
+                <div><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
+                <br>
+                <span class="escrita">Selecione a resposta para a pergunta acima</span>
+                <div><select style="width: 200px" id="pergunta" style="resize: none" class="quest"></select></div>
                 
             </div>
         </div>
