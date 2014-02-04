@@ -36,7 +36,7 @@
                     <div id="navigation">
                         
                         <div style="text-align: center;">
-                            <a href="telaInicialProfessor.php"><li style="list-style: none;" class="menu-sup" >Home</li></a>
+                            <a href="telaInicialAluno.php"><li style="list-style: none;" class="menu-sup" >Home</li></a>
                                 <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
                                 <a href="logado/EstudeAqui.php"><li style="list-style: none;" class="menu-sup" >Comece a Estudar</li></a>
                                 <a><li style="list-style: none;" class="menu-sup">Game</li></a>

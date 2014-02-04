@@ -12,17 +12,17 @@ and open the template in the editor.
 input[type="email"], input[type="password"], input[type="text"]{
     width: 350px;
     border-radius: 10px;
-    height: 40px;
+    height: 30px;
     margin: 10px auto auto auto;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 input[name="nome"] {
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 input[type="button"]{
-    margin: 20px auto 20px auto;
+    margin: 5px auto 20px auto;
     font-size: 20px;
     font-family: tahoma;
 }
@@ -47,6 +47,10 @@ form span{
     margin-left: 0px;
     margin-right: 0px;
     text-align: center;
+}
+
+.in{
+    /*text-align: center;*/
 }
 
 #env_cad{
