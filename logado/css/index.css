@@ -69,7 +69,7 @@ body{
 #div-content{
     margin: 60px auto 10px auto;
     width: 90%;
-    height: 90%;
+    height: auto;
     background-image: url('../img/opacity.png');
     background-repeat: repeat;
     border-radius: 10px;
