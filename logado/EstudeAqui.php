@@ -90,9 +90,9 @@ $usuario = "$nome $sobrenome";
                 height: 77px;
             }
             #ide{             
-                margin-left: 115;
-                width: 20;
-                height: 133;
+                margin-left: 115px;
+                width: 20px;
+                height: 133px;
             }
             #explicacao{
                 display: none;
