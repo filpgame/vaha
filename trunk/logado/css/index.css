@@ -1,6 +1,6 @@
 /* 
     Document   : index
-    Created on : 09/01/2014, 14:22:20
+    Created on : 04/02/2014, 14:22:20
     Author     : Cristian
     Description:
         Purpose of the stylesheet follows.
@@ -47,17 +47,6 @@ body{
     margin-right: 10px;
 }
 
-#enter-button{
-    font-family: cursive;
-    font-size: 18px;
-    float: right;
-    margin-top: 12px;
-    width: 100px;
-    line-height: 30px;
-    background-color: #ba1726;
-    border: 1px solid #e32133;
-    color: white;
-}
 
 .menu-sup{
     display: inline-block;
@@ -66,6 +55,7 @@ body{
     margin-left: 10px;
     margin-top: 15px;
 }
+
 .menu-sup:hover{
     display: inline-block;
     font-family: cursive;
@@ -77,10 +67,10 @@ body{
 
 
 #div-content{
-    margin: 70px auto 10px auto;
+    margin: 60px auto 10px auto;
     width: 90%;
     height: 90%;
-    background-image: url('../../css/start/images/opacity.png');
+    background-image: url('../img/opacity.png');
     background-repeat: repeat;
     border-radius: 10px;
 }
