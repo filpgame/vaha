@@ -35,11 +35,15 @@ $usuario = "$nome $sobrenome";
                 border: 2px solid black;
                 width: 800px;
                 height: 600px;
-                margin-left: 50px;
-                margin-top: 150px;
+                margin: 50px auto 50px auto;
             }
             .area{
-                border: 2px solid white;
+                border: 2px solid transparent;
+                border-radius: 5px;
+            }
+            .area:hover{
+                background-color: red;
+                opacity: 0.5;
             }
             #processador{
                 margin-left: 590px;
@@ -149,7 +153,7 @@ $usuario = "$nome $sobrenome";
                         <div style="text-align: center;">
                             <a><li style="list-style: none;" class="menu-sup" >Home</li></a>
                             <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                            <a><li style="list-style: none;" class="menu-sup" >Comece a Estudar</li></a>
+                            <a><li style="list-style: none;" class="menu-sup" >Como Funciona?</li></a>
                             <a><li style="list-style: none;" class="menu-sup">Game</li></a>
                         </div>
                     </div>
@@ -163,17 +167,19 @@ $usuario = "$nome $sobrenome";
                     <div class="area" id="chipsetnorte" title="Este é o chipsetNorte"></div>
                     <div class="area" id="pciexpress" title="Este é o PCI-E"></div>
                     <div class="area" id="bateria" title="Esta é a bateria"></div>
-                    <!--                    <div class="area" id="ide-hd" title="IDE - HD"></div>-->
-                    <!--                    <div class="area" id="ide-cdrom" title="IDE - CDROM"></div>-->
+                    <!-- <div class="area" id="ide-hd" title="IDE - HD"></div>-->
+                    <!-- <div class="area" id="ide-cdrom" title="IDE - CDROM"></div>-->
                     <div class="area" id="sata" title="Este é o SATA"></div>
                     <div class="area" id="memoria" title="Este é o Memoria"></div>
                     <div class="area" id="pci" title="Este é o PCI"></div>
                     <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>
                     <div class="area" id="ide" title="IDE"></div>
-                    <!--                    <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
+                    <!-- <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
                 </div>
+                <div style="height: 50px;"></div>
             </div>
         </div>
+        
         <div id="explicacao" >
             <a class="b-close">X<a/>
                 <div class="content"></div>
