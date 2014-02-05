@@ -9,7 +9,7 @@ $usuario = "$nome $sobrenome";
         <title>PI</title>
         <script src="../js/jquery-1.10.1.js"></script>
         <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <link href="../css/index.css" rel="stylesheet">
+        <link href="logado/css/index.css" rel="stylesheet">
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
         <script src="../js/jquery.bpopup.min.js"></script>
         <link href="css/baloon.css" rel="stylesheet">
