@@ -132,7 +132,7 @@ $usuario = "$nome $sobrenome";
                     $('#explicacao').bPopup({
                         content: 'iframe',
                         contentContainer: '.content',
-                        loadUrl: 'pecas/' + caminho + '.html', //Uses jQuery.load()
+                        loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
                     });
                 });
             });
