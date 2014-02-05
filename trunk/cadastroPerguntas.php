@@ -41,7 +41,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
     <body>
         <div>
             <div id="navigator">
-                <div id="teste">Bem Vindo, <?= $usuario ?></div>
+                <div id="teste">Bem Vindo, <?=$usuario ?></div>
                 <div id="navigator-style">
                     <div id="navigation">
 
@@ -58,18 +58,16 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
 
             <div id="div-content"> 
 
-                <span style="margin: 50px auto 50px 30% ;color: white; font-size: 70px;">EM BREVE!</span>
-
                 <form method="GET">
-                    <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
-<!--                    <span class="escrita">Aqui você pode cadastrar uma pergunta</span>-->
-                    <img src="logado/img/balao1.png">
-                    <div><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
-                    <br>
-                    <span class="escrita">Selecione a resposta para a pergunta acima</span>
-                    <div>
+                   <br> <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
 
-                        <select style="width: 200px" text="aushausahsuh" id="comboResposta" style="resize: none" class="quest">
+                    <div id="imagem1"><img src="logado/img/balao1.fw.png"></div>
+                    <div id="textPergunta"><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
+                    <br>
+                    
+                    <div id="imagem2"><img src="logado/img/balao2.fw.png"></div>
+                    <div>
+                        <select style="width: 200px" text="" id="comboResposta" style="resize: none" class="quest">
                             <?php
                             while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                                 echo "<option>".$row['nome']."</option>";
@@ -77,7 +75,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                             ?>
                         </select></div>
                     <br>
-                    <span class="escrita">Alguma dica para essa pergunta?</span>
+                   <div id="imagem3"><img src="logado/img/balao3.fw.png"></div>
                     <div><textarea cols="40" rows="4" id="dica" style="resize: none" class="quest"></textarea></div>
                 </form>
 
