@@ -47,7 +47,7 @@ $usuario = "$nome $sobrenome";
                 width: 130px;
                 height: 140px;
             }
-            #chipset-norte{
+            #chipsetnorte{
                 margin-left: 412px;
                 margin-top: -71px;
                 width: 109px;
@@ -77,12 +77,34 @@ $usuario = "$nome $sobrenome";
                 width: 327px;
                 height: 43px;
             }
+            #pci{
+                margin-left: 155px;
+                margin-top: -347px;
+                width: 22px;
+                height: 196px;
+            }
+            #chipsetsul{
+                margin-left: 178px;
+                margin-top: 53px;
+                width: 84px;
+                height: 77px;
+            }
             #explicacao{
-                width: 640px; 
-                height: 480px; 
+
                 display: none;
                 border-radius: 10px;
                 background-color: whitesmoke;
+                color:#000;
+                padding:20px;
+                min-width:640px;
+                min-height: 480px;
+
+            }
+            .b-close{
+                cursor:pointer;
+                position:absolute;
+                right:10px;
+                top:5px;
             }
         </style>
         <script>
@@ -107,7 +129,7 @@ $usuario = "$nome $sobrenome";
                     $('#explicacao').bPopup({
                         content: 'iframe',
                         contentContainer: '.content',
-                        loadUrl: 'pecas/' + caminho + '.html'//Uses jQuery.load()
+                        loadUrl: 'pecas/' + caminho + '.html', //Uses jQuery.load()
                     });
                 });
             });
@@ -135,16 +157,22 @@ $usuario = "$nome $sobrenome";
                 <span>&nbsp;</span>			
                 <div id="mobo">
                     <div class="area" id="processador" title="Este é o processador"></div>
-                    <div class="area" id="chipset-norte" title="Este é o chipsetNorte"></div>
-                    <div class="area" id="pciexpress" title="Este é o PCI"></div>
-                    <div class="area" id="bateria" title="Este é o bateria"></div>
+                    <div class="area" id="chipsetnorte" title="Este é o chipsetNorte"></div>
+                    <div class="area" id="pciexpress" title="Este é o PCI-E"></div>
+                    <div class="area" id="bateria" title="Esta é a bateria"></div>
+                    <!--                    <div class="area" id="ide-hd" title="IDE - HD"></div>-->
+                    <!--                    <div class="area" id="ide-cdrom" title="IDE - CDROM"></div>-->
                     <div class="area" id="sata" title="Este é o SATA"></div>
                     <div class="area" id="memoria" title="Este é o Memoria"></div>
+                    <div class="area" id="pci" title="Este é o PCI"></div>
+                    <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>
+                    <!--                    <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
                 </div>
             </div>
         </div>
         <div id="explicacao" >
-            <div class="content"></div>
+            <a class="b-close">X<a/>
+                <div class="content"></div>
         </div>
     </body>
 </html>
