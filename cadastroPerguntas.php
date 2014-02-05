@@ -62,7 +62,8 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
 
                 <form method="GET">
                     <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
-                    <span class="escrita">Aqui você pode cadastrar uma pergunta</span>
+<!--                    <span class="escrita">Aqui você pode cadastrar uma pergunta</span>-->
+                    <img src="logado/img/balao1.png">
                     <div><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
                     <br>
                     <span class="escrita">Selecione a resposta para a pergunta acima</span>
