@@ -48,9 +48,9 @@
             <div id="div-content">
                 <div id="menu-lateral">
                     <br/><div style="margin-left: 20px; font-family: cursive; font-size: 22px;">Confira aqui suas estatísticas:</div><br/>
-                    <div><img src="logado/img/lapis.png"></div><br/><br/>
-                    <div><img src="logado/img/lapis.png"></div><br/><br/>
-                    <div><img src="logado/img/lapis.png"></div>
+                    <div><img clas="img" src="logado/img/lapis.png"></div><br/><br/>
+                    <div><img clas="img" src="logado/img/lapis.png"></div><br/><br/>
+                    <div><img clas="img" src="logado/img/lapis.png"></div>
                 </div>                
                 
             </div>
