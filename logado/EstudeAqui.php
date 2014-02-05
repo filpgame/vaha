@@ -89,8 +89,12 @@ $usuario = "$nome $sobrenome";
                 width: 84px;
                 height: 77px;
             }
+            #ide{             
+                margin-left: 115;
+                width: 20;
+                height: 133;
+            }
             #explicacao{
-
                 display: none;
                 border-radius: 10px;
                 background-color: whitesmoke;
@@ -98,7 +102,6 @@ $usuario = "$nome $sobrenome";
                 padding:20px;
                 min-width:640px;
                 min-height: 480px;
-
             }
             .b-close{
                 cursor:pointer;
@@ -166,6 +169,7 @@ $usuario = "$nome $sobrenome";
                     <div class="area" id="memoria" title="Este é o Memoria"></div>
                     <div class="area" id="pci" title="Este é o PCI"></div>
                     <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>
+                    <div class="area" id="ide" title="IDE"></div>
                     <!--                    <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
                 </div>
             </div>
