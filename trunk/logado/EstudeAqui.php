@@ -139,6 +139,14 @@ $usuario = "$nome $sobrenome";
                         loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
                     });
                 });
+                
+                $("#howork").click(function() {
+                    $('#explicacao').bPopup({
+                        content: 'iframe',
+                        contentContainer: '.content',
+                        loadUrl: 'Pecas/comofunciona.html' //Uses jQuery.load()
+                    });
+                });
             });
 
         </script>
@@ -153,7 +161,7 @@ $usuario = "$nome $sobrenome";
                         <div style="text-align: center;">
                             <a><li style="list-style: none;" class="menu-sup" >Home</li></a>
                             <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                            <a><li style="list-style: none;" class="menu-sup" >Como Funciona?</li></a>
+                            <a id="howork"><li style="list-style: none;" class="menu-sup" >Como Funciona?</li></a>
                             <a><li style="list-style: none;" class="menu-sup">Game</li></a>
                         </div>
                     </div>
