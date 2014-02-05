@@ -22,3 +22,43 @@
     color: white;
 }
 
+img{
+    width: 400px;
+    height: 400px;
+}
+
+#imagem1{
+    margin-left: 280px;
+}
+
+#imagem2{
+    margin-left: 70%;
+    margin-top: -390px;
+}
+
+#imagem3{
+    margin-left: 35%;
+    margin-top: -140px;
+}
+
+#dica{
+    margin-left: 226px;
+    margin-top: -115px;
+}
+
+#comboResposta{
+    margin-top: -96px;
+    width: 120px;
+    margin-left: 871px;
+}
+
+#textPergunta{
+    margin-top: -140px;
+    width: 120px;
+}
+
+/*li{
+   list-style: none;
+   display: inline;
+}*/
+

@@ -93,12 +93,12 @@ body{
     font-family: cursive;
 }
 
-img:hover{
+.img:hover{
     opacity: 1;
     cursor: pointer;
 }
 
-img{
+.img{
     opacity: 0.8;
     margin-left: 20px;
 }
