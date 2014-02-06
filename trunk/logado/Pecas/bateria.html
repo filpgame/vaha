@@ -2,26 +2,21 @@
 <html>
     <head>
         <link href="style.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="css/rhinoslider-1.05.css" />
         <script type="text/javascript" src="../../js/jquery-1.10.1.js"></script>
-        <script type="text/javascript" src="js/rhinoslider-1.05.min.js"></script>
-        <script type="text/javascript" src="js/mousewheel.js"></script>
-        <script type="text/javascript" src="js/easing.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#slider').rhinoslider();
-            });
-        </script>
+        <link rel="stylesheet" type="text/css" href="css/slides.css" />
+        <script src="js/slide.js"></script>
     </head>
     <body bgcolor="black">
         <div id="conteudo">
-            <div id="page">
-                <ul id="slider">
-                    <li><img src="img/slider/bateria1.jpg" alt="" /></li>
-                    <li><img src="img/slider/bateria2.jpg" alt="" /></li>
-                    <li><img src="img/slider/bateria3.jpg" alt="" /></li>
-                    <li><img src="img/slider/bateria4.jpg" alt="" /></li>
+            <div id="slideshow">
+                <ul class="slides">
+                    <li><img src="img/slider/bateria1.jpg" width="320" height="240" alt="Marsa Alam" /></li>
+                    <li><img src="img/slider/bateria2.jpg" width="320" height="240" alt="Turrimetta Beach" /></li>
+                    <li><img src="img/slider/bateria3.jpg" width="320" height="240" alt="Power Station" /></li>
+                    <li><img src="img/slider/bateria4.jpg" width="320" height="240" alt="Colors of Nature" /></li>
                 </ul>
+                <span class="arrow previous"></span>
+                <span class="arrow next"></span>
             </div>
         </div>
     </body>
