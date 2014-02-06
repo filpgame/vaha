@@ -6,6 +6,8 @@
         Purpose of the stylesheet follows.
 */
 
+
+
 html{
     margin: 0 0 0 0;
     height: 100%;
@@ -17,48 +19,201 @@ body{
     background-size: 100% 100%;
 }
 
-#navigator{
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    z-index: 10;
-    top: 0px;
-}
 
-#navigator-style{
-    background-color: #373737;
-    width: 100%;
-    height: 60px;
+/*#navigation > ul  {
+        color: inherit;
+        border-bottom: solid 1px rgba(128,128,128,0.15);
+        text-decoration: none;
+        display: inline-block;
 }
 
 #navigation{
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
-    width: 970px;
-    height: 60px;
-    /*position: relative;*/
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    padding: .5em 0 .5em 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.25);
 }
 
 #navigator-content{
-    font-family: cursive;
-    font-size: 18px;
-    color: white;
-    float: right;
-    margin-top: 18px;
-    margin-right: 10px;
+    
+    
 }
 
 #enter-button{
-    font-family: cursive;
-    font-size: 18px;
-    float: right;
-    margin-top: 12px;
-    width: 100px;
-    line-height: 30px;
-    background-color: #ba1726;
-    border: 1px solid #e32133;
-    color: white;
+   
 }
+
+.buttonEnter
+{
+        
+}      */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+.logo {
+            background: url('logo2.png') no-repeat;
+            
+            background-size: 35px;
+            height: 35px;
+            width: 35px;
+            left: 0px;
+            right: 0;
+            top: 0;
+            z-index: 8000;
+            display: block;
+            margin-top: 3px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: auto;
+            position: absolute;
+            border:0;
+}
+
+#navigation {
+    background: #000000;
+    width: auto;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+
+}
+
+#navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    display: block;
+    zoom: 1;
+}
+
+#navigation ul:after {
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+#navigation ul li {
+    float: left;
+    display: block;
+    padding: 0;
+}
+
+
+#navigation ul li a {
+    color: #faf5f5;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+}
+
+
+#navigation ul li a:hover {
+    color: #5a92d6;
+}
+
+
+#navigation ul li a:hover:before {
+    width: 100%;
+}
+
+
+#navigation ul li a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -3px;
+    top: 19px;
+    height: 6px;
+    width: 6px;
+    background: #faf5f5;
+    opacity: .5;
+}
+
+
+#navigation ul li a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #5a92d6;
+    -webkit-transition: width .25s;
+    -moz-transition: width .25s;
+    -ms-transition: width .25s;
+    -o-transition: width .25s;
+    transition: width .25s;
+}
+
+
+#navigation ul li.last > a:after,
+#navigation ul li:last-child > a:after {
+    display: none;
+}
+
+
+#navigation ul li.active a {
+    color: #5a92d6;
+}
+
+
+#navigation ul li.active a:before {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+    #navigation ul li {
+        float: none;
+    }
+
+
+    #navigation ul li a {
+        width: 100%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+    #navigation ul li a:after {
+        display: none;
+    }
+
+
+      #navigation ul li a:before {
+        height: 1px;
+        background: #faf5f5;
+        width: 100%;
+        opacity: .2;
+      }
+
+
+    #navigation ul li.last > a:before,
+    #navigation ul li:last-child > a:before {
+        display: none;
+    }
+}    
 
 .menu-sup{
     display: inline-block;
@@ -93,12 +248,35 @@ body{
 }
 
 #div-content{
-    margin: 40px auto 10px auto;
+    /*margin: 70px 50px 10px auto;
     width: 35%;
     height: 55%;
-    background-image: url('start/images/opacity.png');
-    background-repeat: repeat;
-    border-radius: 10px;
+    background-color: white;
+    border: 1px blue solid;
+    box-shadow: 5px 5px 5px white;
+    float: right;*/
+    border: 1px solid #5ccae6;
+   background: #ffffff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+   background: -moz-linear-gradient(top, #ffffff, #ffffff);
+   background: -ms-linear-gradient(top, #ffffff, #ffffff);
+   background: -o-linear-gradient(top, #ffffff, #ffffff);
+   background-image: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 1px 0;
+   font-family: 'Helvetica Neue',Helvetica,sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+   min-width:300px;
+   padding:20px;
+   width:300px;
+   float: right;
+   margin: 70px 50px 10px auto;
 }
 
 #lgn-status{
