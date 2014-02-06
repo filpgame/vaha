@@ -29,30 +29,15 @@
     </head>
     <body>
         <div>
-            <!--<div id="navigator">
-                <div id="teste">Bem Vindo, <?=$usuario?></div>
-                <div id="navigator-style">
-                    <div id="navigation">
-                        
-                        <div style="text-align: center;">
-                                <a href="telaInicialAluno.php"><li style="list-style: none;" class="menu-sup" >Home</li></a>
-                                <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                                <a href="logado/EstudeAqui.php"><li style="list-style: none;" class="menu-sup" >Comece a Estudar</li></a>
-                                <a><li style="list-style: none;" class="menu-sup">Game</li></a>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
             <div id='navigation'>
                 <ul>
                     <li class='active'><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
                     <li><a href='#'><span>Perfil</span></a></li>
-                    <li><a href='#'><span>Comece a estudar</span></a></li>
+                    <li><a href='logado/EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='last'><a href='#'><span>Game</span></a></li>  
                     <li class='welcome'><p><span>Bem Vindo, <?=$usuario?></span></p></li>               
                 </ul>
-                <a href="index.html" class="logo"></a>
+                <a href="telaInicialAluno.php" class="logo"></a>
             </div>
 
             <!--<div id="div-content">
