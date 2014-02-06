@@ -39,7 +39,12 @@ $usuario = "$nome $sobrenome";
             }
             .area{
                 border: 2px solid transparent;
-                border-radius: 5px;
+                border-radius: 7px;
+                -o-transition:.7s;
+                -ms-transition:.7s;
+                -moz-transition:.7s;
+                -webkit-transition:.7s;
+                transition:.7s;
             }
             .area:hover{
                 background-color: red;
@@ -139,7 +144,7 @@ $usuario = "$nome $sobrenome";
                         loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
                     });
                 });
-                
+
                 $("#howork").click(function() {
                     $('#explicacao').bPopup({
                         content: 'iframe',
@@ -187,7 +192,7 @@ $usuario = "$nome $sobrenome";
                 <div style="height: 50px;"></div>
             </div>
         </div>
-        
+
         <div id="explicacao" >
             <a class="b-close">X<a/>
                 <div class="content"></div>

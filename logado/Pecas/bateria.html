@@ -2,11 +2,26 @@
 <html>
     <head>
         <link href="style.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/rhinoslider-1.05.css" />
+        <script type="text/javascript" src="../../js/jquery-1.10.1.js"></script>
+        <script type="text/javascript" src="js/rhinoslider-1.05.min.js"></script>
+        <script type="text/javascript" src="js/mousewheel.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#slider').rhinoslider();
+            });
+        </script>
     </head>
-    <body>
+    <body bgcolor="black">
         <div id="conteudo">
-            <div>
-                TODO write content
+            <div id="page">
+                <ul id="slider">
+                    <li><img src="img/slider/bateria1.jpg" alt="" /></li>
+                    <li><img src="img/slider/bateria2.jpg" alt="" /></li>
+                    <li><img src="img/slider/bateria3.jpg" alt="" /></li>
+                    <li><img src="img/slider/bateria4.jpg" alt="" /></li>
+                </ul>
             </div>
         </div>
     </body>
