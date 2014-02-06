@@ -26,10 +26,10 @@ if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
             
             if($_SESSION["logado"]["tipo"] == 1){
                 $saida["resp"]["local"] = "telaInicialAluno.php";
-				header('Location: telaInicialAluno.php');
+				//header('Location: telaInicialAluno.php');
             }else if($_SESSION["logado"]["tipo"] == 2){
                 $saida["resp"]["local"] = "telaInicialProfessor.php";
-				header('Location: telaInicialProfessor.php');
+				//header('Location: telaInicialProfessor.php');
             }
             //$saida["resp"]["local"] = "telaInicialAluno.php";
             

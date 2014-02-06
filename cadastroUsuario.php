@@ -7,14 +7,14 @@
  */
 include ("./logado/includes/banco.php");
     
-    $nome = $_GET["nome"];
-    $sobrenome = $_GET["sobrenome"];
-    $usuario = $_GET["usuario"];
-    $senha = $_GET["pas"];
-    $conf_senha = $_GET["pas_conf"];
-    $data_nasc = $_GET["dtnasc"];
-    $email = $_GET["email"];
-    $id_Tipo = $_GET["valorCad"];
+    $nome = $_POST["nome"];
+    $sobrenome = $_POST["sobrenome"];
+    $usuario = $_POST["usuario"];
+    $senha = $_POST["pas"];
+    $conf_senha = $_POST["pas_conf"];
+    $data_nasc = $_POST["dtnasc"];
+    $email = $_POST["email"];
+    $id_Tipo = $_POST["valorCad"];
     
     // $query = "INSERT INTO usuario VALUE(1, $usuario, $senha, $nome, $sobrenome, $data_nasc, $email)";
     
@@ -25,6 +25,7 @@ include ("./logado/includes/banco.php");
     
     if ($resultado) {
         $saida["resp"]["status"] = true;
+		 $saida["resp"]["local"] = "index.html";
         echo json_encode($saida);
         
     } else {
