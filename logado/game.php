@@ -1,5 +1,6 @@
 <?php
 include("./includes/info_logado.php");
+include("./gerarPerguntasAleatorias.php");
 
 $usuario = "$nome $sobrenome";
 ?>
@@ -14,6 +15,10 @@ $usuario = "$nome $sobrenome";
         <script src="../js/jquery.bpopup.min.js"></script>
         <link href="css/baloon.css" rel="stylesheet">
         <style>
+            .ui-widget-header{
+                border: 1px solid #000000;
+                background: #000000;
+            }
             .input{
                 width: 100%;
                 border-radius: 10px;
@@ -122,20 +127,22 @@ $usuario = "$nome $sobrenome";
         </style>
         <script>
             $(function() {
-                $(document).tooltip({
-                    position: {
-                        my: "center bottom-20",
-                        at: "center top",
-                        using: function(position, feedback) {
-                            $(this).css(position);
-                            $("<div>")
-                                    .addClass("arrow")
-                                    .addClass(feedback.vertical)
-                                    .addClass(feedback.horizontal)
-                                    .appendTo(this);
-                        }
-                    }
+                
+                $('#start').click(function(){
+                    $('#modal').dialog({
+                        modal: true,
+                        title: "Responda",
+                        resizable: false,
+                        buttons:[{
+                                text: "OK",
+                                id: "btnOK",
+                                click: function(){
+                                    $(this).dialog("close");
+                                }
+                        }]
                 });
+                });
+                
 
                 $(".area").click(function() {
                     var caminho = $(this).attr("id");
@@ -173,8 +180,11 @@ $usuario = "$nome $sobrenome";
                     </div>
                 </div>
             </div>
-
-            <div id="div-content">  
+            
+            <div id="btnOK" >OK</div>
+            <div id="modal"><?=$vetperguntas[0]?></div>
+            
+            <div id="div-content">
                 <br>
                 <div id="mobo">
                     <div class="area" id="processador" title="Este é o processador"></div>
@@ -191,7 +201,7 @@ $usuario = "$nome $sobrenome";
                     <!-- <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
                 </div>
                 <div style="height: 50px;"></div>
-                <div><input type="button" value="Comerçar Jogo" onclick="window.location = 'gerarPerguntasAleatorias.php'"></div>
+                <div><input type="button" id="start" value="Comerçar Jogo" ></div>
             </div>
         </div>
 
