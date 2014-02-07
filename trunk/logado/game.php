@@ -191,6 +191,7 @@ $usuario = "$nome $sobrenome";
                     <!-- <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
                 </div>
                 <div style="height: 50px;"></div>
+                <div><input type="button" value="Comerçar Jogo" onclick="window.location = 'gerarPerguntasAleatorias.php'"></div>
             </div>
         </div>
 
