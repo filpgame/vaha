@@ -25,7 +25,7 @@ include ("./logado/includes/banco.php");
     
     if ($resultado) {
         $saida["resp"]["status"] = true;
-		 $saida["resp"]["local"] = "index.html";
+	$saida["resp"]["local"] = "index.html";
         echo json_encode($saida);
         
     } else {

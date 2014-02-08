@@ -49,8 +49,8 @@ $usuario = "$nome $sobrenome";
                 background-size: 640px 480px;
                 background-repeat: no-repeat;
                 border: 2px solid black;
-                width: 800px;
-                height: 600px;
+                width: 640px;
+                height: 480px;
                 margin: 10px auto 50px auto;
             }
             .area{
@@ -67,63 +67,64 @@ $usuario = "$nome $sobrenome";
                 opacity: 0.5;
             }
             #processador{
-                margin-left: 590px;
-                margin-top: 190px;
-                width: 130px;
-                height: 140px;
-            }
-            #chipsetnorte{
-                margin-left: 412px;
-                margin-top: -71px;
-                width: 109px;
+                margin-left: 473px;
+                margin-top: 159px;
+                width: 100px;
                 height: 103px;
             }
+            #chipsetnorte{
+                margin-left: 331px;
+                margin-top: -55px;
+                width: 83px;
+                height: 82px;
+            }
             #pciexpress{
-                margin-left: 307px;
-                margin-top: -249px;
-                width: 27px;
-                height: 239px;
+                margin-left: 250px;
+                margin-top: -218px;
+                width: 15px;
+                height: 207px;
             }
             #sata{
-                margin-left: 177px;
-                margin-top: -82px;
-                width: 27px;
-                height: 80px;
+                margin-left: 141px;
+                margin-top: -64px;
+                width: 22px;
+                height: 63px;
             }
             #bateria{
-                margin-left: 215px;
-                margin-top: 120px;
-                width: 54px;
-                height: 47px;
+                margin-left: 173px;
+                margin-top: 96px;
+                width: 40px;
+                height: 38px;
+                border-radius: 25px;
             }
             #memoria{
-                margin-left: 409px;
-                margin-top: -125px;
-                width: 327px;
-                height: 43px;
+                margin-left: 307px;
+                margin-top: -100px;
+                width: 303px;
+                height: 31px;
             }
             #pci{
-                margin-left: 155px;
-                margin-top: -347px;
-                width: 22px;
-                height: 196px;
+                margin-left: 123px;
+                margin-top: -278px;
+                width: 17px;
+                height: 157px;
             }
             #chipsetsul{
-                margin-left: 178px;
-                margin-top: 53px;
-                width: 84px;
-                height: 77px;
+                margin-left: 141px;
+                margin-top: 45px;
+                width: 68px;
+                height: 57px;
             }
             #ide{             
-                margin-left: 115px;
-                width: 20px;
-                height: 133px;
+                margin-left: 92px;
+                width: 16px;
+                height: 110px;
             }
             #fonte{
-                margin-left: 524px;
-                margin-top: -29px;
-                height: 24px;
-                width: 136px;
+                margin-left: 419px;
+                margin-top: -26px;
+                height: 19px;
+                width: 108px;
             }
             #explicacao{
                 display: none;
@@ -192,7 +193,7 @@ $usuario = "$nome $sobrenome";
             </div>
 
             <!--<div id="div-content"> -->
-            
+
             <div id="mobo">
                 <div class="area" id="processador" title="Este é o processador"></div>
                 <div class="area" id="chipsetnorte" title="Este é o chipsetNorte"></div>
@@ -211,7 +212,7 @@ $usuario = "$nome $sobrenome";
             <!-- </div> -->
             <div id="explicacao" >
                 <a class="b-close">X</a>
-                    <div class="content"></div>
+                <div class="content"></div>
             </div>
         </div>
     </body>
