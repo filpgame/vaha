@@ -1,6 +1,6 @@
 <?php
-    include("./logado/includes/info_logado.php");
-    
+    include("./includes/info_logado.php");
+        
     $usuario = "$nome $sobrenome";    
 ?>
 <html lang="pt-br">
@@ -11,19 +11,19 @@
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
      
-        <link rel="stylesheet" type="text/css" href="css-reg/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css-reg/style.css" />
-        <link rel="stylesheet" type="text/css" href="css-reg/animate-custom.css" />
-        <link rel="stylesheet" type="text/css" href="css/telaInicialAluno.css" />
-        <link rel="shortcut icon" href="css/logo2.png" />
+        <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
+        <link rel="shortcut icon" href="../css/logo2.png" />
 
-        <script src="js/jquery-1.10.1.js"></script>
+        <script src="../js/jquery-1.10.1.js"></script>
        
-        <link href="css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
-        <script src="js/jquery-ui-1.10.3.custom.js"></script>
-        <script src="js/jquery.validate.js"></script>
-        <script src="js/autenticacao.js"></script>
-        <script src="js/additional-methods.js"></script>
+        <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
+        <script src="../js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../js/jquery.validate.js"></script>
+        <script src="../js/autenticacao.js"></script>
+        <script src="../js/additional-methods.js"></script>
         
     
     </head>
@@ -33,7 +33,7 @@
                 <ul>
                     <li class='active'><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
                     <li><a href='#'><span>Perfil</span></a></li>
-                    <li><a href='logado/EstudeAqui.php'><span>Comece a estudar</span></a></li>
+                    <li><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='last'><a href='#'><span>Game</span></a></li>  
                     <li class='welcome'><p><span>Bem Vindo, <?=$usuario?></span></p></li>               
                 </ul>
