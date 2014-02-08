@@ -141,8 +141,8 @@ $usuario = "$nome $sobrenome";
                                         url: "gerarPerguntasAleatorias.php",
                                         type: 'POST',
                                         success: function(saida){
-                                            data = JSON.parse(saida);
-                                            /* Terminar ... */
+                                            //data = JSON.parse(saida);
+                                            alert(saida);
                                         }
                                     });
                                     $(this).dialog("close");
