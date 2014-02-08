@@ -140,8 +140,8 @@ $usuario = "$nome $sobrenome";
                                     $.ajax({
                                         url: "gerarPerguntasAleatorias.php",
                                         type: 'POST',
-                                        success: function(data){
-                                            data = JSON.parse();
+                                        success: function(saida){
+                                            data = JSON.parse(saida);
                                             /* Terminar ... */
                                         }
                                     });
