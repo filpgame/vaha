@@ -141,7 +141,7 @@ $usuario = "$nome $sobrenome";
                                         url: "gerarPerguntasAleatorias.php",
                                         type: 'POST',
                                         success: function(saida){
-                                            //data = JSON.parse(saida);
+                                            data = JSON.parse(saida);
                                             alert(saida);
                                         }
                                     });
@@ -190,7 +190,7 @@ $usuario = "$nome $sobrenome";
             </div>
             
             <div id="btnOK" >OK</div>
-            <div id="modal"><?$vetperguntas[0]?></div>
+            <div id="modal"><?=$vetperguntas[0]?></div>
             
             <div id="div-content">
                 <br>

@@ -6,7 +6,7 @@
  */
     include ('../logado/includes/banco.php');
 
-    $result = mysqli_query($conn, "SELECT * FROM pergunta ORDER BY rand() LIMIT 4");
+    $result = mysqli_query($conn, "SELECT * FROM pergunta ORDER BY rand() LIMIT 1");
     
     $vetperguntas = array();
             
@@ -20,13 +20,7 @@
         
         array_push($vetperguntas, $pergunta);
     }
-    
+    echo $vetperguntas;
     json_encode($vetperguntas);
-    
-    for($i = 0; $i < count($vetperguntas); $i++ ){
-        
-        
-        
-    }
     
 ?>
