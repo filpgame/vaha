@@ -21,6 +21,6 @@
         array_push($vetperguntas, $pergunta);
     }
     
-    echo $vetperguntas[0];
+    //echo $vetperguntas[0];
     
 ?>

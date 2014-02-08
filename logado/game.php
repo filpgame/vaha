@@ -182,7 +182,7 @@ $usuario = "$nome $sobrenome";
             </div>
             
             <div id="btnOK" >OK</div>
-            <div id="modal"><?=$vetperguntas[0]?></div>
+            <div id="modal"><?$vetperguntas[0]?></div>
             
             <div id="div-content">
                 <br>
