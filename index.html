@@ -26,8 +26,8 @@
 
         <script>
             $(document).ready(function() {
-                $("#btnlogar").click(function(e) {
-					e.preventDefault();
+                $("#btnlogar").click(function(e) {                    
+                    e.preventDefault();
                     $.ajax({
                         url: "login.php",
                         data: $("#frm-login").serialize(),
@@ -44,7 +44,7 @@
                 });
 
                 $("#btncadastrar").click(function(e) {
-				e.preventDefault();
+		    e.preventDefault();
                     $.ajax({
                         url: "cadastroUsuario.php",
                         data: $("#frm-cadastrar").serialize(),

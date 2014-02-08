@@ -137,6 +137,14 @@ $usuario = "$nome $sobrenome";
                                 text: "OK",
                                 id: "btnOK",
                                 click: function(){
+                                    $.ajax({
+                                        url: "gerarPerguntasAleatorias.php",
+                                        type: 'POST',
+                                        success: function(data){
+                                            data = JSON.parse();
+                                            /* Terminar ... */
+                                        }
+                                    });
                                     $(this).dialog("close");
                                 }
                         }]

@@ -21,6 +21,12 @@
         array_push($vetperguntas, $pergunta);
     }
     
-    //echo $vetperguntas[0];
+    json_encode($vetperguntas);
+    
+    for($i = 0; $i < count($vetperguntas); $i++ ){
+        
+        
+        
+    }
     
 ?>
