@@ -125,9 +125,8 @@ $usuario = "$nome $sobrenome";
                 top:5px;
             }
         </style>
-        <script>
-            $(function() {
-                
+        <script>            
+            $(function() {                
                 $('#start').click(function(){
                     $('#modal').dialog({
                         modal: true,
@@ -141,8 +140,8 @@ $usuario = "$nome $sobrenome";
                                         url: "gerarPerguntasAleatorias.php",
                                         type: 'POST',
                                         success: function(saida){
-                                            data = JSON.parse(saida);
-                                            alert(saida);
+                                            data = JSON.parse(saida);                                            
+                                            alert(data.vetperguntas);
                                         }
                                     });
                                     $(this).dialog("close");
