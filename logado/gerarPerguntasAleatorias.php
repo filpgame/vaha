@@ -20,7 +20,7 @@
         
         array_push($vetperguntas, $pergunta);
     }
-    echo $vetperguntas;
-    json_encode($vetperguntas);
+    
+    echo json_encode($vetperguntas);
     
 ?>
