@@ -1,6 +1,6 @@
 <?php
 include("./includes/info_logado.php");
-include("./gerarPerguntasAleatorias.php");
+//include("./gerarPerguntasAleatorias.php");
 
 $usuario = "$nome $sobrenome";
 ?>
@@ -125,31 +125,40 @@ $usuario = "$nome $sobrenome";
                 top:5px;
             }
         </style>
-        <script>            
-            $(function() {                
-                $('#start').click(function(){
+        <script>
+            $(function() {
+                var data = "";
+                $('#start').click(function() {
+                    $.ajax({
+                        url: "gerarPerguntasAleatorias.php",
+                        type: 'POST',
+                        success: function(saida) {
+                            data = JSON.parse(saida);
+                            $("#modal").html(data.vetperguntas)
+                        }
+                    });
                     $('#modal').dialog({
                         modal: true,
                         title: "Responda",
                         resizable: false,
-                        buttons:[{
+                        buttons: [{
                                 text: "OK",
                                 id: "btnOK",
-                                click: function(){
+                                click: function() {
                                     $.ajax({
                                         url: "gerarPerguntasAleatorias.php",
                                         type: 'POST',
-                                        success: function(saida){
-                                            data = JSON.parse(saida);                                            
+                                        success: function(saida) {
+                                            data = JSON.parse(saida);
                                             alert(data.vetperguntas);
                                         }
                                     });
                                     $(this).dialog("close");
                                 }
-                        }]
+                            }]
+                    });
                 });
-                });
-                
+
 
                 $(".area").click(function() {
                     var caminho = $(this).attr("id");
@@ -187,10 +196,10 @@ $usuario = "$nome $sobrenome";
                     </div>
                 </div>
             </div>
-            
+
             <div id="btnOK" >OK</div>
-            <div id="modal"><?=$vetperguntas[0]?></div>
-            
+            <div id="modal"></div>
+
             <div id="div-content">
                 <br>
                 <div id="mobo">
