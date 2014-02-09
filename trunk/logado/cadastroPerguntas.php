@@ -1,6 +1,6 @@
 <?php
-include("./logado/includes/info_logado.php");
-include ("./logado/includes/banco.php");
+include("./includes/info_logado.php");
+include ("./includes/banco.php");
 
 $usuario = "$nome $sobrenome";
 
@@ -10,12 +10,12 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
     <head>
         <meta charset="utf-8">
         <title>PI</title>
-        <script src="js/jquery-1.10.1.js"></script>
-        <link href="css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <link href="logado/css/index.css" rel="stylesheet">
+        <script src="../js/jquery-1.10.1.js"></script>
+        <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-        <link href="logado/css/cadastroPerguntas.css" rel="stylesheet">
-        <script src="js/jquery-ui-1.10.3.custom.js"></script>
+        <link href="css/cadastroPerguntas.css" rel="stylesheet">
+        <script src="../js/jquery-ui-1.10.3.custom.js"></script>
         <style>
             .input{
                 width: 100%;
@@ -28,7 +28,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                 font-size: 14px;
                 color: white;
                 float: left;
-                margin-top: 40px;
+                margin-tsop: 40px;
                 margin-left: 65px;
             }
 
@@ -61,11 +61,11 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                 <form method="GET">
                    <br> <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
 
-                    <div id="imagem1"><img src="logado/img/balao1.fw.png"></div>
+                    <div id="imagem1"><img src="img/balao1.fw.png"></div>
                     <div id="textPergunta"><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
                     <br>
                     
-                    <div id="imagem2"><img src="logado/img/balao2.fw.png"></div>
+                    <div id="imagem2"><img src="img/balao2.fw.png"></div>
                     <div>
                         <select style="width: 200px" text="" id="comboResposta" style="resize: none" class="quest">
                             <?php
@@ -75,7 +75,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                             ?>
                         </select></div>
                     <br>
-                   <div id="imagem3"><img src="logado/img/balao3.fw.png"></div>
+                   <div id="imagem3"><img src="img/balao3.fw.png"></div>
                     <div><textarea cols="40" rows="4" id="dica" style="resize: none" class="quest"></textarea></div>
                 </form>
 
