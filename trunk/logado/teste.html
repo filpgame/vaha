@@ -1,33 +1,19 @@
-<?php
-include("./includes/info_logado.php");
-
-$usuario = "$nome $sobrenome";
-?>
-<html lang="pt-br">
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
     <head>
-        <title>Bem Vindo</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-
-        <link rel="stylesheet" type="text/css" href="css/index.css" >
-        <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
-        <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
-        <link rel="shortcut icon" href="../css/logo2.png" />
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/baloon.css" rel="stylesheet">
-
         <script src="../js/jquery-1.10.1.js"></script>
         <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
-        <script src="../js/jquery.validate.js"></script>
-        <script src="../js/autenticacao.js"></script>
-        <script src="../js/additional-methods.js"></script>
-        <script src="../js/jquery.bpopup.min.js"></script>
-        
+
         <script>
             $(function() {
                 $(document).tooltip({
@@ -66,24 +52,11 @@ $usuario = "$nome $sobrenome";
         </script>
     </head>
     <body>
-        <div>
-            <div id='navigation'>
-                <ul>
-                    <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
-                    <li><a href='#'><span>Perfil</span></a></li>
-                    <li class='active'><a href='logado/EstudeAqui.php'><span>Comece a estudar</span></a></li>
-                    <li class='last'><a href='#'><span>Game</span></a></li>  
-                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?></span></p></li>               
-                </ul>
-                <a href="telaInicialAluno.php" class="logo"></a>
-            </div>
 
-            <!--<div id="div-content"> -->
-
-            <table border=1 cellspacing=0 cellpadding=0>
+        <table border=1 cellspacing=0 cellpadding=0>
             <tr>
                 <td>
-                    <img class="area" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
+                    <img src="Pecas/img/cooler.JPG" alt=""/>
                 </td>
                 <td rowspan=6>
                     <div id="mobo">
@@ -103,26 +76,20 @@ $usuario = "$nome $sobrenome";
                     </div>
                 </td>
                 <td>  
-                    <img class="area" id="drivecddvd" src="Pecas/img/driveCD.jpg" title="Leitor de CD/DVD"/>
+                    <img src="Pecas/img/driveCD.jpg" alt=""/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img class="area" id="harddisk" src="Pecas/img/hd.png" title="HD"/>
+                    <img src="Pecas/img/hd.png" alt=""/>
                 </td>
                 <td>
-                    <img class="area" id="placadevideo" src="Pecas/img/placa de video2.jpg" title="Placa de Vídeo"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="area" id="monitor" src="Pecas/img/monitor.jpg" title="Monitor"/>
-                </td>
-                <td>
+                    <img src="Pecas/img/placa de video2.jpg" alt=""/>
                 </td>
             </tr>
             <tr>
                 <td>
+                    <img src="Pecas/img/monitor.jpg" alt=""/>
                 </td>
                 <td>
                 </td>
@@ -139,12 +106,12 @@ $usuario = "$nome $sobrenome";
                 <td>
                 </td>
             </tr>
-        </table>       
-            <!-- </div> -->
-            <div id="explicacao" >
-                <a class="b-close">X</a>
-                <div class="content"></div>
-            </div>
-        </div>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>

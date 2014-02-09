@@ -3,7 +3,13 @@
     Created on : 29/01/2014, 15:34:09
     Author     : Felipe
 */
+html{
+    overflow: hidden;
+}
 
+table{
+    margin: auto;
+}
 .input{
     width: 100%;
     border-radius: 10px;
