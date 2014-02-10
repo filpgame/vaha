@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <?php
+    require '../includes/banco.php';
+    $query = "SELECT * FROM comp_pc WHERE nome = 'processador'";
+    $resultado = mysqli_query($conn, $query);
+    ?>
     <head>
         <title></title>
         <meta charset="UTF-8">
@@ -8,7 +13,9 @@
     <body>
         <div id="conteudo">
             <iframe frameborder="0" height="240" width="320" allowFullScreen src="https://skfb.ly/5i3gc0a?autostart=1&transparent=0&autospin=1&controls=1"></iframe>
-            <div>Monitor é o que faz um computador pessoal ter sentido na humilde vida do ser humano. Ele mostra, de forma visual, toda atividade do computador. Através dele </div>
+            <?php while ($linha = mysqli_fetch_array($resultado,MYSQLI_ASSOC)): ?>
+                <div> <?php echo $linha['desc']; ?> </div>
+            <?php endwhile; ?>
         </div>
     </body>
 </html>
