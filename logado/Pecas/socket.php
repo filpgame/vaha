@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php 
-require("../includes/banco.php")
+require("../includes/banco.php");
+$query = "SELECT * FROM comp_pc WHERE nome = 'harddisk'";
+$resultado = mysqli_query($conn, $query);
 ?>
 <html>
     <head>
@@ -22,7 +24,10 @@ require("../includes/banco.php")
                 <span class="arrow previous"></span>
                 <span class="arrow next"></span>
             </div>
-        <div>SATA é a porta de conexão para Dispositivos de armazenamento em Massa (HDs, DVDs, etc) mais moderninhos.. Está em sua versão III, transfere até 6Gbps por Segundo (veja tabela de nomenclaturas)</div>
+        <!--<div>SATA é a porta de conexão para Dispositivos de armazenamento em Massa (HDs, DVDs, etc) mais moderninhos.. Está em sua versão III, transfere até 6Gbps por Segundo (veja tabela de nomenclaturas)</div>-->
+        <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
+                <div> <?php echo $linha['desc']; ?> </div>
+            <?php endwhile; ?>
     </div>
         </body>
 </html>
