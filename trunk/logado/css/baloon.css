@@ -7,6 +7,25 @@ html{
     overflow: hidden;
 }
 
+.ui-widget-header{
+    border: 1px solid #000000;
+    background: #000000;
+}
+
+#start{
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#ver{
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+}
+
 table{
     margin: 30px auto auto auto;
 }
@@ -47,12 +66,14 @@ table{
     background-color: red;
     opacity: 0.5;
 }
+
 #socket{
     margin-left: 473px;
     margin-top: 159px;
     width: 100px;
     height: 103px;
 }
+
 #chipsetnorte{
     margin-left: 331px;
     margin-top: -55px;
