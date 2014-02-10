@@ -11,10 +11,10 @@
     <body>
         <div id="slideshow">
                 <ul class="slides">
-                    <li><img src="img/slider/chipsetnorte1.jpg" width="320" height="240" alt="Marsa Alam" /></li>
-                    <li><img src="img/slider/chipsetnorte2.jpg" width="320" height="240" alt="Turrimetta Beach" /></li>
-                    <li><img src="img/slider/chipsetnorte3.jpg" width="320" height="240" alt="Power Station" /></li>
-                    <li><img src="img/slider/chipsetnorte4.jpg" width="320" height="240" alt="Colors of Nature" /></li>
+                    <li> <img src="img/slider/chipsetnorte1.jpg" width="320" height="240"/> </li>
+                    <li> <img src="img/slider/chipsetnorte2.jpg" width="320" height="240"/> </li>
+                    <li> <img src="img/slider/chipsetnorte3.jpg" width="320" height="240"/> </li>
+                    <li> <img src="img/slider/chipsetnorte4.jpg" width="320" height="240"/> </li>
                 </ul>
                 <span class="arrow previous"></span>
                 <span class="arrow next"></span>
