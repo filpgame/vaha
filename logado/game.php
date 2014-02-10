@@ -1,130 +1,34 @@
 <?php
 include("./includes/info_logado.php");
-//include("./gerarPerguntasAleatorias.php");
 
 $usuario = "$nome $sobrenome";
 ?>
 <html lang="pt-br">
     <head>
+        <title>Bem Vindo</title>
         <meta charset="utf-8">
-        <title>PI</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" >
+        <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
+        <link rel="shortcut icon" href="../css/logo2.png" />
+        
+
         <script src="../js/jquery-1.10.1.js"></script>
-        <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
+        <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../js/jquery.validate.js"></script>
+        <script src="../js/autenticacao.js"></script>
+        <script src="../js/additional-methods.js"></script>
         <script src="../js/jquery.bpopup.min.js"></script>
         <link href="css/baloon.css" rel="stylesheet">
-        <style>
-            .ui-widget-header{
-                border: 1px solid #000000;
-                background: #000000;
-            }
-            .input{
-                width: 100%;
-                border-radius: 10px;
-                height: 30px;
-                margin-top: 10px;
-            }
-            #teste{
-                font-family: cursive;
-                font-size: 14px;
-                color: white;
-                float: left;
-                margin-top: 40px;
-                margin-left: 65px;
-            }
-            #mobo{
-                background-image: url('img/boardb.jpg');
-                background-size: 600px 500px;
-                background-repeat: no-repeat;
-                border: 2px solid black;
-                width: 600px;
-                height: 500px;
-                margin: 20px auto 50px auto;
-            }
-            .area{
-                border: 2px solid transparent;
-                border-radius: 7px;
-                -o-transition:.7s;
-                -ms-transition:.7s;
-                -moz-transition:.7s;
-                -webkit-transition:.7s;
-                transition:.7s;
-            }
-            .area:hover{
-                background-color: red;
-                opacity: 0.5;
-            }
-            #processador{
-                margin-left: 443px;
-                margin-top: 168px;
-                width: 94px;
-                height: 98px;
-            }
-            #chipsetnorte{
-                margin-left: 309px;
-                margin-top: -54px;
-                width: 84px;
-                height: 98px;
-            }
-            #pciexpress{
-                margin-left: 235px;
-                margin-top: -233px;
-                width: 14px;
-                height: 210px;
-            }
-            #sata{
-                margin-left: 134px;
-                margin-top: -83px;
-                width: 16px;
-                height: 60px;
-            }
-            #bateria{
-                margin-left: 162px;
-                margin-top: 120px;
-                width: 40px;
-                height: 41px;
-            }
-            #memoria{
-                margin-left: 290px;
-                margin-top: -116px;
-                width: 282px;
-                height: 33px;
-            }
-            #pci{
-                margin-left: 117px;
-                margin-top: -275px;
-                width: 14px;
-                height: 164px;
-            }
-            #chipsetsul{
-                margin-left: 133px;
-                margin-top: 46px;
-                width: 64px;
-                height: 59px;
-            }
-            #ide{             
-                margin-left: 85px;
-                width: 16px;
-                height: 115px;
-                margin-top: -20px;
-            }
-            #explicacao{
-                display: none;
-                border-radius: 10px;
-                background-color: whitesmoke;
-                color:#000;
-                padding:20px;
-                min-width:640px;
-                min-height: 480px;
-            }
-            .b-close{
-                cursor:pointer;
-                position:absolute;
-                right:10px;
-                top:5px;
-            }
-        </style>
+        
         <script>
             $(document).ready(function() {
 
@@ -152,29 +56,29 @@ $usuario = "$nome $sobrenome";
                 
                     $('.area').click(function() {
                         var id = $(this).attr("id");
-                        if (id === data[i].Resposta) {
+                        if (id === data[i].resposta) {
                             mensagem = "Parabéns! Você acertou! \o/";
                             alert(mensagem);
                             i++;    
                             pontuacao += (100/tentativa);
 
-                            acertos++;                            
+                            acertos++;
+                            tentativa = 1;
                             chamarPergunta();
                         }else{
                             mensagem = "Oops! Resposta errada! :/";
-                            alert(mensagem);
+                            alert(mensagem + " - Tentativas restantes: " + tentativa );
                             tentativa++;
                             
-                            if(tentativa > 2){
+                            if(tentativa === 4){
+                                alert(mensagem + " A resposta correta é:  " + data[i].resposta);
+                                i++;
                                 chamarPergunta();
+                                tentativa = 1;
                             }
-                            
-                            erros++;                     
+                            erros++;
                         }
                     });
-
-
-                    i++;
 
                 $('#start').click(function() {
                     $.ajax({
@@ -206,51 +110,76 @@ $usuario = "$nome $sobrenome";
     </head>
     <body>
         <div>
-            <div id="navigator">
-                <div id="teste">Bem Vindo, <?= $usuario ?></div>
-                <div id="navigator-style">
-                    <div id="navigation">
-
-                        <div style="text-align: center;">
-                            <a><li style="list-style: none;" class="menu-sup" >Home</li></a>
-                            <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                            <a id="howork"><li style="list-style: none;" class="menu-sup" >Como Funciona?</li></a>
-                            <a><li style="list-style: none;" class="menu-sup">Game</li></a>
-                        </div>
-                    </div>
-                </div>
+            <div id='navigation'>
+                <ul>
+                    <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
+                    <li><a href='#'><span>Perfil</span></a></li>
+                    <li class=''><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
+                    <li class='active'><a href='game.php'><span>Game</span></a></li>  
+                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?></span></p></li>             
+                </ul>
+                <a href="telaInicialAluno.php" class="logo"></a>
             </div>
 
-            <div id="btnOK" >OK</div>
+            <!--<div id="div-content"> -->
+            <div id="btnOK" ></div>
             <div id="modal"></div>
-
-            <div id="div-content">
-                <br>
-                <div id="mobo">
-                    <div class="area" id="processador" title="Este é o processador"></div>
-                    <div class="area" id="chipsetnorte" title="Este é o chipsetNorte"></div>
-                    <div class="area" id="pciexpress" title="Este é o PCI-E"></div>
-                    <div class="area" id="bateria" title="Esta é a bateria"></div>
-                    <!-- <div class="area" id="ide-hd" title="IDE - HD"></div>-->
-                    <!-- <div class="area" id="ide-cdrom" title="IDE - CDROM"></div>-->
-                    <div class="area" id="sata" title="Este é o SATA"></div>
-                    <div class="area" id="memoria" title="Este é o Memoria"></div>
-                    <div class="area" id="pci" title="Este é o PCI"></div>
-                    <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>
-                    <div class="area" id="ide" title="IDE"></div>
-                    <!-- <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
-                </div>
-                <div style="height: 50px;"></div>
-                <div><input type="button" id="start" value="Comerçar Jogo" ></div>
-            </div>
-        </div>
-
-        <div id="explicacao" >
-            <a class="b-close">X<a/>
+            <table cellspacing=0 cellpadding=0>
+            <tr>
+                <td>
+                    <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
+                </td>
+            <input type="button" id="ver" value="Ver Pergunta"/><br>
+            <input type="button" id="start" value="Começar Jogo">
+                <td rowspan=6>
+                    <div id="mobo">
+                        <div class="area" id="socket" title="Soquete"></div>
+                        <div class="area" id="chipsetnorte" title="Chipset Norte"></div>
+                        <div class="area" id="pciexpress" title="Slot PCI-Express"></div>
+                        <div class="area" id="bateria" title="Bateria"></div>
+                        <div class="area" id="sata" title="Connexão SATA"></div>
+                        <div class="area" id="memoria" title="Slot de Memória"></div>
+                        <div class="area" id="pci" title="Slot PCI"></div>
+                        <div class="area" id="chipsetsul" title="Chipset Sul"></div>
+                        <div class="area" id="ide" title="Conexão IDE"></div>
+                        <div class="area" id="fonte" title="Aqui se conecta a fonte"></div>
+                    </div>
+                </td>
+                <td>  
+                    <img class="area imglateraldir" id="drivecddvd" src="Pecas/img/driveCD.jpg"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png"/>
+                </td>
+                <td>
+                    <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" />
+                </td>
+                <td>
+                    <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" />
+                </td>
+                <td>
+                    <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" />
+                </td>
+            </tr>
+            
+        </table>       
+            <!-- </div> -->
+            <div id="explicacao" >
+                <a class="b-close">X</a>
                 <div class="content"></div>
+            </div>
         </div>
     </body>
 </html>
-
-
-

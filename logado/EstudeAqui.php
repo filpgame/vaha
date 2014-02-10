@@ -71,8 +71,8 @@ $usuario = "$nome $sobrenome";
                 <ul>
                     <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
                     <li><a href='#'><span>Perfil</span></a></li>
-                    <li class='active'><a href='logado/EstudeAqui.php'><span>Comece a estudar</span></a></li>
-                    <li class='last'><a href='#'><span>Game</span></a></li>  
+                    <li class='active'><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
+                    <li class='last'><a href='game.php'><span>Game</span></a></li>  
                     <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?></span></p></li>               
                 </ul>
                 <a href="telaInicialAluno.php" class="logo"></a>
