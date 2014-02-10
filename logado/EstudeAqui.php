@@ -50,7 +50,7 @@ $usuario = "$nome $sobrenome";
                     $('#explicacao').bPopup({
                         content: 'iframe',
                         contentContainer: '.content',
-                        loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
+                        loadUrl: 'Pecas/' + caminho + '.php' //Uses jQuery.load()
                     });
                 });
 
@@ -121,7 +121,7 @@ $usuario = "$nome $sobrenome";
             </tr>
             <tr>
                 <td>
-                    <img class="area imglateralesq" id="placamae" src="Pecas/img/placamae.jpg" title="Placa Mãe"/>
+                    <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" title="Placa Mãe"/>
                 </td>
                 <td>
                     <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" title="Processador"/>
