@@ -126,26 +126,67 @@ $usuario = "$nome $sobrenome";
             }
         </style>
         <script>
-            $(function() {
+            $(document).ready(function() {
+
                 var data = "";
+                var i = 0;
+                var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
+                var mensagem = "";
+                
+                function chamarPergunta(){
+                    $("#modal").html(data[i].Pergunta);
+                    
+                    $('#modal').dialog({
+                        modal: true,
+                        title: "Pergunta " + (i + 1),
+                        resizable: false,
+                        buttons: [{
+                                text: "OK",
+                                id: "btnOK",
+                                click: function() {
+                                    $(this).dialog("close");
+                                }
+                            }]
+                    });
+                }  
+                
+                    $('.area').click(function() {
+                        var id = $(this).attr("id");
+                        if (id === data[i].Resposta) {
+                            mensagem = "Parabéns! Você acertou! \o/";
+                            alert(mensagem);
+                            i++;    
+                            pontuacao += (100/tentativa);
+
+                            acertos++;                            
+                            chamarPergunta();
+                        }else{
+                            mensagem = "Oops! Resposta errada! :/";
+                            alert(mensagem);
+                            tentativa++;
+                            
+                            if(tentativa > 2){
+                                chamarPergunta();
+                            }
+                            
+                            erros++;                     
+                        }
+                    });
+
+
+                    i++;
+
                 $('#start').click(function() {
                     $.ajax({
                         url: "gerarPerguntasAleatorias.php",
                         type: 'POST',
-                        success: function(saida){
+                        success: function(saida) {
                             data = JSON.parse(saida);
-                            $("#modal").html(data[0]);
-                            //alert(data.vetperguntas);
-                            
-                            $('#mobo div').click(function(){
-                                var id = $(this).attr("id");
-                                if(id === "processador"){
-                                    alert("Parabéns, voce acertou. o/");
-                                }
-                            });
-                            
+                            chamarPergunta();
                         }
                     });
+                    $(this).hide();
+                    
                     $('#modal').dialog({
                         modal: true,
                         title: "Pergunta ... ",
@@ -154,37 +195,11 @@ $usuario = "$nome $sobrenome";
                                 text: "OK",
                                 id: "btnOK",
                                 click: function() {
-                                    $.ajax({
-                                        url: "gerarPerguntasAleatorias.php",
-                                        type: 'POST',
-                                        success: function(saida) {
-                                            data = JSON.parse(saida);
-                                            //alert(data.vetperguntas);
-                                        }
-                                    });
                                     $(this).dialog("close");
                                 }
                             }]
                     });
                 });
-
-
-//                $(".area").click(function() {
-//                    var caminho = $(this).attr("id");
-//                    $('#explicacao').bPopup({
-//                        content: 'iframe',
-//                        contentContainer: '.content',
-//                        loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
-//                    });
-//                });
-//
-//                $("#howork").click(function() {
-//                    $('#explicacao').bPopup({
-//                        content: 'iframe',
-//                        contentContainer: '.content',
-//                        loadUrl: 'Pecas/comofunciona.html' //Uses jQuery.load()
-//                    });
-//                });
             });
 
         </script>
