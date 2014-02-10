@@ -91,7 +91,7 @@
                             required: true, minlength: 4, equalTo: "#pas"
                         },
                         email: {
-                            email: true, required: true
+                            email: true, required: true, remote: "verificaUsuario.php"
                         },
                         dtnasc: {
                             required: true
@@ -100,7 +100,8 @@
                     messages: {
                         email: {
                             required: "Campo obrigatório.",
-                            email: " Digite um e-mail válido."
+                            email: " Digite um e-mail válido.",
+                            remote: "Este email já existe"
                         },
                         nome: {
                             required: "Campo obrigatório.",
