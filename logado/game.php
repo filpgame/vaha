@@ -132,14 +132,23 @@ $usuario = "$nome $sobrenome";
                     $.ajax({
                         url: "gerarPerguntasAleatorias.php",
                         type: 'POST',
-                        success: function(saida) {
+                        success: function(saida){
                             data = JSON.parse(saida);
-                            $("#modal").html(data.vetperguntas)
+                            $("#modal").html(data[0]);
+                            //alert(data.vetperguntas);
+                            
+                            $('#mobo div').click(function(){
+                                var id = $(this).attr("id");
+                                if(id === "processador"){
+                                    alert("Parabéns, voce acertou. o/");
+                                }
+                            });
+                            
                         }
                     });
                     $('#modal').dialog({
                         modal: true,
-                        title: "Responda",
+                        title: "Pergunta ... ",
                         resizable: false,
                         buttons: [{
                                 text: "OK",
@@ -150,7 +159,7 @@ $usuario = "$nome $sobrenome";
                                         type: 'POST',
                                         success: function(saida) {
                                             data = JSON.parse(saida);
-                                            alert(data.vetperguntas);
+                                            //alert(data.vetperguntas);
                                         }
                                     });
                                     $(this).dialog("close");
@@ -160,22 +169,22 @@ $usuario = "$nome $sobrenome";
                 });
 
 
-                $(".area").click(function() {
-                    var caminho = $(this).attr("id");
-                    $('#explicacao').bPopup({
-                        content: 'iframe',
-                        contentContainer: '.content',
-                        loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
-                    });
-                });
-
-                $("#howork").click(function() {
-                    $('#explicacao').bPopup({
-                        content: 'iframe',
-                        contentContainer: '.content',
-                        loadUrl: 'Pecas/comofunciona.html' //Uses jQuery.load()
-                    });
-                });
+//                $(".area").click(function() {
+//                    var caminho = $(this).attr("id");
+//                    $('#explicacao').bPopup({
+//                        content: 'iframe',
+//                        contentContainer: '.content',
+//                        loadUrl: 'Pecas/' + caminho + '.html' //Uses jQuery.load()
+//                    });
+//                });
+//
+//                $("#howork").click(function() {
+//                    $('#explicacao').bPopup({
+//                        content: 'iframe',
+//                        contentContainer: '.content',
+//                        loadUrl: 'Pecas/comofunciona.html' //Uses jQuery.load()
+//                    });
+//                });
             });
 
         </script>

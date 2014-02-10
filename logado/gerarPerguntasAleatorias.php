@@ -6,7 +6,7 @@
  */
     include ('../logado/includes/banco.php');
 
-    $result = mysqli_query($conn, "SELECT * FROM pergunta ORDER BY rand() LIMIT 1");
+    $result = mysqli_query($conn, "SELECT * FROM pergunta ORDER BY rand() LIMIT 2");
     
     $vetperguntas = array();
             
@@ -22,5 +22,16 @@
     }
     
     echo json_encode($vetperguntas);
+    
+    
+    $result2 = mysqli_query($conn, "SELECT resposta.resposta FROM pergunta join resposta on(pergunta.id_resposta = resposta.id_resposta)");
+    
+    while($linha = mysqli_fetch_array($result2)){
+        $pergunta = $linha['resposta'];
+        
+        array_push($vetperguntas, $pergunta);
+    }
+    
+    
     
 ?>
