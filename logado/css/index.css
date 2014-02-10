@@ -31,13 +31,6 @@ body{
     height: 60px;
 }
 
-#navigation{
-    margin-left: auto;
-    margin-right: auto;
-    width: 970px;
-    height: 60px;
-}
-
 #navigator-content{
     font-family: cursive;
     font-size: 18px;

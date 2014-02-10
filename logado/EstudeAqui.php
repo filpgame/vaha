@@ -80,51 +80,51 @@ $usuario = "$nome $sobrenome";
 
             <!--<div id="div-content"> -->
 
-            <table border=1 cellspacing=0 cellpadding=0>
+            <table cellspacing=0 cellpadding=0>
             <tr>
                 <td>
-                    <img class="area" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
+                    <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
                 </td>
                 <td rowspan=6>
                     <div id="mobo">
-                        <div class="area" id="processador" title="Este é o processador"></div>
-                        <div class="area" id="chipsetnorte" title="Este é o chipsetNorte"></div>
-                        <div class="area" id="pciexpress" title="Este é o PCI-E"></div>
-                        <div class="area" id="bateria" title="Esta é a bateria"></div>
-                        <!-- <div class="area" id="ide-hd" title="IDE - HD"></div>-->
-                        <!-- <div class="area" id="ide-cdrom" title="IDE - CDROM"></div>-->
-                        <div class="area" id="sata" title="Este é o SATA"></div>
-                        <div class="area" id="memoria" title="Este é o Memoria"></div>
-                        <div class="area" id="pci" title="Este é o PCI"></div>
-                        <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>
-                        <div class="area" id="ide" title="IDE"></div>
+                        <div class="area" id="socket" title="Soquete"></div>
+                        <div class="area" id="chipsetnorte" title="Chipset Norte"></div>
+                        <div class="area" id="pciexpress" title="Slot PCI-Express"></div>
+                        <div class="area" id="bateria" title="Bateria"></div>
+                        <div class="area" id="sata" title="Connexão SATA"></div>
+                        <div class="area" id="memoria" title="Slot de Memória"></div>
+                        <div class="area" id="pci" title="Slot PCI"></div>
+                        <div class="area" id="chipsetsul" title="Chipset Sul"></div>
+                        <div class="area" id="ide" title="Conexão IDE"></div>
                         <div class="area" id="fonte" title="Aqui se conecta a fonte"></div>
-                        <!-- <div class="area" id="chipsetsul" title="Este é o Chipset Sul"></div>-->
                     </div>
                 </td>
                 <td>  
-                    <img class="area" id="drivecddvd" src="Pecas/img/driveCD.jpg" title="Leitor de CD/DVD"/>
+                    <img class="area imglateraldir" id="drivecddvd" src="Pecas/img/driveCD.jpg" title="Leitor de CD/DVD"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img class="area" id="harddisk" src="Pecas/img/hd.png" title="HD"/>
+                    <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png" title="HD"/>
                 </td>
                 <td>
-                    <img class="area" id="placadevideo" src="Pecas/img/placa de video2.jpg" title="Placa de Vídeo"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="area" id="monitor" src="Pecas/img/monitor.jpg" title="Monitor"/>
-                </td>
-                <td>
+                    <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" title="Placa de Vídeo"/>
                 </td>
             </tr>
             <tr>
                 <td>
+                    <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" title="Monitor"/>
                 </td>
                 <td>
+                    <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" title="Gabinete"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="area imglateralesq" id="placamae" src="Pecas/img/placamae.jpg" title="Placa Mãe"/>
+                </td>
+                <td>
+                    <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" title="Processador"/>
                 </td>
             </tr>
             <tr>
