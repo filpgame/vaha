@@ -69,7 +69,11 @@ $usuario = "$nome $sobrenome";
         <div>
             <div id='navigation'>
                 <ul>
-                    <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
+                    <?php if ($tipo == 1): ?>
+                        <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
+                    <?php else: ?>
+                        <li><a href='telaInicialProfessor.php'><span>Inicio</span></a></li>
+                    <?php endif ?>
                     <li><a href='#'><span>Perfil</span></a></li>
                     <li class='active'><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='last'><a href='game.php'><span>Game</span></a></li>  
