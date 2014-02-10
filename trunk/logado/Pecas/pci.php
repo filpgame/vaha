@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+require '../includes/banco.php';
+$query = "SELECT * FROM comp_pc WHERE nome = 'harddisk'";
+$resultado = mysqli_query($conn, $query);
+?>
 <html>
     <head>
         <title></title>
@@ -20,7 +25,10 @@
                 <span class="arrow previous"></span>
                 <span class="arrow next"></span>
             </div>
-            <div>TODO write content</div>
+            <!--<div>TODO write content</div>-->
+            <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
+                <div> <?php echo $linha['desc']; ?> </div>
+            <?php endwhile; ?>
         </div>
     </body>
 </html>

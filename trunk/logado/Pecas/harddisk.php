@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+require '../includes/banco.php';
+$query = "SELECT * FROM comp_pc WHERE nome = 'harddisk'";
+$resultado = mysqli_query($conn, $query);
+?>
 <html>
     <head>
         <title></title>
@@ -7,7 +12,11 @@
     </head>
     <body>
         <div>
-        <iframe frameborder="0" height="240" width="320" allowFullScreen webkitallowfullscreen="true" mozallowfullscreen="true" src="https://sketchfab.com/nm5lkh20ba?autostart=1&transparent=0&autospin=1&controls=1"></iframe> <p style="font-size: 13px; font-weight:normal; margin: 5px; color: #4a4a4a"><strong><a style="color: #1caad9;" href="http://sketchfab.com/show/1e699db0fade40eab161603387db918e">Hard Disk Drive</a> from <a style="color: #1caad9;" href="http://sketchfab.com/delmark2k12">delmark2k12</a> on <a style="color: #1caad9;" href="https://sketchfab.com">Sketchfab</a>.</strong></p>
+            <iframe frameborder="0" height="240" width="320" allowFullScreen webkitallowfullscreen="true" mozallowfullscreen="true" src="https://sketchfab.com/nm5lkh20ba?autostart=1&transparent=0&autospin=1&controls=1"></iframe> <p style="font-size: 13px; font-weight:normal; margin: 5px; color: #4a4a4a"><strong><a style="color: #1caad9;" href="http://sketchfab.com/show/1e699db0fade40eab161603387db918e">Hard Disk Drive</a> from <a style="color: #1caad9;" href="http://sketchfab.com/delmark2k12">delmark2k12</a> on <a style="color: #1caad9;" href="https://sketchfab.com">Sketchfab</a>.</strong></p>
         </div>
+        <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
+            <div> <?php echo $linha['desc']; ?> </div>
+        <?php endwhile; ?>
+        <!-- <div></div> -->
     </body>
 </html>

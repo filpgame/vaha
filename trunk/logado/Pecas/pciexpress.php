@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+require '../includes/banco.php';
+$query = "SELECT * FROM comp_pc WHERE nome = 'harddisk'";
+$resultado = mysqli_query($conn, $query);
+?>
 <html>
     <head>
         <title></title>
@@ -25,8 +25,10 @@ and open the template in the editor.
                 <span class="arrow previous"></span>
                 <span class="arrow next"></span>
             </div>
-        <div>TODO write content</div>
+        <!--<div>TODO write content</div>-->
+        <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
+                <div> <?php echo $linha['desc']; ?> </div>
+            <?php endwhile; ?>
         </div>
-        <div>TODO write content</div>
     </body>
 </html>

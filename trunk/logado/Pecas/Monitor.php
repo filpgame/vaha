@@ -2,7 +2,7 @@
 <html>
     <?php
     require '../includes/banco.php';
-    $query = "SELECT * FROM comp_pc WHERE nome = 'processador'";
+    $query = "SELECT * FROM comp_pc WHERE nome = 'monitor'";
     $resultado = mysqli_query($conn, $query);
     ?>
     <head>

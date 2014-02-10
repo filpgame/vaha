@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+    require '../includes/banco.php';
+    $query = "SELECT * FROM comp_pc WHERE nome = 'bateria'";
+    $resultado = mysqli_query($conn, $query);
+    ?>
 <html>
     <head>
         <link href="style.css" rel="stylesheet">
@@ -18,7 +23,10 @@
                 <span class="arrow previous"></span>
                 <span class="arrow next"></span>
             </div>
-            <div>Você pode pensar: "Pra que uma bateria de relógio num computador enorme desses?" É interessante a pergunta, pra manter o computador ligado quando cair a luz que não é. Ele é responsável por manter na ativa as informações importantes do computador (como configurações da BIOS, informaçoes do CMOS e até mesmo o relógio)  </div>
+            <!--<div>Você pode pensar: "Pra que uma bateria de relógio num computador enorme desses?" É interessante a pergunta, pra manter o computador ligado quando cair a luz que não é. Ele é responsável por manter na ativa as informações importantes do computador (como configurações da BIOS, informaçoes do CMOS e até mesmo o relógio)  </div> -->
+            <?php while ($linha = mysqli_fetch_array($resultado,MYSQLI_ASSOC)): ?>
+                <div> <?php echo $linha['desc']; ?> </div>
+            <?php endwhile; ?>
         </div>
     </body>
 </html>
