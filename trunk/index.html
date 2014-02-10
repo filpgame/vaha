@@ -21,6 +21,7 @@
         <link href="css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
         <script src="js/jquery-ui-1.10.3.custom.js"></script>
         <script src="js/jquery.validate.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
         <script src="js/autenticacao.js"></script>
         <script src="js/additional-methods.js"></script>
 
@@ -37,29 +38,12 @@
                             if (data.resp.status) {
                                 document.location = data.resp.local;
                             } else {
-				alert("Login ou senha Incorreta");
+                                alert("Login ou senha Incorreta");
                             }
                         }
                     });
                 });
-
-                $("#btncadastrar").click(function(e) {
-		   // e.preventDefault();
-                    $.ajax({
-                        url: "cadastroUsuario.php",
-                        data: $("#frm-cadastrar").serialize(),
-                        type: 'POST',
-                        success: function(saida) {
-                            data = JSON.parse(saida);
-                            if (data.resp.status) {
-                                document.location = data.resp.local;
-                            } else {
-                                alert("Erro ao Cadastrar. Tente novamente mais tarde");
-                            }
-                        }
-                    });
-                });
-
+                
                 $("#date").datepicker({
                     dateFormat: "yy-mm-dd",
                     monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
@@ -69,7 +53,6 @@
 
                 $('#telefone').hide();
                 $('#inst').hide();
-
                 $("#cbox").change(function() {
                     if ($('#cbox').prop("checked")) {
                         $('#valorCad').val("2");
@@ -84,9 +67,85 @@
                     }
                 });
             });
+</script>
+        <script>
+            /* Validação login */
+            $(function() {
 
-        </script>
+                /* Validação cadastro */
+                $("#frm-cadastrar").validate({
+                    rules: {
+                        nome: {
+                            required: true, minlength: 3
+                        },
+                        sobrenome: {
+                            required: true, minlength: 3
+                        },
+                        usuario: {
+                            required: true, minlength: 3
+                        },
+                        pas: {
+                            required: true, minlength: 4
+                        },
+                        pas_conf: {
+                            required: true, minlength: 4, equalTo: "#pas"
+                        },
+                        email: {
+                            email: true, required: true
+                        },
+                        dtnasc: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        email: {
+                            required: "Campo obrigatório.",
+                            email: " Digite um e-mail válido."
+                        },
+                        nome: {
+                            required: "Campo obrigatório.",
+                            minlength: "Mínimo de 3 caracteres."
+                        },
+                        sobrenome: {
+                            required: "Campo obrigatório.",
+                            minlength: "Mínimo de 3 caracteres."
+                        },
+                        pass: {
+                            required: "Campo obrigatório.",
+                            minlength: "Mínimo de 6 caracteres."
+                        },
+                        pas_conf: {
+                            required: "Campo obrigatório.",
+                            minlength: "Mínimo de 6 caracteres.",
+                            equalTo: "As senhas não correspondem."
+                        },
+                        dtnasc: {
+                            required: "Campo obrigatório.",
+                        },
+                        usuario: {
+                            required: "Campo obrigatório.",
+                            minlength: "Mínimo de 3 caracteres."
+                        }
+                    },
+                    submitHandler: function() {
+                        $.ajax({
+                            url: "cadastroUsuario.php",
+                            data: $("#frm-cadastrar").serialize(),
+                            type: 'POST',
+                            success: function(saida) {
+                                data = JSON.parse(saida);
+                                if (data.resp.status) {
+                                    document.location = data.resp.local;
+                                } else {
+                                    alert("Erro ao Cadastrar. Tente novamente mais tarde");
+                                }
+                            }
+                        });
+                    }
+                });
+            });
 
+        </script>    
     </head>
     <body>
         <!-- Início cabeçalho -->
