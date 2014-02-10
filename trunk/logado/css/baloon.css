@@ -8,7 +8,7 @@ html{
 }
 
 table{
-    margin: auto;
+    margin: 30px auto auto auto;
 }
 .input{
     width: 100%;
@@ -25,28 +25,29 @@ table{
     margin-left: 65px;
 }
 #mobo{
-    background-image: url('../img/boardb.jpg');
+    background-image: url('../img/placa.png');
     background-size: 640px 480px;
     background-repeat: no-repeat;
-    border: 2px solid black;
+    border: 2px solid transparent;
     width: 640px;
     height: 480px;
-   // margin: 10px auto 50px auto;
+    // margin: 10px auto 50px auto;
 }
 .area{
-    border: 2px solid white;
+    border: 2px solid transparent;
     border-radius: 7px;
     -o-transition:.7s;
     -ms-transition:.7s;
     -moz-transition:.7s;
     -webkit-transition:.7s;
     transition:.7s;
+    cursor: pointer;
 }
 .area:hover{
     background-color: red;
     opacity: 0.5;
 }
-#processador{
+#socket{
     margin-left: 473px;
     margin-top: 159px;
     width: 100px;
@@ -120,6 +121,21 @@ table{
     position:absolute;
     right:10px;
     top:5px;
+}
+
+td{
+    vertical-align: top;
+}
+
+.imglateraldir{
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 15px;
+}
+.imglateralesq{
+    width: 100px;
+    height: 100px;
+    margin: 0 15px 0 0;
 }
 
 /*Balão onde coloca o nome do componente */
