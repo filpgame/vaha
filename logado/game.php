@@ -18,7 +18,7 @@ $usuario = "$nome $sobrenome";
         <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
         <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
         <link rel="shortcut icon" href="../css/logo2.png" />
-        
+
 
         <script src="../js/jquery-1.10.1.js"></script>
         <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
@@ -28,7 +28,7 @@ $usuario = "$nome $sobrenome";
         <script src="../js/additional-methods.js"></script>
         <script src="../js/jquery.bpopup.min.js"></script>
         <link href="css/baloon.css" rel="stylesheet">
-        
+
         <script>
             $(document).ready(function() {
 
@@ -36,10 +36,11 @@ $usuario = "$nome $sobrenome";
                 var i = 0;
                 var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
                 var mensagem = "";
-                
-                function chamarPergunta(){
+                var qtd_perguntas = 9;
+
+                function chamarPergunta() {
                     $("#modal").html(data[i].Pergunta);
-                    
+
                     $('#modal').dialog({
                         modal: true,
                         title: "Pergunta " + (i + 1),
@@ -52,33 +53,37 @@ $usuario = "$nome $sobrenome";
                                 }
                             }]
                     });
-                }  
-                
-                    $('.area').click(function() {
-                        var id = $(this).attr("id");
-                        if (id === data[i].resposta) {
-                            mensagem = "Parabéns! Você acertou! \o/";
-                            alert(mensagem);
-                            i++;    
-                            pontuacao += (100/tentativa);
+                }
 
-                            acertos++;
-                            tentativa = 1;
+                $('.area').click(function() {
+                    var id = $(this).attr("id");
+                    if (id === data[i].resposta) {
+                        mensagem = "Parabéns! Você acertou! \o/";
+                        alert(mensagem);
+                        i++;
+                        pontuacao += (100 / tentativa);
+
+                        acertos++;
+                        tentativa = 1;
+                        chamarPergunta();
+                    } else {
+                        mensagem = "Oops! Resposta errada! :/";
+                        alert(mensagem + " - Tentativas restantes: " + tentativa);
+                        tentativa++;
+
+                        if (tentativa === 4) {
+                            alert(mensagem + " A resposta correta é:  " + data[i].resposta);
+                            i++;
                             chamarPergunta();
-                        }else{
-                            mensagem = "Oops! Resposta errada! :/";
-                            alert(mensagem + " - Tentativas restantes: " + tentativa );
-                            tentativa++;
-                            
-                            if(tentativa === 4){
-                                alert(mensagem + " A resposta correta é:  " + data[i].resposta);
-                                i++;
-                                chamarPergunta();
-                                tentativa = 1;
-                            }
-                            erros++;
+                            tentativa = 1;
                         }
-                    });
+                        erros++;
+                    }
+
+                    if (i === qtd_perguntas) {
+                        alert("As perguntas acabaram! \o/ Você acertou " + acertos + "questões");
+                    }
+                });
 
                 $('#start').click(function() {
                     $.ajax({
@@ -90,7 +95,7 @@ $usuario = "$nome $sobrenome";
                         }
                     });
                     $(this).hide();
-                    
+
                     $('#modal').dialog({
                         modal: true,
                         title: "Pergunta ... ",
@@ -112,7 +117,11 @@ $usuario = "$nome $sobrenome";
         <div>
             <div id='navigation'>
                 <ul>
-                    <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
+                    <?php if ($tipo == 1): ?>
+                        <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
+                    <?php else: ?>
+                        <li><a href='telaInicialProfessor.php'><span>Inicio</span></a></li>
+                    <?php endif ?>
                     <li><a href='#'><span>Perfil</span></a></li>
                     <li class=''><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='active'><a href='game.php'><span>Game</span></a></li>  
@@ -125,12 +134,12 @@ $usuario = "$nome $sobrenome";
             <div id="btnOK" ></div>
             <div id="modal"></div>
             <table cellspacing=0 cellpadding=0>
-            <tr>
-                <td>
-                    <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
-                </td>
-            <input type="button" id="ver" value="Ver Pergunta"/><br>
-            <input type="button" id="start" value="Começar Jogo">
+                <tr>
+                    <td>
+                        <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
+                    </td>
+                <input type="button" id="ver" value="Ver Pergunta"/><br>
+                <input type="button" id="start" value="Começar Jogo">
                 <td rowspan=6>
                     <div id="mobo">
                         <div class="area" id="socket" title="Soquete"></div>
@@ -148,33 +157,33 @@ $usuario = "$nome $sobrenome";
                 <td>  
                     <img class="area imglateraldir" id="drivecddvd" src="Pecas/img/driveCD.jpg"/>
                 </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png"/>
-                </td>
-                <td>
-                    <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" />
-                </td>
-                <td>
-                    <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" />
-                </td>
-                <td>
-                    <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" />
-                </td>
-            </tr>
-            
-        </table>       
+                </tr>
+                <tr>
+                    <td>
+                        <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png"/>
+                    </td>
+                    <td>
+                        <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" />
+                    </td>
+                    <td>
+                        <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" />
+                    </td>
+                    <td>
+                        <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" />
+                    </td>
+                </tr>
+
+            </table>       
             <!-- </div> -->
             <div id="explicacao" >
                 <a class="b-close">X</a>
