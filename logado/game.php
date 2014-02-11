@@ -37,10 +37,8 @@ $usuario = "$nome $sobrenome";
                 var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
                 var mensagem = "";
                 var qtd_perguntas = 9;
-
-                function chamarPergunta() {
-                    $("#modal").html(data[i].Pergunta);
-
+                
+                function chamarModal(){
                     $('#modal').dialog({
                         modal: true,
                         title: "Pergunta " + (i + 1),
@@ -53,11 +51,20 @@ $usuario = "$nome $sobrenome";
                                 }
                             }]
                     });
+                }
+
+                function chamarPergunta() {
+                    $("#modal").html(data[i].Pergunta);
+                    chamarModal();
                     
                     if(i >= qtd_perguntas){
-                        alert("Acabooooou! Você acertou " + acertos + " questões");
+                        alert("Acabooooou! Você acertou " + acertos + " questões." + " Sua pontuação foi de: " + pontuacao);
                     }
                 }
+                
+                $('#ver').click(function(){
+                    chamarModal();
+                });
 
                 $('.area').click(function() {
                     var id = $(this).attr("id");
@@ -99,19 +106,7 @@ $usuario = "$nome $sobrenome";
                         }
                     });
                     $(this).hide();
-
-                    $('#modal').dialog({
-                        modal: true,
-                        title: "Pergunta ... ",
-                        resizable: false,
-                        buttons: [{
-                                text: "OK",
-                                id: "btnOK",
-                                click: function() {
-                                    $(this).dialog("close");
-                                }
-                            }]
-                    });
+                    chamarModal();
                 });
             });
 
@@ -135,15 +130,21 @@ $usuario = "$nome $sobrenome";
             </div>
 
             <!--<div id="div-content"> -->
+            
+
             <div id="btnOK" ></div>
             <div id="modal"></div>
+            <div id="principal">
             <table cellspacing=0 cellpadding=0>
                 <tr>
                     <td>
                         <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
                     </td>
-                <input type="button" id="ver" value="Ver Pergunta"/><br>
-                <input type="button" id="start" value="Começar Jogo">
+                <form style="text-align: center; margin-left: 50%;">
+                    <input type="button" id="ver" value="Ver Pergunta">
+                    <input type="button" id="start" value="Começar Jogo">
+                </form>
+                
                 <td rowspan=6>
                     <div id="mobo">
                         <div class="area" id="socket" title="Soquete"></div>
@@ -188,7 +189,7 @@ $usuario = "$nome $sobrenome";
                 </tr>
 
             </table>       
-            <!-- </div> -->
+             </div>
             <div id="explicacao" >
                 <a class="b-close">X</a>
                 <div class="content"></div>
