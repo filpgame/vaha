@@ -53,6 +53,10 @@ $usuario = "$nome $sobrenome";
                                 }
                             }]
                     });
+                    
+                    if(i >= qtd_perguntas){
+                        alert("Acabooooou! Você acertou " + acertos + " questões");
+                    }
                 }
 
                 $('.area').click(function() {
