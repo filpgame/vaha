@@ -27,7 +27,7 @@ $usuario = "$nome $sobrenome";
         <script src="../js/autenticacao.js"></script>
         <script src="../js/additional-methods.js"></script>
         <script src="../js/jquery.bpopup.min.js"></script>
-        
+
         <script>
             $(function() {
                 $(document).tooltip({
@@ -83,7 +83,7 @@ $usuario = "$nome $sobrenome";
             </div>
 
             <!--<div id="div-content"> -->
-
+            <div id="principal">
             <table cellspacing=0 cellpadding=0>
             <tr>
                 <td>
@@ -144,7 +144,7 @@ $usuario = "$nome $sobrenome";
                 </td>
             </tr>
         </table>       
-            <!-- </div> -->
+             </div> 
             <div id="explicacao" >
                 <a class="b-close">X</a>
                 <div class="content"></div>
