@@ -24,6 +24,13 @@
         <script src="../js/jquery.validate.js"></script>
         <script src="../js/autenticacao.js"></script>
         <script src="../js/additional-methods.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#logout").click(function(){
+                    window.location = "logout.php";
+                });
+            });
+        </script>
         
     
     </head>
@@ -36,7 +43,7 @@
                     <li><a href='#'><span>Aluno</span></a></li>
                     <li><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='last'><a href='#'><span>Game</span></a></li>  
-                    <li class='welcome'><p><span>Bem Vindo, <?=$usuario?></span></p></li>               
+                    <li class='welcome'><p><span>Bem Vindo, <?=$usuario?><img src="img/logout.png" id="logout" style="width: 16px; height: 16px"></span></p></li>               
                 </ul>
                 <a href="telaInicialProfessor.php" class="logo"></a>
             </div>
