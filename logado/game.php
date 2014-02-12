@@ -38,6 +38,10 @@ $usuario = "$nome $sobrenome";
                 var mensagem = "";
                 var qtd_perguntas = 9;
                 
+                $("#logout").click(function(){
+                    window.location = "logout.php";
+                });
+                
                 function chamarModal(){
                     $('#modal').dialog({
                         modal: true,
@@ -124,7 +128,7 @@ $usuario = "$nome $sobrenome";
                     <li><a href='#'><span>Perfil</span></a></li>
                     <li class=''><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='active'><a href='game.php'><span>Game</span></a></li>  
-                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?></span></p></li>             
+                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?><img src="img/logout.png" id="logout" style="width: 16px; height: 16px"></span></p></li>             
                 </ul>
                 <a href="telaInicialAluno.php" class="logo"></a>
             </div>

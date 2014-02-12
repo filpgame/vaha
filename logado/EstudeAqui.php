@@ -44,6 +44,10 @@ $usuario = "$nome $sobrenome";
                         }
                     }
                 });
+                
+                $("#logout").click(function(){
+                    window.location = "logout.php";
+                });
 
                 $(".area").click(function() {
                     var caminho = $(this).attr("id");
@@ -77,7 +81,7 @@ $usuario = "$nome $sobrenome";
                     <li><a href='#'><span>Perfil</span></a></li>
                     <li class='active'><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='last'><a href='game.php'><span>Game</span></a></li>  
-                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?></span></p></li>               
+                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?> <img src="img/logout.png" id="logout" style="width: 16px; height: 16px"></span></p></li>               
                 </ul>
                 <a href="telaInicialAluno.php" class="logo"></a>
             </div>

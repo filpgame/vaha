@@ -26,7 +26,50 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
         <script src="../js/jquery.validate.js"></script>
         <script src="../js/autenticacao.js"></script>
-        <script src="../js/additional-methods.js"></script>        
+        <script src="../js/additional-methods.js"></script>  
+        <script>
+            $(document).ready(function() {
+                $("#salvar").click(function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: "cadastrarConteudo.php",
+                        data: $("#frm").serialize(),
+                        type: 'POST',
+                        success: function(saida) {
+                            data = JSON.parse(saida);
+                            if (data.resp.status) {
+                                alert("Pergunta Criada com Sucesso!");
+                            } else {
+                                alert("Erro ao Criar Pergunta");
+                            }
+                        }
+                    });
+                });
+
+                $("#atualizar").click(function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: "cadastrarConteudo.php",
+                        data: $("#frm2").serialize(),
+                        type: 'POST',
+                        success: function(saida) {
+                            data = JSON.parse(saida);
+                            if (data.resp.status) {
+                                alert("Conteúdo atualizado com Sucesso! \0/");
+                            } else {
+                                alert("Erro ao cadastrar conteúdo! :/");
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+        <style>
+            span{
+                font-weight: bold;
+            }
+
+        </style>
 
     </head>
     <body>
@@ -44,114 +87,46 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
             </div>
 
             <div id="principal">
+                <h4 style="font-size: 30px; text-align: center;">Cadastro de Perguntas</h4><br>
                 <span>Aqui você pode Atualizar o conteúdo que desejar e também cadastrar suas próprias perguntas</span>
                 <form id="frm">
                     <br><span>Digite aqui a pergunta:</span><br>
-                    <textarea cols="40" rows="4" id="pergunta" style="resize: none"></textarea><br>
+                    <textarea name="pergunta" cols="40" rows="4" id="pergunta" style="resize: none"></textarea><br>
                     <br><span>Selecione a resposta:</span>
-                    <br><select>
+                    <br><select id="resposta" name="resposta">
                         <?php
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                             echo "<option>" . $row['nome'] . "</option>";
                         }
                         ?>
                     </select><br>
-                    
-                    <br><span>Alguma dica? Digite aqui:</span><br>
-                    <textarea cols="40" rows="4" id="dica" style="resize: none"></textarea>
+
+                    <br><input type="submit" id="salvar" name="salvarPergunta" value="Salvar">
+                </form>
+                <hr>
+
+                <h4 style="font-size: 30px; text-align: center;">Atualização de Conteúdo</h4><br>
+                
+                <form id="frm2">
+                    <span>Selecione o componente que deseja alterar o conteúdo:</span>
+                    <br><select id="respostaConteudo" name="respostaConteudo">
+                        <?php
+                        $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
+                        while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                            echo "<option>" . $row['nome'] . "</option>";
+                        }
+                        ?>
+                    </select><br>
+                    <br><span>Você deseja modificar o conteúdo de algo? Digite aqui em baixo:</span><br>
+                    <textarea name="desc" id="desc" cols="40" rows="4" id="dica" style="resize: none"></textarea><br>
+                    <input type="button" name="atualizar" id="atualizar" value="Atualizar conteúdo">
 
                 </form>
+
+
+
+
             </div>
         </div>
     </body>
 </html>
-
-
-
-
-//<?php
-//include("./includes/info_logado.php");
-//include ("./includes/banco.php");
-//
-//$usuario = "$nome $sobrenome";
-//
-//$query = mysqli_query($conn, "SELECT nome FROM comp_pc");
-//
-?>
-<!--<html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <title>PI</title>
-        <script src="../js/jquery-1.10.1.js"></script>
-        <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-        <link href="css/cadastroPerguntas.css" rel="stylesheet">
-        <script src="../js/jquery-ui-1.10.3.custom.js"></script>
-        <style>
-            .input{
-                width: 100%;
-                border-radius: 10px;
-                height: 30px;
-                margin-top: 10px;
-            }
-            #teste{
-                font-family: sans-serif;
-                font-size: 14px;
-                color: white;
-                float: left;
-                margin-tsop: 40px;
-                margin-left: 65px;
-            }
-
-            a:visited{ 
-                color: black;
-            }
-
-        </style>
-    </head>
-    <body>
-        <div>
-            <div id="navigator">
-                <div id="teste">Bem Vindo, <?= $usuario ?></div>
-                <div id="navigator-style">
-                    <div id="navigation">
-
-                        <div style="text-align: center;">
-                            <a href="telaInicialProfessor.php"><li style="list-style: none;" class="menu-sup" >Home</li></a>
-                            <a><li style="list-style: none;" class="menu-sup" >Perfil</li></a>
-                            <a><li style="list-style: none;" class="menu-sup" >Conteúdo</li></a>
-                            <a href="cadastroPerguntas.php"><li style="list-style: none;" class="menu-sup">Game</li></a>
-                            <a><li style="list-style: none;" class="menu-sup">Sobre</li></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="div-content"> 
-
-                <form method="GET">
-                   <br> <div id="line"><p class="escrita">Olá professor! Aqui você pode criar perguntas para testar o conhecimento de seus alunos</p></div>
-
-                    <div id="imagem1"><img src="img/balao1.fw.png"></div>
-                    <div id="textPergunta"><textarea cols="40" rows="4" id="pergunta" style="resize: none" class="quest"></textarea></div>
-                    <br>
-                    
-                    <div id="imagem2"><img src="img/balao2.fw.png"></div>
-                    <div>
-                        <select style="width: 200px" text="" id="comboResposta" style="resize: none" class="quest">
-<?php
-while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-    echo "<option>" . $row['nome'] . "</option>";
-}
-?>
-                        </select></div>
-                    <br>
-                   <div id="imagem3"><img src="img/balao3.fw.png"></div>
-                    <div><textarea cols="40" rows="4" id="dica" style="resize: none" class="quest"></textarea></div>
-                </form>
-
-            </div>
-        </div>
-    </body>
-</html>-->
