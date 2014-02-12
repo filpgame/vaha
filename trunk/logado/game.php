@@ -125,10 +125,14 @@ $usuario = "$nome $sobrenome";
                     <?php else: ?>
                         <li><a href='telaInicialProfessor.php'><span>Inicio</span></a></li>
                     <?php endif ?>
-                    <li><a href='#'><span>Perfil</span></a></li>
-                    <li class=''><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
+                    <?php if ($tipo == 1): ?>
+                    <?php else: ?>
+                        <li><a href='cadastroPerguntas.php'><span>Conteúdo</span></a></li>
+                        <li><a href='#'><span>Aluno</span></a></li>
+                    <?php endif ?>
+                    <li class='last'><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='active'><a href='game.php'><span>Game</span></a></li>  
-                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?><img src="img/logout.png" id="logout" style="width: 16px; height: 16px"></span></p></li>             
+                    <li class='welcome'><p><span>Bem Vindo, <?= $usuario ?> <img src="img/logout.png" id="logout" style="width: 16px; height: 16px"></span></p></li>                
                 </ul>
                 <a href="telaInicialAluno.php" class="logo"></a>
             </div>

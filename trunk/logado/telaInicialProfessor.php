@@ -5,6 +5,7 @@
 ?>
 <html lang="pt-br">
     <head>
+        <meta charset="utf-8">
         <title>Bem Vindo</title>
          <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
@@ -39,7 +40,7 @@
             <div id='navigation'>
                 <ul>
                     <li class='active'><a href='telaInicialProfessor.php'><span>Inicio</span></a></li>
-                    <li><a href='#'><span>Perfil</span></a></li>
+                    <li><a href='cadastroPerguntas.php'><span>Conteúdo</span></a></li>
                     <li><a href='#'><span>Aluno</span></a></li>
                     <li><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
                     <li class='last'><a href='#'><span>Game</span></a></li>  
@@ -48,15 +49,6 @@
                 <a href="telaInicialProfessor.php" class="logo"></a>
             </div>
 
-            <!--<div id="div-content">
-                <div id="menu-lateral">
-                    <br/><div style="margin-left: 20px; font-family: cursive; font-size: 22px;">Confira aqui suas estatísticas:</div><br/>
-                    <div><img src="logado/img/lapis.png"></div><br/><br/>
-                    <div><img src="logado/img/lapis.png"></div><br/><br/>
-                    <div><img src="logado/img/lapis.png"></div>
-                </div>                
-                
-            </div>-->
         </div>
     </body>
 </html>
