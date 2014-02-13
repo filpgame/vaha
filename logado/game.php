@@ -31,7 +31,16 @@ $usuario = "$nome $sobrenome";
 
         <script>
             $(document).ready(function() {
-
+                
+                function atualizaPontuacao(erros, acertos, pontuacao) {
+                    $.ajax({
+                        url: "estatisticas.php?errosAtuais="+erros+"&acertosAtuais="+acertos+"&pontucaoAtual="+pontuacao"",
+                        failure: function(){
+                            alert("Erro ao enviar dados ...");
+                        }                        
+                    });
+                }
+                
                 var data = "";
                 var i = 0;
                 var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
@@ -41,7 +50,7 @@ $usuario = "$nome $sobrenome";
                 $("#logout").click(function() {
                     window.location = "logout.php";
                 });
-                
+
                 $('#acertos').html("Acertos: " + acertos);
                 $('#erros').html("Erros: " + erros);
                 $('#pontuacao').html("Pontuação: " + pontuacao);
@@ -81,9 +90,9 @@ $usuario = "$nome $sobrenome";
                         alert(mensagem);
                         i++;
                         pontuacao += (100 / tentativa);
-
                         acertos++;
                         tentativa = 1;
+                        atualizaPontuacao(erros, acertos, pontuacao);
                         chamarPergunta();
                     } else {
                         mensagem = "Oops! Resposta errada! :/";
@@ -147,11 +156,11 @@ $usuario = "$nome $sobrenome";
             <div id="btnOK" ></div>
             <div id="modal"></div>
             <div id="principal">
-                
+
                 <div id="acertos"></div>
                 <div id="erros"></div>
                 <div id="pontuacao"></div>
-                
+
                 <table cellspacing=0 cellpadding=0>
                     <tr>
                         <td>

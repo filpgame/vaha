@@ -4,9 +4,10 @@ include './includes/banco.php';
 include './includes/info_logado.php';
     
 
-    $erros =  $_REQUEST['erros'];
-    $acertos = $_REQUEST['acertos'];
-    $pontuacao = $_REQUEST['pontuacao'];
+    $errosAtuais =  $_REQUEST['erros'];
+    $acertosAtuais = $_REQUEST['acertos'];
+    $pontuacaoAtual = $_REQUEST['pontuacao'];
     
-    mysqli_query($conn, "INSERT INTO");
-    //$result = mysqli_query($conn, "UPDATE FROM estatiticas SET acertos = $acertos, erro");
+    mysqli_query($conn, "UPDATE `estatiticas` SET `acertos`= (SELECT SUM(acertos) + $acertosAtuais), erros = (SELECT SUM(erros) + $errosAtuais), pontuacao_geral = (SELECT SUM(pontuacao_geral)+ $pontuacaoAtual)   WHERE ID_usuario = $ID_usuario");
+    
+    mysqli_close($conn);
