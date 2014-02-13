@@ -37,12 +37,16 @@ $usuario = "$nome $sobrenome";
                 var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
                 var mensagem = "";
                 var qtd_perguntas = 9;
-                
-                $("#logout").click(function(){
+
+                $("#logout").click(function() {
                     window.location = "logout.php";
                 });
                 
-                function chamarModal(){
+                $('#acertos').html("Acertos: " + acertos);
+                $('#erros').html("Erros: " + erros);
+                $('#pontuacao').html("Pontuação: " + pontuacao);
+
+                function chamarModal() {
                     $('#modal').dialog({
                         modal: true,
                         title: "Pergunta " + (i + 1),
@@ -60,13 +64,13 @@ $usuario = "$nome $sobrenome";
                 function chamarPergunta() {
                     $("#modal").html(data[i].Pergunta);
                     chamarModal();
-                    
-                    if(i >= qtd_perguntas){
+
+                    if (i >= qtd_perguntas) {
                         alert("Acabooooou! Você acertou " + acertos + " questões." + " Sua pontuação foi de: " + pontuacao);
                     }
                 }
-                
-                $('#ver').click(function(){
+
+                $('#ver').click(function() {
                     chamarModal();
                 });
 
@@ -83,7 +87,7 @@ $usuario = "$nome $sobrenome";
                         chamarPergunta();
                     } else {
                         mensagem = "Oops! Resposta errada! :/";
-                        alert(mensagem + " - Tentativas restantes: " + tentativa);
+                        alert(mensagem + " - Tentativa " + tentativa);
                         tentativa++;
 
                         if (tentativa === 4) {
@@ -138,66 +142,71 @@ $usuario = "$nome $sobrenome";
             </div>
 
             <!--<div id="div-content"> -->
-            
+
 
             <div id="btnOK" ></div>
             <div id="modal"></div>
             <div id="principal">
-            <table cellspacing=0 cellpadding=0>
-                <tr>
-                    <td>
-                        <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
-                    </td>
-                <form style="text-align: center; margin-left: 50%;">
-                    <input type="button" id="ver" value="Ver Pergunta">
-                    <input type="button" id="start" value="Começar Jogo">
-                </form>
                 
-                <td rowspan=6>
-                    <div id="mobo">
-                        <div class="area" id="socket" title="Soquete"></div>
-                        <div class="area" id="chipsetnorte" title="Chipset Norte"></div>
-                        <div class="area" id="pciexpress" title="Slot PCI-Express"></div>
-                        <div class="area" id="bateria" title="Bateria"></div>
-                        <div class="area" id="sata" title="Connexão SATA"></div>
-                        <div class="area" id="memoria" title="Slot de Memória"></div>
-                        <div class="area" id="pci" title="Slot PCI"></div>
-                        <div class="area" id="chipsetsul" title="Chipset Sul"></div>
-                        <div class="area" id="ide" title="Conexão IDE"></div>
-                        <div class="area" id="fonte" title="Aqui se conecta a fonte"></div>
-                    </div>
-                </td>
-                <td>  
-                    <img class="area imglateraldir" id="drivecddvd" src="Pecas/img/driveCD.jpg"/>
-                </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png"/>
-                    </td>
-                    <td>
-                        <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" />
-                    </td>
-                    <td>
-                        <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" />
-                    </td>
-                    <td>
-                        <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" />
-                    </td>
-                </tr>
+                <div id="acertos"></div>
+                <div id="erros"></div>
+                <div id="pontuacao"></div>
+                
+                <table cellspacing=0 cellpadding=0>
+                    <tr>
+                        <td>
+                            <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
+                        </td>
+                    <form style="text-align: center; margin-left: 50%;">
+                        <input type="button" id="ver" value="Ver Pergunta">
+                        <input type="button" id="start" value="Começar Jogo">
+                    </form>
 
-            </table>       
-             </div>
+                    <td rowspan=6>
+                        <div id="mobo">
+                            <div class="area" id="socket" title="Soquete"></div>
+                            <div class="area" id="chipsetnorte" title="Chipset Norte"></div>
+                            <div class="area" id="pciexpress" title="Slot PCI-Express"></div>
+                            <div class="area" id="bateria" title="Bateria"></div>
+                            <div class="area" id="sata" title="Connexão SATA"></div>
+                            <div class="area" id="memoria" title="Slot de Memória"></div>
+                            <div class="area" id="pci" title="Slot PCI"></div>
+                            <div class="area" id="chipsetsul" title="Chipset Sul"></div>
+                            <div class="area" id="ide" title="Conexão IDE"></div>
+                            <div class="area" id="fonte" title="Aqui se conecta a fonte"></div>
+                        </div>
+                    </td>
+                    <td>  
+                        <img class="area imglateraldir" id="drivecddvd" src="Pecas/img/driveCD.jpg"/>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png"/>
+                        </td>
+                        <td>
+                            <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" />
+                        </td>
+                        <td>
+                            <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" />
+                        </td>
+                        <td>
+                            <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" />
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
             <div id="explicacao" >
                 <a class="b-close">X</a>
                 <div class="content"></div>
