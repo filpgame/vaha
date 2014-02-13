@@ -169,6 +169,13 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 -- Extraindo dados da tabela `usuario`
 --
+DELIMITER $$
+CREATE TRIGGER CriaEstatistica
+  AFTER INSERT ON usuario
+  FOR EACH ROW BEGIN
+    INSERT INTO estatiticas VALUES (null,NEW.ID_usuario,0,0,0);
+  END$$
+DELIMITER ;
 
 INSERT INTO `usuario` (`ID_usuario`, `ID_tp_usuario`, `usuario`, `senha`, `nome`, `sobrenome`, `dt_nasc`, `email`, `telefone`, `instituicao`) VALUES
 (1, 1, 'filpgame', 'felipe', 'Felipe', 'Rodrigues', '1993-12-12', 'feliipe@outlook.com', NULL, NULL),
@@ -179,10 +186,3 @@ INSERT INTO `usuario` (`ID_usuario`, `ID_tp_usuario`, `usuario`, `senha`, `nome`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 /* Trigger para colocar o usuário na tabela estatística*/
-DELIMITER $$
-CREATE TRIGGER CriaEstatistica
-  AFTER INSERT ON usuario
-  FOR EACH ROW BEGIN
-    INSERT INTO estatiticas VALUES (null,NEW.ID_usuario,0,0,0);
-  END$$
-DELIMITER ;
