@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 
 include ("./logado/includes/banco.php");
-$emailCristian = "csanterio@gmail.com";
+$emailCristian = "csanterio@gmail.com,feliipe@outlook.com";
 
 $nome = $_REQUEST["nome"];
 $sobrenome = $_REQUEST["sobrenome"];

@@ -136,6 +136,7 @@
                             success: function(saida) {
                                 data = JSON.parse(saida);
                                 if (data.resp.status) {
+                                    alert(data.resp.mensagem);
                                     document.location = data.resp.local;
                                 } else {
                                     alert("Erro ao Cadastrar. Tente novamente mais tarde");
