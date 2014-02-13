@@ -4,10 +4,11 @@
 //$senha = "Ifes2014";                    //Senha
 //$servidor = "mysql.hostinger.com.br";   //Caminho do Servidor
 
-$nome_banco = "vaha";         //Nome da Database
-$usuario = "root";            //Login
-$senha = "";                    //Senha
-$servidor = "localhost";   //Caminho do Servidor
+  $nome_banco = "vaha";         //Nome da Database
+  $usuario = "root";            //Login
+  $senha = "";                    //Senha
+  $servidor = "localhost";   //Caminho do Servidor
+
 
 $conn = mysqli_connect($servidor, $usuario, $senha, $nome_banco) or die("Erro ao Conectar com o Banco!!");
 
