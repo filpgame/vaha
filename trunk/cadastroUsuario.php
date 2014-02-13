@@ -1,10 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 include ("./logado/includes/banco.php");
     
     $nome = $_POST["nome"];
@@ -15,13 +9,19 @@ include ("./logado/includes/banco.php");
     $data_nasc = $_POST["dtnasc"];
     $email = $_POST["email"];
     $id_Tipo = $_POST["valorCad"];
+    $instituicao = $_POST["inst"];
+    $telefone = $_POST["telefone"];
     
     // $query = "INSERT INTO usuario VALUE(1, $usuario, $senha, $nome, $sobrenome, $data_nasc, $email)";
     
     $saida["resp"]["status"] = false;
     
+    if($id_Tipo == 1){
+        $resultado = mysqli_query($conn, "INSERT INTO usuario VALUES(null,'$id_Tipo', '$usuario', '$senha', '$nome', '$sobrenome', '$data_nasc', '$email',null,null)");
+    }else{
+        $resultado = mysqli_query($conn, "INSERT INTO usuario VALUES(null,'$id_Tipo', '$usuario', '$senha', '$nome', '$sobrenome', '$data_nasc', '$email','$telefone','$instituicao')");
+    }
     
-    $resultado = mysqli_query($conn, "INSERT INTO usuario VALUES(null,'$id_Tipo', '$usuario', '$senha', '$nome', '$sobrenome', '$data_nasc', '$email')");
     
     if ($resultado) {
         $saida["resp"]["status"] = true;
