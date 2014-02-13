@@ -177,3 +177,12 @@ INSERT INTO `usuario` (`ID_usuario`, `ID_tp_usuario`, `usuario`, `senha`, `nome`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/* Trigger para colocar o usuário na tabela estatística*/
+DELIMITER $$
+CREATE TRIGGER CriaEstatistica
+  AFTER INSERT ON usuario
+  FOR EACH ROW BEGIN
+    INSERT INTO estatiticas VALUES (null,NEW.ID_usuario,0,0,0);
+  END$$
+DELIMITER ;
