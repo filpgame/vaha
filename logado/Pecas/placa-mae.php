@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 require '../includes/banco.php';
-$query = "SELECT * FROM comp_pc WHERE nome = 'placa-mae'";
+$query = "SELECT * FROM comp_pc WHERE nome = 'Placa-Mãe'";
 $resultado = mysqli_query($conn, $query);
 ?>
 

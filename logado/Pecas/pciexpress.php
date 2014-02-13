@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 require '../includes/banco.php';
-$query = "SELECT * FROM comp_pc WHERE nome = 'harddisk'";
+$query = "SELECT * FROM comp_pc WHERE nome = 'PCI Express'";
 $resultado = mysqli_query($conn, $query);
 ?>
 <html>
