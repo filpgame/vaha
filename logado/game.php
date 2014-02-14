@@ -34,7 +34,7 @@ $usuario = "$nome $sobrenome";
                 
                 function atualizaPontuacao(erros, acertos, pontuacao) {
                     $.ajax({
-                        url: "estatisticas.php?errosAtuais="+erros+"&acertosAtuais="+acertos+"&pontucaoAtual="+pontuacao"",
+                        url: "estatisticas.php?errosAtuais="+erros+"&acertosAtuais="+acertos+"&pontucaoAtual="+pontuacao,
                         failure: function(){
                             alert("Erro ao enviar dados ...");
                         }                        
@@ -84,7 +84,7 @@ $usuario = "$nome $sobrenome";
                 });
 
                 $('.area').click(function() {
-                    var id = $(this).attr("id");
+                    var id = $(this).attr("name");
                     if (id === data[i].resposta) {
                         mensagem = "Parabéns! Você acertou! \o/";
                         alert(mensagem);
@@ -164,7 +164,7 @@ $usuario = "$nome $sobrenome";
                 <table cellspacing=0 cellpadding=0>
                     <tr>
                         <td>
-                            <img class="area imglateralesq" id="cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
+                            <img class="area imglateralesq" id="cooler" name="Cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
                         </td>
                     <form style="text-align: center; margin-left: 50%;">
                         <input type="button" id="ver" value="Ver Pergunta">
@@ -173,44 +173,44 @@ $usuario = "$nome $sobrenome";
 
                     <td rowspan=6>
                         <div id="mobo">
-                            <div class="area" id="socket" title="Soquete"></div>
-                            <div class="area" id="chipsetnorte" title="Chipset Norte"></div>
-                            <div class="area" id="pciexpress" title="Slot PCI-Express"></div>
-                            <div class="area" id="bateria" title="Bateria"></div>
-                            <div class="area" id="sata" title="Connexão SATA"></div>
-                            <div class="area" id="memoria" title="Slot de Memória"></div>
-                            <div class="area" id="pci" title="Slot PCI"></div>
-                            <div class="area" id="chipsetsul" title="Chipset Sul"></div>
-                            <div class="area" id="ide" title="Conexão IDE"></div>
-                            <div class="area" id="fonte" title="Aqui se conecta a fonte"></div>
+                            <div class="area" id="socket" name="Soquete" title="Soquete"></div>
+                            <div class="area" id="chipsetnorte" name="Chipset Norte" title="Chipset Norte"></div>
+                            <div class="area" id="pciexpress" name="PCI-Express" title="Slot PCI-Express"></div>
+                            <div class="area" id="bateria" name="Bateria" title="Bateria"></div>
+                            <div class="area" id="sata" name="SATA" title="Connexão SATA"></div>
+                            <div class="area" id="memoria" name="Memória RAM" title="Slot de Memória"></div>
+                            <div class="area" id="pci" name="PCI" title="Slot PCI"></div>
+                            <div class="area" id="chipsetsul" name="Chipset Sul" title="Chipset Sul"></div>
+                            <div class="area" id="ide" name="Conexão IDE" title="Conexão IDE"></div>
+                            <div class="area" id="fonte" name="Fonte" title="Aqui se conecta a fonte"></div>
                         </div>
                     </td>
                     <td>  
-                        <img class="area imglateraldir" id="drivecddvd" src="Pecas/img/driveCD.jpg"/>
+                        <img class="area imglateraldir" id="drivecddvd" name="Leitor CD/DVD" src="Pecas/img/driveCD.jpg"/>
                     </td>
                     </tr>
                     <tr>
                         <td>
-                            <img class="area imglateralesq" id="harddisk" src="Pecas/img/hd.png"/>
+                            <img class="area imglateralesq" id="harddisk" name="Disco Rígido" src="Pecas/img/hd.png"/>
                         </td>
                         <td>
-                            <img class="area imglateraldir" id="placadevideo" src="Pecas/img/placa de video2.jpg" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="area imglateralesq" id="monitor" src="Pecas/img/monitor.jpg" />
-                        </td>
-                        <td>
-                            <img class="area imglateraldir" id="gabinete" src="Pecas/img/Gabinete.jpg" />
+                            <img class="area imglateraldir" id="placadevideo" name="Placa de Vídeo" src="Pecas/img/placa de video2.jpg" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <img class="area imglateralesq" id="placa-mae" src="Pecas/img/placamae.jpg" />
+                            <img class="area imglateralesq" id="monitor" name="Monitor" src="Pecas/img/monitor.jpg" />
                         </td>
                         <td>
-                            <img class="area imglateraldir" id="processador" src="Pecas/img/processador.jpg" />
+                            <img class="area imglateraldir" id="gabinete" name="Gabinete" src="Pecas/img/Gabinete.jpg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="area imglateralesq" id="placa-mae" name="Placa-Mae" src="Pecas/img/placamae.jpg" />
+                        </td>
+                        <td>
+                            <img class="area imglateraldir" id="processador" name="Processador" src="Pecas/img/processador.jpg" />
                         </td>
                     </tr>
 
