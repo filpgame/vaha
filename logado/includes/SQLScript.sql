@@ -51,6 +51,31 @@ INSERT INTO `comp_pc` (`ID_comp`, `nome`, `desc`, `tp_componente`, `princ_marcas
 (22, 'SATA', 'SATA é a porta de conexão para Dispositivos de armazenamento em Massa (HDs, DVDs, etc) mais moderninhos.. Está em sua versão III, transfere até 6Gbps por Segundo (veja tabela de nomenclaturas)', 'Componente', NULL, NULL),
 (23, 'Soquete', 'Sem descrição', '', '', NULL);
 
+
+--
+-- INSERT NA TABELA RESPOSTA
+--
+
+INSERT INTO `resposta` (`ID_resposta`, `ID_comp`, `resposta`) VALUES
+(null, 6, 'Processador'),
+(null, 7, 'Bateria'),
+(null, 8, 'Chipset Norte'),
+(null, 9, 'Chipset Sul'),
+(null, 10, 'Cooler'),
+(null, 11, 'Leitor CD/DVD'),
+(null, 12, 'Fonte'),
+(null, 13, 'Gabinete'),
+(null, 14, 'Monitor'),
+(null, 15, 'Disco Rígido'),
+(null, 16, 'Conexão IDE'),
+(null, 17, 'Memória RAM'),
+(null, 18, 'PCI'),
+(null, 19, 'PCI-Express'),
+(null, 20, 'Placa-Mãe'),
+(null, 21, 'Placa de Vídeo'),
+(null, 22, 'SATA'),
+(null, 23, 'Soquete');
+
 -- --------------------------------------------------------
 
 --

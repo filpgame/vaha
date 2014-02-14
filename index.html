@@ -27,7 +27,7 @@
 
         <script>
             $(document).ready(function() {
-                $("#btnlogar").click(function(e) {           
+                $("#btnlogar").click(function(e) {
                     e.preventDefault();
                     $.ajax({
                         url: "login.php",
@@ -43,7 +43,7 @@
                         }
                     });
                 });
-                
+
                 $("#date").datepicker({
                     dateFormat: "yy-mm-dd",
                     monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
@@ -67,7 +67,7 @@
                     }
                 });
             });
-</script>
+        </script>
         <script>
             /* Validação login */
             $(function() {
@@ -82,7 +82,7 @@
                             required: true, minlength: 3
                         },
                         usuario: {
-                            required: true, minlength: 3
+                            required: true, minlength: 3, remote: "verificaUsuario.php"
                         },
                         pas: {
                             required: true, minlength: 4
@@ -105,7 +105,7 @@
                         },
                         nome: {
                             required: "Campo obrigatório.",
-                            minlength: "Mínimo de 3 caracteres."
+                            minlength: "Mínimo de 3 caracteres.",
                         },
                         sobrenome: {
                             required: "Campo obrigatório.",
@@ -125,7 +125,8 @@
                         },
                         usuario: {
                             required: "Campo obrigatório.",
-                            minlength: "Mínimo de 3 caracteres."
+                            minlength: "Mínimo de 3 caracteres.",
+                            remote: "Este usuário já existe"
                         }
                     },
                     submitHandler: function() {

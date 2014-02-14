@@ -1,10 +1,9 @@
 <?php
-mysqli_set_charset($conn, 'utf8');
-ini_set('default_charset', 'UTF-8');
 
 include ('../logado/includes/banco.php');
 
-
+mysqli_set_charset($conn, 'utf8');
+ini_set('default_charset', 'UTF-8');
 
 $result = mysqli_query($conn, "SELECT * FROM resposta JOIN pergunta ON(pergunta.id_resposta = resposta.id_resposta) ORDER BY rand() LIMIT 10;");
 

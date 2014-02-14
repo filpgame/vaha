@@ -6,7 +6,7 @@
 
   $nome_banco = "vaha";         //Nome da Database
   $usuario = "root";            //Login
-  $senha = "";                    //Senha
+  $senha = "usbw";                    //Senha
   $servidor = "localhost";   //Caminho do Servidor
 
 
@@ -16,6 +16,8 @@ if (mysqli_connect_errno()) {
     echo "3.Erro";
 }
 
+mysqli_set_charset($conn, 'utf8');
+ini_set('default_charset', 'UTF-8');
 
 /* Login: u454564541
  * Senha: Ifes2014
