@@ -1,0 +1,174 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+DROP SCHEMA IF EXISTS `vaha` ;
+CREATE SCHEMA IF NOT EXISTS `vaha` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `vaha` ;
+
+-- -----------------------------------------------------
+-- Table `Tp_pergunta`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Tp_pergunta` ;
+
+CREATE  TABLE IF NOT EXISTS `Tp_pergunta` (
+  `ID_tp_pergunta` INT NOT NULL AUTO_INCREMENT ,
+  `assunto` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`ID_tp_pergunta`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Tp_usuario`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Tp_usuario` ;
+
+CREATE  TABLE IF NOT EXISTS `Tp_usuario` (
+  `ID_tp_usuario` INT NOT NULL AUTO_INCREMENT ,
+  `dsc_tipo` VARCHAR(45) NULL ,
+  PRIMARY KEY (`ID_tp_usuario`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `usuario`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `usuario` ;
+
+CREATE  TABLE IF NOT EXISTS `usuario` (
+  `ID_usuario` INT NOT NULL AUTO_INCREMENT ,
+  `ID_tp_usuario` INT NOT NULL ,
+  `usuario` VARCHAR(45) NULL ,
+  `senha` VARCHAR(45) NULL ,
+  `nome` VARCHAR(45) NULL ,
+  `sobrenome` VARCHAR(45) NULL ,
+  `dt_nasc` DATE NULL ,
+  `email` VARCHAR(60) NULL ,
+  `telefone` VARCHAR(45) NULL ,
+  `instituicao` VARCHAR(45) NULL ,
+  PRIMARY KEY (`ID_usuario`) ,
+  INDEX `fk_usuario_Tp_usuario1_idx` (`ID_tp_usuario` ASC) ,
+  CONSTRAINT `fk_usuario_Tp_usuario1`
+    FOREIGN KEY (`ID_tp_usuario` )
+    REFERENCES `Tp_usuario` (`ID_tp_usuario` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+COMMENT = '	';
+
+
+-- -----------------------------------------------------
+-- Table `nivel_pergunta`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `nivel_pergunta` ;
+
+CREATE  TABLE IF NOT EXISTS `nivel_pergunta` (
+  `ID_nivel_pergunta` INT NOT NULL AUTO_INCREMENT ,
+  `dsc_nivel` VARCHAR(45) NULL ,
+  PRIMARY KEY (`ID_nivel_pergunta`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `comp_pc`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `comp_pc` ;
+
+CREATE  TABLE IF NOT EXISTS `comp_pc` (
+  `ID_comp` INT NOT NULL AUTO_INCREMENT ,
+  `nome` VARCHAR(45) NULL ,
+  `desc` VARCHAR(300) NULL ,
+  `tp_componente` VARCHAR(45) NULL ,
+  `princ_marcas` VARCHAR(45) NULL ,
+  `modelos` VARCHAR(45) NULL ,
+  PRIMARY KEY (`ID_comp`) )
+ENGINE = InnoDB
+COMMENT = '				';
+
+
+-- -----------------------------------------------------
+-- Table `resposta`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `resposta` ;
+
+CREATE  TABLE IF NOT EXISTS `resposta` (
+  `ID_resposta` INT NOT NULL AUTO_INCREMENT ,
+  `ID_comp` INT NOT NULL ,
+  `resposta` VARCHAR(200) NULL ,
+  PRIMARY KEY (`ID_resposta`) ,
+  INDEX `fk_resposta_comp_pc1_idx` (`ID_comp` ASC) ,
+  CONSTRAINT `fk_resposta_comp_pc1`
+    FOREIGN KEY (`ID_comp` )
+    REFERENCES `comp_pc` (`ID_comp` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pergunta`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `pergunta` ;
+
+CREATE  TABLE IF NOT EXISTS `pergunta` (
+  `ID_pergunta` INT NOT NULL AUTO_INCREMENT ,
+  `ID_tp_pergunta` INT NOT NULL ,
+  `ID_usuario` INT NOT NULL ,
+  `ID_nivel_pergunta` INT NOT NULL ,
+  `ID_resposta` INT NOT NULL ,
+  `Pergunta` VARCHAR(200) NULL ,
+  PRIMARY KEY (`ID_pergunta`) ,
+  INDEX `fk_pergunta_Tp_pergunta1_idx` (`ID_tp_pergunta` ASC) ,
+  INDEX `fk_pergunta_usuario1_idx` (`ID_usuario` ASC) ,
+  INDEX `fk_pergunta_nivel_pergunta1_idx` (`ID_nivel_pergunta` ASC) ,
+  INDEX `fk_pergunta_resposta1_idx` (`ID_resposta` ASC) ,
+  CONSTRAINT `fk_pergunta_Tp_pergunta1`
+    FOREIGN KEY (`ID_tp_pergunta` )
+    REFERENCES `Tp_pergunta` (`ID_tp_pergunta` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pergunta_usuario1`
+    FOREIGN KEY (`ID_usuario` )
+    REFERENCES `usuario` (`ID_usuario` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pergunta_nivel_pergunta1`
+    FOREIGN KEY (`ID_nivel_pergunta` )
+    REFERENCES `nivel_pergunta` (`ID_nivel_pergunta` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pergunta_resposta1`
+    FOREIGN KEY (`ID_resposta` )
+    REFERENCES `resposta` (`ID_resposta` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = '	';
+
+
+-- -----------------------------------------------------
+-- Table `estatiticas`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estatiticas` ;
+
+CREATE  TABLE IF NOT EXISTS `estatiticas` (
+  `ID_estatiticas` INT NOT NULL AUTO_INCREMENT ,
+  `ID_usuario` INT NOT NULL ,
+  `acertos` INT NULL ,
+  `erros` INT NULL ,
+  `pontuacao_geral` INT NULL ,
+  PRIMARY KEY (`ID_estatiticas`) ,
+  INDEX `fk_estatiticas_usuario1_idx` (`ID_usuario` ASC) ,
+  CONSTRAINT `fk_estatiticas_usuario1`
+    FOREIGN KEY (`ID_usuario` )
+    REFERENCES `usuario` (`ID_usuario` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+USE `vaha` ;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
