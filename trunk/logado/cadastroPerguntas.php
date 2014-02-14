@@ -2,6 +2,9 @@
 include("./includes/info_logado.php");
 include ("./includes/banco.php");
 
+mysqli_set_charset($conn, 'utf8');
+ini_set('default_charset', 'UTF-8');
+
 $usuario = "$nome $sobrenome";
 $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
 ?>

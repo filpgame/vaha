@@ -13,7 +13,8 @@ include ("./logado/includes/banco.php");
                 echo "true";
             }
         }
-    }else if(isset($_REQUEST["usuario"])){
+    }
+    if(isset($_REQUEST["usuario"])){
         $usuario = $_REQUEST["usuario"];
         $result = mysqli_query($conn,"SELECT * FROM usuario WHERE usuario =  '$usuario'");
         

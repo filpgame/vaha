@@ -31,16 +31,16 @@ $usuario = "$nome $sobrenome";
 
         <script>
             $(document).ready(function() {
-                
+
                 function atualizaPontuacao(erros, acertos, pontuacao) {
                     $.ajax({
-                        url: "estatisticas.php?errosAtuais="+erros+"&acertosAtuais="+acertos+"&pontucaoAtual="+pontuacao,
-                        failure: function(){
+                        url: "estatisticas.php?erros=" + erros + "&acertos=" + acertos + "&pontuacao=" + pontuacao,
+                        failure: function() {
                             alert("Erro ao enviar dados ...");
-                        }                        
+                        }
                     });
                 }
-                
+
                 var data = "";
                 var i = 0;
                 var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
@@ -51,15 +51,14 @@ $usuario = "$nome $sobrenome";
                     window.location = "logout.php";
                 });
 
-                $('#acertos').html("Acertos: " + acertos);
-                $('#erros').html("Erros: " + erros);
-                $('#pontuacao').html("Pontuação: " + pontuacao);
-
                 function chamarModal() {
                     $('#modal').dialog({
                         modal: true,
                         title: "Pergunta " + (i + 1),
-                        resizable: false,
+                        resizable: true,
+                        width: "500px",
+                        //height: "500px",
+
                         buttons: [{
                                 text: "OK",
                                 id: "btnOK",
@@ -73,6 +72,7 @@ $usuario = "$nome $sobrenome";
                 function chamarPergunta() {
                     $("#modal").html(data[i].Pergunta);
                     chamarModal();
+                    atualizaPlacar();
 
                     if (i >= qtd_perguntas) {
                         alert("Acabooooou! Você acertou " + acertos + " questões." + " Sua pontuação foi de: " + pontuacao);
@@ -101,17 +101,23 @@ $usuario = "$nome $sobrenome";
 
                         if (tentativa === 4) {
                             alert(mensagem + " A resposta correta é:  " + data[i].resposta);
+                            erros++;
                             i++;
                             chamarPergunta();
                             tentativa = 1;
                         }
-                        erros++;
                     }
 
                     if (i === qtd_perguntas) {
                         alert("As perguntas acabaram! \o/ Você acertou " + acertos + "questões");
                     }
                 });
+                /* Placar ... */
+                function atualizaPlacar() {
+                    $('#acertos').html("Acertos: " + acertos);
+                    $('#erros').html("Erros: " + erros);
+                    $('#pontuacao').html("Pontuação: " + pontuacao);
+                }
 
                 $('#start').click(function() {
                     $.ajax({
@@ -204,7 +210,7 @@ $usuario = "$nome $sobrenome";
                     </tr>
                     <tr>
                         <td>
-                            <img class="area imglateralesq" id="placa-mae" name="Placa-Mae" src="Pecas/img/placamae.jpg" />
+                            <img class="area imglateralesq" id="placa-mae" name="Placa-Mãe" src="Pecas/img/placamae.jpg" />
                         </td>
                         <td>
                             <img class="area imglateraldir" id="processador" name="Processador" src="Pecas/img/processador.jpg" />

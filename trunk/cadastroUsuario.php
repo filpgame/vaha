@@ -13,7 +13,11 @@ $email = $_REQUEST["email"];
 $id_Tipo = $_REQUEST["valorCad"];
 $instituicao = $_REQUEST["inst"];
 $telefone = $_REQUEST["telefone"];
-$confirmacad = $_REQUEST["confirmacad"];
+$confirmacad = "false";
+
+if(isset($_REQUEST["confirmacad"])){
+    $confirmacad = $_REQUEST["confirmacad"];
+}
 
 // $query = "INSERT INTO usuario VALUE(1, $usuario, $senha, $nome, $sobrenome, $data_nasc, $email)";
 $mensagem = "Nome: $nome \n Sobrenome: $sobrenome \n User: $usuario \n Data Nasc: $data_nasc \n Email: $email \n Escola: $instituicao \n Telefone: $telefone \n\n\n\n\n "
