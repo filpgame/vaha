@@ -41,12 +41,12 @@
                 <ul>
                     <li class='active'><a href='telaInicialProfessor.php'><span>Inicio</span></a></li>
                     <li><a href='cadastroPerguntas.php'><span>Conteúdo</span></a></li>
-                    <li><a href='#'><span>Aluno</span></a></li>
+                    <li><a href='InfAlunos.php'><span>Alunos</span></a></li>
                     <li><a href='EstudeAqui.php'><span>Comece a estudar</span></a></li>
-                    <li class='last'><a href='#'><span>Game</span></a></li>  
+                    <li class='last'><a href='game.php'><span>Game</span></a></li>  
                     <li class='welcome'><p><span>Bem Vindo, <?=$usuario?><img src="img/logout.png" id="logout" style="width: 16px; height: 16px"></span></p></li>               
                 </ul>
-                <a href="telaInicialProfessor.php" class="logo"></a>
+                <a href="#" class="logo"></a>
             </div>
 
         </div>
