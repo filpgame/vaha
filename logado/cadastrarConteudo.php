@@ -17,7 +17,7 @@
         $resposta = $_REQUEST["resposta"];
         $pergunta = $_REQUEST["pergunta"];
         
-        $result = mysqli_query($conn, "SELECT resposta.ID_resposta FROM comp_pc JOIN resposta ON(comp_pc.ID_comp = resposta.ID_comp) WHERE resposta.resposta = '$resposta'");
+        $result = mysqli_query($conn, "SELECT ID_resposta FROM resposta WHERE resposta.resposta = '$resposta'");
         $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
         $ID_resposta = $linha['ID_resposta'];    
