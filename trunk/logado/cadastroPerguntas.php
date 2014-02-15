@@ -41,6 +41,7 @@ $query = mysqli_query($conn, "SELECT resposta FROM resposta");
                         success: function(saida) {
                             data = JSON.parse(saida);
                             if (data.resp.status) {
+                                $('#pergunta').val("");
                                 alert("Pergunta Criada com Sucesso!");
                             } else {
                                 alert("Erro ao Criar Pergunta");
