@@ -1,9 +1,12 @@
 <?php
 
-header("Content-Type: text/html; charset=utf-8");
+//header("Content-Type: text/html; charset=utf-8");
 
     include("./includes/banco.php");
     include("./includes/info_logado.php");
+    
+    mysqli_set_charset($conn, 'utf8');
+    ini_set('default_charset', 'UTF-8');
     
     $saida = array();
     $saida["resp"]["status"] = false;
@@ -12,7 +15,7 @@ header("Content-Type: text/html; charset=utf-8");
     if(isset($_REQUEST["pergunta"])){
         
         $resposta = $_REQUEST["resposta"];
-        $pergunta = utf8_decode($_REQUEST["pergunta"]);
+        $pergunta = $_REQUEST["pergunta"];
         
         $result = mysqli_query($conn, "SELECT resposta.ID_resposta FROM comp_pc JOIN resposta ON(comp_pc.ID_comp = resposta.ID_comp) WHERE resposta.resposta = '$resposta'");
         $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -26,7 +29,10 @@ header("Content-Type: text/html; charset=utf-8");
         }else{
             $saida["resp"]["status"] = false;
         }
-    }else if(isset($_REQUEST['desc'])){
+    }else 
+                                                                /* INSERT DE CONTEÚDO */
+        
+        if(isset($_REQUEST['desc'])){
         
         $desc = $_REQUEST["desc"];        
         $resposta2 = $_REQUEST["respostaConteudo"];
@@ -41,6 +47,26 @@ header("Content-Type: text/html; charset=utf-8");
         
         if($resultado){
             $saida["resp"]["status"] = true;
+        }else{
+            $saida["resp"]["status"] = false;
+        }
+        
+    }
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+    if(isset($_REQUEST['respostaConteudo'])){
+        
+        $resposta2 = $_REQUEST["respostaConteudo"];
+        
+        $result = mysqli_query($conn, "SELECT `desc` as descricao FROM comp_pc WHERE `nome` = '$resposta2'");
+        
+        while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $desc = $linha['descricao'];
+        }
+        
+        if($result){
+            $saida["resp"]["status"] = true;
+            $saida["resp"]["conteudo"] = $desc;
+            
         }else{
             $saida["resp"]["status"] = false;
         }

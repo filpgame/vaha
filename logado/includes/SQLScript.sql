@@ -76,6 +76,20 @@ INSERT INTO `resposta` (`ID_resposta`, `ID_comp`, `resposta`) VALUES
 (null, 22, 'SATA'),
 (null, 23, 'Soquete');
 
+--
+-- INSERT NA TABELA PERGUNTAS
+--
+
+INSERT INTO `pergunta` (`ID_pergunta`, `ID_tp_pergunta`, `ID_usuario`, `ID_nivel_pergunta`, `ID_resposta`, `Pergunta`) VALUES
+(1, 1, 3, 1, 1, 'Qual o componente responsável pela maior parte do processamento de dados?'),
+(2, 1, 3, 1, 7, 'Qual o componente responsável pela alimentação dos componentes internos do computador?'),
+(30, 1, 3, 1, 10, 'Quando o computador liga aparece uma mensagem: "HDD FAILURE", qual componente está com problema'),
+(31, 1, 3, 1, 9, 'Ao ligar o computador nada aparece no vídeo, mas é possível ouvir o barulho de inicialização do Sistema Operacional. Qual o problema?'),
+(32, 1, 3, 1, 15, 'Qual o componente responsável por abrigar os principais componentes do computador?'),
+(33, 1, 3, 1, 16, 'Qual o componente responsável pelo processamento gráfico do computador?'),
+(34, 1, 3, 1, 7, 'O computador não liga. Nenhuma luz acende!\r\nDica: Este problema aconteceu após um pique de energia. O que deu problema?'),
+(35, 1, 3, 1, 2, 'Ao ligar o computador aparece a seguinte mensagem: CMOS CHECKSUM ERROR - DEFAULT LOADED. Qual componente está com problema?');
+
 -- --------------------------------------------------------
 
 --

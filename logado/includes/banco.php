@@ -16,9 +16,6 @@ if (mysqli_connect_errno()) {
     echo "3.Erro";
 }
 
-mysqli_set_charset($conn, 'utf8');
-ini_set('default_charset', 'UTF-8');
-
 /* Login: u454564541
  * Senha: Ifes2014
  * FTP Hostname Temporário: 31.170.165.161
