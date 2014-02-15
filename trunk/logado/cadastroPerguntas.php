@@ -6,7 +6,7 @@ mysqli_set_charset($conn, 'utf8');
 ini_set('default_charset', 'UTF-8');
 
 $usuario = "$nome $sobrenome";
-$query = mysqli_query($conn, "SELECT nome FROM comp_pc");
+$query = mysqli_query($conn, "SELECT resposta FROM resposta");
 ?>
 <html lang="pt-br">
     <head>
@@ -58,13 +58,33 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                         success: function(saida) {
                             data = JSON.parse(saida);
                             if (data.resp.status) {
+                                $('#desc').val(" ");
                                 alert("Conteúdo atualizado com Sucesso! \0/");
+                                
                             } else {
                                 alert("Erro ao cadastrar conteúdo! :/");
                             }
                         }
                     });
                 });
+                
+                $("#respostaConteudo").change(function(e) {
+                    itemSelecionado = $('#respostaConteudo').find(":selected").text();
+                    $.ajax({
+                        url: "cadastrarConteudo.php?respostaConteudo="+itemSelecionado,
+                        type: 'POST',
+                        success: function(saida) {
+                            data = JSON.parse(saida);
+                            if (data.resp.status) {
+                                $('#desc').val(data.resp.conteudo);
+                            } else {
+                                alert("Erro ao consultar conteúdo! :/");
+                            }
+                        }
+                    });
+                });
+                
+                
             });
         </script>
         <style>
@@ -79,7 +99,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
         <div>
             <div id='navigation'>
                 <ul>
-                   <?php if ($tipo == 1): ?>
+                    <?php if ($tipo == 1): ?>
                         <li><a href='telaInicialAluno.php'><span>Inicio</span></a></li>
                     <?php else: ?>
                         <li><a href='telaInicialProfessor.php'><span>Inicio</span></a></li>
@@ -103,7 +123,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                     <br><select id="resposta" name="resposta">
                         <?php
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-                            echo "<option>" . $row['nome'] . "</option>";
+                            echo "<option>" . $row['resposta'] . "</option>";
                         }
                         ?>
                     </select><br>
@@ -113,7 +133,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                 <hr>
 
                 <h4 style="font-size: 30px; text-align: center;">Atualização de Conteúdo</h4><br>
-                
+
                 <form id="frm2">
                     <span>Selecione o componente que deseja alterar o conteúdo:</span>
                     <br><select id="respostaConteudo" name="respostaConteudo">
@@ -125,7 +145,7 @@ $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
                         ?>
                     </select><br>
                     <br><span>Você deseja modificar o conteúdo de algo? Digite aqui em baixo:</span><br>
-                    <textarea name="desc" id="desc" cols="40" rows="4" id="dica" style="resize: none"></textarea><br>
+                    <textarea name="desc" id="desc" cols="80" rows="8" id="dica" style="resize: none"></textarea><br>
                     <input type="button" name="atualizar" id="atualizar" value="Atualizar conteúdo">
 
                 </form>
