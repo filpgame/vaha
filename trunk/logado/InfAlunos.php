@@ -5,7 +5,6 @@ include("./includes/banco.php");
 $usuario = "$nome $sobrenome";
 
 $query = "SELECT CONCAT(us.nome,' ',us.sobrenome) as Nome, us.ID_usuario, acertos, erros, pontuacao_geral, (erros+acertos) as total_perguntas, CONCAT(ROUND((acertos)/(acertos+erros)*100,1),'%') as Razao FROM usuario us INNER JOIN tp_usuario tpus ON (us.ID_tp_usuario = tpus.ID_tp_usuario) INNER JOIN estatiticas est ON(est.ID_usuario = us.ID_usuario) WHERE us.ID_tp_usuario = 1;";
-
 $result = mysqli_query($conn, $query) or die("erro na consulta");
 ?>
 <html lang="pt-br">
@@ -16,13 +15,15 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
         <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
-
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" >
         <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
         <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
         <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
         <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
         <link rel="shortcut icon" href="../css/logo2.png" />
-
+        <link href="css/baloon.css" rel="stylesheet">
+        
         <script src="../js/jquery-1.10.1.js"></script>
 
         <link href="../css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
@@ -60,11 +61,21 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
                 </ul>
                 <a href="#" id="logo" class="logo"></a>
             </div>
-           <div id="principal">
-                <table style="margin: auto;">
-                    <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
-                    <tr> 
-                        <td><?php=$row["Nome"] ?></td>
+           <div id="principal"><br><br>
+                <table border="5" style="margin: auto; width: 80%;" cellpadding= 2; cellspacing=2>
+                    <tr style="height: 30px; ">
+                        <td>Nome</td>
+                        <td>Acertos</td>
+                        <td>Erros</td>
+                        <td>Pontuação</td>
+                    </tr>
+                    
+                    <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
+                    <tr style="height: 30px; ">
+                        <td><?php echo $row["Nome"] ?></td>
+                        <td><?php echo $row["acertos"] ?></td>
+                        <td><?php echo $row["erros"] ?></td>
+                        <td><?php echo $row["pontuacao_geral"] ?></td>
                     </tr>
                     <?php endwhile; ?>
                 </table>

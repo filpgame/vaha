@@ -3,7 +3,7 @@
 require("../includes/banco.php");
 mysqli_set_charset($conn, 'utf8');
 ini_set('default_charset', 'UTF-8');
-$query = "SELECT * FROM comp_pc WHERE nome = 'SATA'";
+$query = "SELECT * FROM comp_pc WHERE nome = 'Soquete'";
 $resultado = mysqli_query($conn, $query);
 ?>
 <html>
