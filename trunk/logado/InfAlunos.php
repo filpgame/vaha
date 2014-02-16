@@ -4,7 +4,7 @@ include("./includes/banco.php");
 
 $usuario = "$nome $sobrenome";
 
-$query = "SELECT CONCAT(us.nome,' ',us.sobrenome) as Nome, us.ID_usuario, acertos, erros, pontuacao_geral, (erros+acertos) as total_perguntas, CONCAT(ROUND((acertos)/(acertos+erros)*100,1),'%') as Razao FROM usuario us INNER JOIN tp_usuario tpus ON (us.ID_tp_usuario = tpus.ID_tp_usuario) INNER JOIN estatiticas est ON(est.ID_usuario = us.ID_usuario) WHERE us.ID_tp_usuario = 1;";
+$query = "SELECT distinct CONCAT(us.nome,' ',us.sobrenome) as Nome, us.ID_usuario, acertos, erros, pontuacao_geral, (erros+acertos) as total_perguntas, CONCAT(ROUND((acertos)/(acertos+erros)*100,1),'%') as Razao FROM usuario us INNER JOIN Tp_usuario tpus ON (us.ID_tp_usuario = tpus.ID_tp_usuario) INNER JOIN estatiticas est ON(est.ID_usuario = us.ID_usuario) WHERE us.ID_tp_usuario = 1 and acertos > 0;";
 $result = mysqli_query($conn, $query) or die("erro na consulta");
 ?>
 <html lang="pt-br">
