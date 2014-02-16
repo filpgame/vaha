@@ -32,20 +32,24 @@ $usuario = "$nome $sobrenome";
         <script>
             $(document).ready(function() {
 
-                function atualizaPontuacao(erros, acertos, pontuacao) {
+                var data = "";
+                var i = 0;
+                var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
+                var acertosTeste = 0, errosTeste = 0, pontuacaoTeste = 0;
+                var mensagem = "";
+                var qtd_perguntas = 9;
+
+                function atualizaPontuacao(errosA, acertosA, pontuacaoA) {
                     $.ajax({
-                        url: "estatisticas.php?erros=" + erros + "&acertos=" + acertos + "&pontuacao=" + pontuacao,
+                        url: "estatisticas.php?erros=" + errosA + "&acertos=" + acertosA + "&pontuacao=" + pontuacaoA,
                         failure: function() {
                             alert("Erro ao enviar dados ...");
                         }
                     });
+                    acertos = 0;
+                    erros = 0;
+                    pontuacao = 0;
                 }
-
-                var data = "";
-                var i = 0;
-                var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
-                var mensagem = "";
-                var qtd_perguntas = 9;
 
                 $("#logout").click(function() {
                     window.location = "logout.php";
@@ -57,8 +61,6 @@ $usuario = "$nome $sobrenome";
                         title: "Pergunta " + (i + 1),
                         resizable: true,
                         width: "500px",
-                        //height: "500px",
-
                         buttons: [{
                                 text: "OK",
                                 id: "btnOK",
@@ -90,7 +92,9 @@ $usuario = "$nome $sobrenome";
                         alert(mensagem);
                         i++;
                         pontuacao += (100 / tentativa);
+                        pontuacaoTeste += (100 / tentativa);
                         acertos++;
+                        acertosTeste++;
                         tentativa = 1;
                         atualizaPontuacao(erros, acertos, pontuacao);
                         chamarPergunta();
@@ -102,6 +106,7 @@ $usuario = "$nome $sobrenome";
                         if (tentativa === 4) {
                             alert(mensagem + " A resposta correta é:  " + data[i].resposta);
                             erros++;
+                            errosTeste++;
                             i++;
                             chamarPergunta();
                             tentativa = 1;
@@ -114,9 +119,9 @@ $usuario = "$nome $sobrenome";
                 });
                 /* Placar ... */
                 function atualizaPlacar() {
-                    $('#acertos').html("Acertos: " + acertos);
-                    $('#erros').html("Erros: " + erros);
-                    $('#pontuacao').html("Pontuação: " + pontuacao);
+                    $('#acertos').html("Acertos: " + acertosTeste);
+                    $('#erros').html("Erros: " + errosTeste);
+                    $('#pontuacao').html("Pontuação: " + pontuacaoTeste);
                 }
 
                 $('#start').click(function() {
