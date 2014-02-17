@@ -18,11 +18,14 @@ $resultado = mysqli_query($conn, $query);
         <div id="conteudo">
             <div id="slideshow">
                 <ul class="slides">
-                    <li><img src="img/slider/sata1.jpg" width="320" height="240" alt="Marsa Alam" /></li>
-                    <li><img src="img/slider/sata2.jpg" width="320" height="240" alt="Turrimetta Beach" /></li>
-                    <li><img src="img/slider/sata3.jpg" width="320" height="240" alt="Power Station" /></li>
-                    <li><img src="img/slider/sata4.jpg" width="320" height="240" alt="Colors of Nature" /></li>
-                </ul>
+                    <li><img src="img/slider/socket1.jpg" width="320" height="240" /></li>
+                    <li><img src="img/slider/socket2.jpg" width="320" height="240" /></li>
+                    <li><img src="img/slider/socket3.jpg" width="320" height="240" /></li>
+                    <li><img src="img/slider/socket4.jpg" width="320" height="240" /></li>
+                    <li><img src="img/slider/socket5.jpg" width="320" height="240" /></li>
+                    <li><img src="img/slider/socket6.jpg" width="320" height="240" /></li>
+                    <li><img src="img/slider/socket7.jpg" width="320" height="240" /></li>
+                    </ul>
                 <span class="arrow previous"></span>
                 <span class="arrow next"></span>
             </div>
