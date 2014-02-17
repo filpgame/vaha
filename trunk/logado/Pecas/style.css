@@ -1,4 +1,15 @@
 #conteudo{
-    width: 640px;
     height: 480px;
+}
+#explicacao-3d{
+    margin-top: 5px;
+    height: 140px;
+    overflow-y: scroll;
+    border: 1px solid black;
+}
+#explicacao-slide{
+    margin-top: 25px;
+    height: 140px;
+    overflow-y: scroll;
+    border: 1px solid black;
 }

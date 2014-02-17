@@ -30,7 +30,7 @@ $resultado = mysqli_query($conn, $query);
                 <span class="arrow next"></span>
             </div>
         <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
-                <div> <?php echo $linha['desc']; ?> </div>
+                <div id="explicacao-slide"> <?php echo $linha['desc']; ?> </div>
             <?php endwhile; ?>
     </div>
         </body>

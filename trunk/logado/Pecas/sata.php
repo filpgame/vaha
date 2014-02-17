@@ -29,7 +29,7 @@ $resultado = mysqli_query($conn, $query);
             </div>
        <!-- <div>SATA é a porta de conexão para Dispositivos de armazenamento em Massa (HDs, DVDs, etc) mais moderninhos.. Está em sua versão III, transfere até 6Gbps por Segundo (veja tabela de nomenclaturas)</div> -->
        <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
-                <div> <?php echo $linha['desc']; ?> </div>
+                <div id="explicacao-slide"> <?php echo $linha['desc']; ?> </div>
             <?php endwhile; ?>
     </div>
         </body>
