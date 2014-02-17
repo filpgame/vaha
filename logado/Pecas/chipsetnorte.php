@@ -28,7 +28,7 @@ $resultado = mysqli_query($conn, $query);
         </div>
         <!-- <div>Chipset norte é o irmão mais esperto... Cuida dos componentes que mais rápidos (PCI-e, Memória RAM, Processador)</div> -->
         <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
-            <div> <?php echo $linha['desc']; ?> </div>
+            <div id="explicacao-slide"> <?php echo $linha['desc']; ?> </div>
         <?php endwhile; ?>
     </body>
 </html>

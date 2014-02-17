@@ -28,7 +28,7 @@ $resultado = mysqli_query($conn, $query);
             </div>
             <!-- <div>Chipset SUL é o que gerencia os dispositivos mais lentos (PCI, Som, etc)</div> -->
             <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
-                <div> <?php echo $linha['desc']; ?> </div>
+                <div id="explicacao-slide"> <?php echo $linha['desc']; ?> </div>
             <?php endwhile; ?>
         </div>
     </body>

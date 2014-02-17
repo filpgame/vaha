@@ -15,9 +15,9 @@ $resultado = mysqli_query($conn, $query);
     </head>
     <body>
         <div id="conteudo">
-            <iframe frameborder="0" height="240" width="320" allowFullScreen src="https://sketchfab.com/64i3h2ec?autostart=1&transparent=0&autospin=1&controls=1"></iframe>
+            <iframe frameborder="0" height="320" width="400" allowFullScreen src="https://sketchfab.com/64i3h2ec?autostart=1&transparent=0&autospin=1&controls=1"></iframe>
             <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
-                <div> <?php echo $linha['desc']; ?> </div>
+                <div id="explicacao-3d"> <?php echo $linha['desc']; ?> </div>
             <?php endwhile; ?>
         </div>
     </body>
