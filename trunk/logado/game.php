@@ -181,16 +181,16 @@ $usuario = "$nome $sobrenome";
 
                     <td rowspan=6>
                         <div id="mobo">
-                            <div class="area" id="socket" name="Soquete" title="Soquete"></div>
-                            <div class="area" id="chipsetnorte" name="Chipset Norte" title="Chipset Norte"></div>
-                            <div class="area" id="pciexpress" name="PCI-Express" title="Slot PCI-Express"></div>
-                            <div class="area" id="bateria" name="Bateria" title="Bateria"></div>
-                            <div class="area" id="sata" name="SATA" title="Connexão SATA"></div>
-                            <div class="area" id="memoria" name="Memória RAM" title="Slot de Memória"></div>
+                            <div class="area" id="socket" name="Soquete"></div>
+                            <div class="area" id="chipsetnorte" name="Chipset Norte"></div>
+                            <div class="area" id="pciexpress" name="PCI-Express"></div>
+                            <div class="area" id="bateria" name="Bateria"></div>
+                            <div class="area" id="sata" name="SATA"></div>
+                            <div class="area" id="memoria" name="Memória RAM" ></div>
                             <div class="area" id="pci" name="PCI" title="Slot PCI"></div>
-                            <div class="area" id="chipsetsul" name="Chipset Sul" title="Chipset Sul"></div>
-                            <div class="area" id="ide" name="Conexão IDE" title="Conexão IDE"></div>
-                            <div class="area" id="fonte" name="Fonte" title="Aqui se conecta a fonte"></div>
+                            <div class="area" id="chipsetsul" name="Chipset Sul"></div>
+                            <div class="area" id="ide" name="Conexão IDE"></div>
+                            <div class="area" id="fonte" name="Fonte"></div>
                         </div>
                     </td>
                     <td>  
