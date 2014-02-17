@@ -35,7 +35,7 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
             $(document).ready(function() {
                 $('#logo').click(function(e) {
                     e.preventDefault();
-                    window.history.pushState("","","CLICQUEI");
+                    window.history.pushState("","","VAHA");
                 });
                 $(window).bind("popstate", function(e) {
                     $('#my-navigation-container').load(e.state.url);
@@ -68,6 +68,8 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
                         <td>Acertos</td>
                         <td>Erros</td>
                         <td>Pontuação</td>
+                        <td>Perguntas Respondidas</td>
+                        <td>Taxa de Acertos</td>
                     </tr>
                     
                     <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
@@ -76,6 +78,8 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
                         <td><?php echo $row["acertos"] ?></td>
                         <td><?php echo $row["erros"] ?></td>
                         <td><?php echo $row["pontuacao_geral"] ?></td>
+                        <td><?php echo $row["total_perguntas"] ?></td>
+                        <td><?php echo $row["Razao"] ?></td>
                     </tr>
                     <?php endwhile; ?>
                 </table>
