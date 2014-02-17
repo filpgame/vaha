@@ -13,10 +13,10 @@ $usuario = "$nome $sobrenome";
         <meta name="author" content="Codrops" />
 
         <link rel="stylesheet" type="text/css" href="css/index.css" >
-        <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
-        <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
+        <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/EstudeAqui.css" />
         <link rel="shortcut icon" href="../css/logo2.png" />
         <link href="css/baloon.css" rel="stylesheet">
         

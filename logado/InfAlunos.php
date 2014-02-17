@@ -17,10 +17,10 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
         <meta name="author" content="Codrops" />
         
         <link rel="stylesheet" type="text/css" href="css/index.css" >
-        <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
-        <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
+        <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="../css/alunos.css" />
         <link rel="shortcut icon" href="../css/logo2.png" />
         <link href="css/baloon.css" rel="stylesheet">
         

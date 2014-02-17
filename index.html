@@ -1,27 +1,22 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+        
         <title>PI</title>
         <meta charset="UTF-8" />
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-
-        <link rel="stylesheet" type="text/css" href="css-reg/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css-reg/style.css" />
-        <link rel="stylesheet" type="text/css" href="css-reg/animate-custom.css" />
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" /> <!-- estilo para tags gerais -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- form login/cadastro -->
+        <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />  <!-- framework de animação quando se clica para mudar de formuluario -->     
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/blitzer/jquery-ui-1.10.3.custom.css" >   
         <link rel="shortcut icon" href="css/logo2.png" />
-
-        <script src="js/jquery-1.10.1.js"></script>
-        <link href="css/index.css" rel="stylesheet">
-        <link href="css/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">      
+        
+        <script src="js/modernizr.custom.79639.js"></script>    <!-- Modernizr detecta se o navegador suporta ou nao html5/css3 -->
+        <script src="js/jquery-1.10.1.js"></script>   
         <script src="js/jquery-ui-1.10.3.custom.js"></script>
         <script src="js/jquery.validate.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
         <script src="js/autenticacao.js"></script>
         <script src="js/additional-methods.js"></script>
 
@@ -148,28 +143,36 @@
                 });
             });
 
-        </script>    
+        </script>
+
     </head>
     <body>
-        <!-- Início cabeçalho -->
-        <div id='navigation'>
+
+
+        <div id="container" class="container">    
+            <div id='navigation'>
             <ul>
-                <li class='last'><a href='#'><span>Sobre</span></a></li>
+                <li id="tblcontents"><p><span>Sobre</span></p></li>
             </ul>
             <a href="index.html" class="logo"></a> 
-        </div>
+            </div>
 
+            <div class="menu-panel">
+                <h3>Sobre VAHA</h3>
+                <ul id="menu-toc" class="menu-toc">
+                      <li><img src="images/logo22.png"/></li>
+                      <li>Venha Aprender Hardware Agora!</li>
+                      <hr>
+                </ul>
+            </div>
 
-        <!-- Fim cabeçalho -->
-
-        <div class="container">
             <section>               
                 <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
-                        <div id="login" class="animate form">
+                         <div id="login" cl
+                         ass="animate form">
                             <form  id="frm-login" action="login.php" method="POST" autocomplete="on"> 
                                 <h1>Entrar</h1> 
                                 <p> 
@@ -195,13 +198,13 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  id="frm-cadastrar" > 
+                            <form  action="cadastroUsuario.php" method='GET' > 
                                 <h1> Registre-se </h1> 
                                 <p> 
                                     <label for="nome" class="uname" data-icon="u" > Nome</label>
                                     <input id="nome" name="nome" required="required" type="text" placeholder="Primeiro nome"/> 
                                 </p>
-                                <p> 
+                                 <p> 
                                     <label for="sobrenome" class="uname" data-icon="u" > Sobrenome</label>
                                     <input id="sobrenome" name="sobrenome" required="required" type="text" placeholder="Sobrenome"/> 
                                 </p>
@@ -237,7 +240,7 @@
                                     <input type="text" id="inst" name="inst" placeholder='Instituição de'/>
                                 </p>
                                 <p class="signin button"> 
-                                    <input id='btncadastrar' type="submit" value="Registrar"/> 
+                                    <input id='env_cad' type="submit" value="Registrar"/> 
                                 </p>
                                 <p class="change_link">  
                                     Aluno ? Entre aqui
@@ -245,11 +248,24 @@
                                 </p>
                             </form>
                         </div>
-
+                        
                     </div>
                 </div>  
             </section>
+
         </div>
+  
+        <!-- plugin para barra lateral -->
+        <script src="js/jquery.jscrollpane.min.js"></script> <!-- Plugin jQuery que converte as barras de rolagem do navegador em uma estrutura HTML para manipulação-->
+        <script src="js/jquery.bookblock.js"></script>
+        <script src="js/page.js"></script> <!-- manipulação dos plugins -->
+        <script>
+            $(function() {
+
+                Page.init();
+
+            });
+        </script>
     </body>
 </html>
 
