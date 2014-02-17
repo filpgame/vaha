@@ -8,6 +8,6 @@ if (!isset($_SESSION["logado"]["nome"]) && !isset($_SESSION["logado"]["sobrenome
     $email = $_SESSION["logado"]["email"];
     $sobrenome = $_SESSION["logado"]["sobrenome"];
     $tipo = $_SESSION["logado"]["tipo"];
-//$_SESSION["logado"]["usuario"] = $linha["usuario"];
+    $nick = $_SESSION["logado"]["usuario"];
     $ID_usuario = $_SESSION["logado"]["ID"];
 }

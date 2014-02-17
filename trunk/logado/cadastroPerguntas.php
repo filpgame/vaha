@@ -17,10 +17,10 @@ $query = mysqli_query($conn, "SELECT resposta FROM resposta");
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
 
-        <link rel="stylesheet" type="text/css" href="../css-reg/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css-reg/animate-custom.css" />
-        <link rel="stylesheet" type="text/css" href="../css/telaInicialAluno.css" />
+        <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="../css/conteudo.css" />
         <link rel="shortcut icon" href="../css/logo2.png" />
 
         <script src="../js/jquery-1.10.1.js"></script>
