@@ -20,6 +20,7 @@ if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
             $_SESSION["logado"]["sobrenome"] = $linha["sobrenome"];
             $_SESSION["logado"]["tipo"] = $linha["ID_tp_usuario"]; // <------------ Descomentar, quando colocar o ID_tp_usuario novamente ...
             $_SESSION["logado"]["ID"] = $linha["ID_usuario"];
+            $_SESSION["logado"]["dt_nasc"] = $linha["dt_nasc"];
 
             $saida["resp"]["status"] = true;
             //$saida["resp"]["local"] = "logado/index.php";

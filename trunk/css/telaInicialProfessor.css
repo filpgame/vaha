@@ -17,6 +17,27 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Terminal Dosis';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Dosis Regular'), local('Dosis-Regular'), url('_IcvjW_kWHsIHjjUsLbdpFGxLvFzKVP0OsRYGzgS_zk.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Alegreya Sans SC Medium'), local('AlegreyaSansSC-Medium'), url('AjAmkoP1y0Vaad0UPPR46whJOZTZOJCgHOTlr0W59eQ.woff') format('woff');
+}
+
 html{
     margin: 0 0 0 0;
     height: 100%;
