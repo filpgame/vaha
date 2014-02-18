@@ -57,7 +57,12 @@
             <div id='about' class='clearfix'>
                 <section id="center" >
                     <div id="userStats" class="clearfix">
-                        <input type="file" title="Selecionar Imagem" value="asdasdsdsad"/>
+                        
+                        <form enctype="multpart/form-data" name='cad-img'>
+                            <input type="file" title="Selecionar Imagem" name="selectImagem"/><br>
+                            <input type="submit" name="salvarImagem" value="Salvar" />
+                        </form>
+                        
                         <div class="pic">
                             <a href="#"><img src="../images/cat23.png" width="150" height="150" /></a>
                         </div>
