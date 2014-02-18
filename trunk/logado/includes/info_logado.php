@@ -15,4 +15,5 @@ if (!isset($_SESSION["logado"]["nome"]) && !isset($_SESSION["logado"]["sobrenome
     $tipo = $_SESSION["logado"]["tipo"];
     $nick = $_SESSION["logado"]["usuario"];
     $ID_usuario = $_SESSION["logado"]["ID"];
+    $dt_nasc = $_SESSION["logado"]["dt_nasc"];
 }
