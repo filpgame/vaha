@@ -27,6 +27,7 @@ $usuario = "$nome $sobrenome";
         <script src="../js/autenticacao.js"></script>
         <script src="../js/additional-methods.js"></script>
         <script src="../js/jquery.bpopup.min.js"></script>
+        <script src="../js/acendeAli.js"></script>
 
         <script>
             $(function() {
