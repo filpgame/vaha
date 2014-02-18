@@ -6,7 +6,7 @@
 
   $nome_banco = "vaha";         //Nome da Database
   $usuario = "root";            //Login
-  $senha = "usbw";                    //Senha
+  $senha = "";                    //Senha
   $servidor = "localhost";   //Caminho do Servidor
 
 
