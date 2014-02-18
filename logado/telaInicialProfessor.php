@@ -2,6 +2,7 @@
     include("./includes/info_logado.php");
     
     $usuario = "$nome $sobrenome";
+    
 ?>
 <html lang="pt-br">
     <head>
@@ -13,10 +14,10 @@
         <link rel="stylesheet" type="text/css" href="../css/telaInicialProfessor.css" />
         <link rel="stylesheet" type="text/css" href="../css/blitzer/jquery-ui-1.10.3.custom.css"> 
         <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
-        <link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" />
-        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500' rel='stylesheet' type='text/css'>
         
-        <script src="../js/jquery-1.10.1.js"></script> 
+<!--        <link href='../css/fonts/AjAmkoP1y0Vaad0UPPR46whJOZTZOJCgHOTlr0W59eQ.woff' rel='stylesheet' type='text/css'>-->
+        
+        <script src="../js/jquery-1.10.1.js"></script>
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
         <script src="../js/jquery.validate.js"></script>
         <script src="../js/autenticacao.js"></script>
@@ -76,7 +77,7 @@
                     </div>
                     <div id='red'>
                         <h1><?=$usuario?></h1>
-                        <h3>Data de Nascimento</h3>
+                        <h3><?=$dt_nasc?></h3>
                         <h4><?=$email?></h4>
                     </div>
                     <div id='green'>
