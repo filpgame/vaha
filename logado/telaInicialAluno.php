@@ -1,7 +1,19 @@
 <?php
     include("./includes/info_logado.php");
-        
-    $usuario = "$nome $sobrenome";    
+    include("./includes/banco.php");
+    
+    $usuario = "$nome $sobrenome";
+    $data = converteData($dt_nasc);
+    
+    $result = mysqli_query($conn, "SELECT * FROM estatiticas WHERE ID_usuario = $ID_usuario");
+    
+    while($row = mysqli_fetch_array($result)){
+        $acertos = $row['acertos'];
+        $erros = $row['erros'];
+        $pontuacao = $row['pontuacao_geral'];
+    }
+    
+    
 ?>
 <html lang="pt-br">
     <head>
@@ -58,9 +70,9 @@
                         <div class="data">
                             <div class="sep"></div>
                             <ul class="numbers clearfix">
-                                <li>Pontuação<strong>0</strong></li>
-                                <li>Acertos<strong>0</strong></li>
-                                <li class="nobrdr">Erros<strong>0</strong></li>
+                                <li>Pontuação<strong><?=$pontuacao?></strong></li>
+                                <li>Acertos<strong><?=$acertos?></strong></li>
+                                <li class="nobrdr">Erros<strong><?=$erros?></strong></li>
                             </ul>
                         </div>
                     </div>
@@ -68,14 +80,14 @@
 
                 <section id='container'>
                     <div id='blue'>
-                        <h1>Fulano de Tal</h1> <!--usario -->
+                        <h1><?=$nick?></h1> <!--usario -->
                         <h3>Serra, ES</h3>
                         <h4><a href="http://www.sr.ifes.edu.br">http://www.sr.ifes.edu.br</a></h4>
                     </div>
                     <div id='red'>
-                        <h1>Nome Sobrenome</h1>
-                        <h3>Data de Nascimento</h3>
-                        <h4>Email</h4>
+                        <h1><?=$usuario?></h1>
+                        <h3><?=$data?></h3>
+                        <h4><?=$email?></h4>
                     </div>
                     
                     <div id='white'><h1>VAHA é um sistema Web para aprendizado sobre hardware de uma maneira mais interetiva e menos teorica!</h1>

@@ -1,7 +1,10 @@
 <?php
     include("./includes/info_logado.php");
+    include("./includes/banco.php");
+    include("./includes/consultaDados.php");
     
     $usuario = "$nome $sobrenome";
+    $data = converteData($dt_nasc);
     
 ?>
 <html lang="pt-br">
@@ -14,8 +17,8 @@
         <link rel="stylesheet" type="text/css" href="../css/telaInicialProfessor.css" />
         <link rel="stylesheet" type="text/css" href="../css/blitzer/jquery-ui-1.10.3.custom.css"> 
         <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
-        
-<!--        <link href='../css/fonts/AjAmkoP1y0Vaad0UPPR46whJOZTZOJCgHOTlr0W59eQ.woff' rel='stylesheet' type='text/css'>-->
+        <link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" />
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500' rel='stylesheet' type='text/css'>
         
         <script src="../js/jquery-1.10.1.js"></script>
         <script src="../js/jquery-ui-1.10.3.custom.js"></script>
@@ -54,6 +57,7 @@
             <div id='about' class='clearfix'>
                 <section id="center" >
                     <div id="userStats" class="clearfix">
+                        <input type="file" title="Selecionar Imagem" value="asdasdsdsad"/>
                         <div class="pic">
                             <a href="#"><img src="../images/cat23.png" width="150" height="150" /></a>
                         </div>
@@ -61,9 +65,9 @@
                         <div class="data">
                             <div class="sep"></div>
                             <ul class="numbers clearfix">
-                                <li>Pontuação<strong>0</strong></li>
-                                <li>Acertos<strong>0</strong></li>
-                                <li class="nobrdr">Erros<strong>0</strong></li>
+                                <li>Pontuação<strong><?=$pontuacao?></strong></li>
+                                <li>Acertos<strong><?=$acertos?></strong></li>
+                                <li class="nobrdr">Erros<strong><?=$erros?></strong></li>
                             </ul>
                         </div>
                     </div>
@@ -77,15 +81,15 @@
                     </div>
                     <div id='red'>
                         <h1><?=$usuario?></h1>
-                        <h3><?=$dt_nasc?></h3>
+                        <h3><?=$data?></h3>
                         <h4><?=$email?></h4>
                     </div>
                     <div id='green'>
-                        <h1>Perguntas criadas</h1>
-                        <h3>Perguntas no sistema</h3>
-                        <h4>Alunos cadastrados</h4>
+                        <h1>Perguntas criadas: <?=$qtd_perguntas_criadas?></h1>
+                        <h3>Perguntas no sistema: <?=$qtd_perguntas_sistema?></h3>
+                        <h4>Alunos cadastrados: <?=$alunos_cadastrados?></h4>
                     </div>
-                    <div id='white'><h1>VAHA é um sistema Web para aprendizado sobre hardware de uma maneira mais interetiva e menos teorica!</h1>
+                    <div id='white'><h1>VAHA é um sistema Web para aprendizado sobre hardware de uma maneira mais interativa e menos teorica!</h1>
                                     <h3>Aqui você poderar estudar nossos textos escritos de uma forma menos formal e jogar um jogo interativo. </h3>
                     </div>
                 </section>

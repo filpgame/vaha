@@ -2,7 +2,8 @@
 session_start();
 
 function converteData($data){
-	$res = str_split($data,"/");
+	//$res = str_split($data,"-");        
+        $res = split("-", $data);        
 	return $res[2]."/".$res[1]."/".$res[0];
 }
 
