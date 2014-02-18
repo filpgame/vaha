@@ -43,25 +43,28 @@ body  {
 	background-color: rgba(237, 237, 237, 0.7);
 }
 
+#socket:hover{
+    
+}
 
 
 .logo {
-            background: url('logo2.png') no-repeat;
-            
-            background-size: 35px;
-            height: 35px;
-            width: 35px;
-            left: 0px;
-            right: 0;
-            top: 0;
-            z-index: 8000;
-            display: block;
-            margin-top: 3px;
-            margin-right: auto;
-            margin-left: auto;
-            margin-bottom: auto;
-            position: absolute;
-            border:0;
+        background: url('logo2.png') no-repeat;
+
+        background-size: 35px;
+        height: 35px;
+        width: 35px;
+        left: 0px;
+        right: 0;
+        top: 0;
+        z-index: 8000;
+        display: block;
+        margin-top: 3px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: auto;
+        position: absolute;
+        border:0;
 }
 
 #navigation {

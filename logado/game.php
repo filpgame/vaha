@@ -18,6 +18,7 @@ $usuario = "$nome $sobrenome";
         <link rel="stylesheet" type="text/css" href="../css/animate-custom.css" />
         <link rel="stylesheet" type="text/css" href="css/game.css" />
         <link rel="shortcut icon" href="../css/logo2.png" />
+        <link rel="shortcut icon" href="css/game.css" />
 
 
         <script src="../js/jquery-1.10.1.js"></script>
@@ -37,7 +38,7 @@ $usuario = "$nome $sobrenome";
                 var acertos = 0, erros = 0, pontuacao = 0, tentativa = 1;
                 var acertosTeste = 0, errosTeste = 0, pontuacaoTeste = 0;
                 var mensagem = "";
-                var qtd_perguntas = 9;
+                var qtd_perguntas = 10;
 
                 function atualizaPontuacao(errosA, acertosA, pontuacaoA) {
                     $.ajax({
@@ -49,6 +50,24 @@ $usuario = "$nome $sobrenome";
                     acertos = 0;
                     erros = 0;
                     pontuacao = 0;
+                }
+                
+                function modal(msg){
+                    $('#notificacao').dialog({
+                        modal: true,
+                        title: "Certa Resposta",
+                        resizable: true,
+                        color: "red",
+                        width: "500px",
+                        content: msg,
+                        buttons: [{
+                                text: "OK",
+                                id: "btnOK",
+                                click: function() {
+                                    $(this).dialog("close");
+                                }
+                            }]
+                    });
                 }
 
                 $("#logout").click(function() {
@@ -76,8 +95,8 @@ $usuario = "$nome $sobrenome";
                     chamarModal();
                     atualizaPlacar();
 
-                    if (i >= qtd_perguntas) {
-                        alert("Acabooooou! Você acertou " + acertos + " questões." + " Sua pontuação foi de: " + pontuacao);
+                    if (i >= qtd_perguntas){
+                        alert("Acabooooou! Você acertou " + acertos + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
                     }
                 }
 
@@ -91,8 +110,8 @@ $usuario = "$nome $sobrenome";
                         mensagem = "Parabéns! Você acertou! \o/";
                         alert(mensagem);
                         i++;
-                        pontuacao += (100 / tentativa);
-                        pontuacaoTeste += (100 / tentativa);
+                        pontuacao += (10 / tentativa);
+                        pontuacaoTeste += (10 / tentativa);
                         acertos++;
                         acertosTeste++;
                         tentativa = 1;
@@ -115,6 +134,8 @@ $usuario = "$nome $sobrenome";
 
                     if (i === qtd_perguntas) {
                         alert("As perguntas acabaram! \o/ Você acertou " + acertos + "questões");
+                        $('#start').show();
+                        $('#ver').hide();
                     }
                 });
                 /* Placar ... */
@@ -163,6 +184,7 @@ $usuario = "$nome $sobrenome";
 
             <div id="btnOK" ></div>
             <div id="modal"></div>
+            <div id="notificacao"></div>
             <div id="principal">
 
                 <div id="acertos"></div>
@@ -175,8 +197,8 @@ $usuario = "$nome $sobrenome";
                             <img class="area imglateralesq" id="cooler" name="Cooler" src="Pecas/img/cooler.JPG" title="Cooler"/>
                         </td>
                     <form style="text-align: center; margin-left: 50%;">
-                        <input type="button" id="ver" value="Ver Pergunta">
-                        <input type="button" id="start" value="Começar Jogo">
+                        <input type="button" class="classname" id="ver" value="Ver Pergunta">
+                        <input type="button" class="classname" id="start" value="Começar Jogo">
                     </form>
 
                     <td rowspan=6>
