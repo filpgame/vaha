@@ -15,6 +15,14 @@ $resultado = mysqli_query($conn, $query);
     <body>
         <div id="conteudo">
             <iframe frameborder="0" height="320" width="400" allowFullScreen src="https://sketchfab.com/64i3hg1ba?autostart=1&transparent=0&autospin=1&controls=1"></iframe>
+            <div style="display: inline-block;">
+                <p style="font-weight: bold; font-size: small;">Clique e escute a explicação<br> sobre o componente!</p>
+                <audio controls style="margin-bottom: 140px;width: 217px;">
+                    <source src="audio/cooler.3ga" type="audio/ogg">
+                    <source src="audio/cooler.3ga" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
             <!-- <div>Cooler é aquele "ventiladorzinho" (nunca diga ventilador.. há relatos de pessoas que foram demitidas e nunca mais vistas após pronunciar isso) que refrigera algum componente. Sempre terá um em cima do Processador, e outro dentro da fonte.. mas pode haver mais. O quanto você quiser, onde você quiser.</div> -->
             <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
                 <div id="explicacao-3d"> <?php echo $linha['desc']; ?> </div>
