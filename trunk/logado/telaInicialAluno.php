@@ -90,8 +90,8 @@
                         <h4><?=$email?></h4>
                     </div>
                     
-                    <div id='white'><h1>VAHA é um sistema Web para aprendizado sobre hardware de uma maneira mais interetiva e menos teorica!</h1>
-                                    <h3>Aqui você poderar estudar nossos textos escritos de uma forma menos formal e jogar um jogo interativo. </h3>
+                    <div id='white'><h1>VAHA é um sistema Web para aprendizado sobre hardware de uma maneira mais interativa e menos te&oacute;rica!</h1>
+                                    <h3>Aqui você poder&aacute; estudar nossos textos escritos de uma forma menos formal e jogar um jogo interativo. </h3>
                     </div>
                 </section>
             </div>
