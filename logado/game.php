@@ -91,19 +91,24 @@ $usuario = "$nome $sobrenome";
                 }
 
                 function chamarPergunta() {
-                    $("#modal").html(data[i].Pergunta);
-                    chamarModal();
-                    atualizaPlacar();
-
-                    if (i >= qtd_perguntas){
-                        alert("Acabooooou! Você acertou " + acertos + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
+                    if(i < data.length){
+                        $("#modal").html(data[i].Pergunta);
+                        chamarModal();
+                        atualizaPlacar();
+                    }else{
+                        //if (i > qtd_perguntas){
+                            alert("Acabooooou! Você acertou " + acertosTeste + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
+                            $('#start').show();
+                            $('#start').css("margin-top","40%");
+                            $('#ver').hide();
+                       // }
                     }
                 }
 
                 $('#ver').click(function() {
                     chamarModal();
                 });
-
+                    
                 $('.area').click(function() {
                     var id = $(this).attr("name");
                     if (id === data[i].resposta) {
@@ -131,9 +136,9 @@ $usuario = "$nome $sobrenome";
                             tentativa = 1;
                         }
                     }
-
-                    if (i === qtd_perguntas) {
-                        alert("As perguntas acabaram! \o/ Você acertou " + acertos + "questões");
+                    
+                    if (i > qtd_perguntas){
+                        alert("Acabooooou! Você acertou " + acertosTeste + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
                         $('#start').show();
                         $('#ver').hide();
                     }
@@ -143,6 +148,7 @@ $usuario = "$nome $sobrenome";
                     $('#acertos').html("Acertos: " + acertosTeste);
                     $('#erros').html("Erros: " + errosTeste);
                     $('#pontuacao').html("Pontuação: " + pontuacaoTeste);
+                    $("#progresso").html("Pergunta " + (i + 1) + '/' + data.length);
                 }
 
                 $('#start').click(function() {
@@ -190,7 +196,7 @@ $usuario = "$nome $sobrenome";
                 <div id="acertos"></div>
                 <div id="erros"></div>
                 <div id="pontuacao"></div>
-
+                <div id="progresso"></div>
                 <table cellspacing=0 cellpadding=0>
                     <tr>
                         <td>
