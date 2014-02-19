@@ -16,6 +16,14 @@ $resultado = mysqli_query($conn, $query);
         <div id="conteudo">
             <iframe frameborder="0" height="320" width="400" allowFullScreen src="https://sketchfab.com/64i3hfe1d?autostart=1&transparent=0&autospin=1&controls=1"></iframe>
            <!--  <div>Placa de vídeo é o queridinho pra quem gosta de jogar. Se instalado, ele fica responsável por todo tipo de processamento gráfico (Jogos, vídeos, imagens, etc.)</div> -->
+           <div style="display: inline-block;">
+                <p style="font-weight: bold; font-size: small;">Clique e escute a explicação<br> sobre o componente!</p>
+                <audio controls style="margin-bottom: 140px; width: 217px;">
+                    <source src="audio/placadevideo.3ga" type="audio/ogg">
+                    <source src="audio/placadevideo.3ga" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         <?php while ($linha = mysqli_fetch_array($resultado, MYSQLI_ASSOC)): ?>
                 <div id="explicacao-3d"> <?php echo $linha['desc']; ?> </div>
             <?php endwhile; ?>
