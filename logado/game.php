@@ -99,8 +99,11 @@ $usuario = "$nome $sobrenome";
                         //if (i > qtd_perguntas){
                             alert("Acabooooou! Você acertou " + acertosTeste + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
                             $('#start').show();
-                            $('#start').css("margin-top","40%");
-                            $('#ver').hide();
+                            $('#ver').show();
+                            $('#acertos').hide();
+                            $('#erros').hide();
+                            $('#pontuacao').hide();
+                            $("#progresso").hide();
                        // }
                     }
                 }
@@ -137,11 +140,15 @@ $usuario = "$nome $sobrenome";
                         }
                     }
                     
-                    if (i > qtd_perguntas){
-                        alert("Acabooooou! Você acertou " + acertosTeste + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
-                        $('#start').show();
-                        $('#ver').hide();
-                    }
+//                    if (i > qtd_perguntas){
+//                        alert("Acabooooou! Você acertou " + acertosTeste + " questões." + " Sua pontuação foi de: " + pontuacaoTeste);
+//                        $('#start').show();
+//                        $('#ver').hide();
+//                        $('#acertos').hide();
+//                        $('#erros').hide();
+//                        $('#pontuacao').hide();
+//                        $("#progresso").hide();
+//                    }
                 });
                 /* Placar ... */
                 function atualizaPlacar() {
@@ -204,7 +211,7 @@ $usuario = "$nome $sobrenome";
                         </td>
                     <form style="text-align: center; margin-left: 50%;">
                         <input type="button" class="classname" id="ver" value="Ver Pergunta">
-                        <input type="button" class="classname" id="start" value="Começar Jogo">
+                        <input type="button" style="" class="classname" id="start" value="Começar Jogo">
                     </form>
 
                     <td rowspan=6>
