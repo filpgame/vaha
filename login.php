@@ -9,7 +9,7 @@ if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
     
     $login = mysqli_real_escape_string($conn, $_REQUEST["login"]);
     $pass = mysqli_real_escape_string($conn, $_REQUEST["pass"]);
-    $consulta = "SELECT * FROM usuarios us WHERE us.usuario = '$login' AND us.senha= '$pass'";
+    $consulta = "SELECT * FROM usuario us WHERE us.usuario = '$login' AND us.senha= '$pass'";
     $result = mysqli_query($conn, $consulta);
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
