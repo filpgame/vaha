@@ -6,13 +6,14 @@ include("./logado/includes/banco.php");
 $saida["resp"]["status"] = false;
 
 if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
+    
     $login = mysqli_real_escape_string($conn, $_REQUEST["login"]);
     $pass = mysqli_real_escape_string($conn, $_REQUEST["pass"]);
-    $consulta = "SELECT * FROM usuario us WHERE us.usuario = '$login' AND us.senha= '$pass'";
+    $consulta = "SELECT * FROM usuarios us WHERE us.usuario = '$login' AND us.senha= '$pass'";
     $result = mysqli_query($conn, $consulta);
-
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
+             
             $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $_SESSION["logado"]["nome"] = $linha["nome"];
             $_SESSION["logado"]["usuario"] = $linha["usuario"];
@@ -35,17 +36,18 @@ if (isset($_REQUEST["login"]) && isset($_REQUEST["pass"])) {
             //$saida["resp"]["local"] = "telaInicialAluno.php";
             echo json_encode($saida);
         } else {
+            
             $saida["resp"]["status"] = false;
             $saida["resp"]["mensagem"] = "Login ou senha incorreta";
             echo json_encode($saida);
         }
+       
+    }else{
+        print_r(mysqli_error_list($conn));
     }
 } else {
     //Encaminha para a página inicial
+    
     header("Location: ./index.html");
 }
-
-
-
-
     

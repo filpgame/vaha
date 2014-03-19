@@ -90,8 +90,10 @@
                         <h4><?=$email?></h4>
                     </div>
                     
-                    <div id='white'><h1>VAHA é um sistema Web para aprendizado sobre hardware de uma maneira mais interativa e menos te&oacute;rica!</h1>
-                                    <h3>Aqui você poder&aacute; estudar nossos textos escritos de uma forma menos formal e jogar um jogo interativo. </h3>
+                    <div id='white'>
+                                    <h4>Este Sistema foi um trabalho de final de curso e, no momento está ocioso. <br>Caso queiram mais detalhes sobre o projeto ou queiram dar continuidade ou alguma proposta, entrar e contato com Felipe ou Cristian. 
+                                        <br>Felipe: &phone;(27) 99695-6489 &nbsp;&nbsp;&nbsp; &boxtimes; feliipe@outlook.com
+                                        <br> Cristian &phone;(27) 99862-3814 &nbsp;&nbsp;&nbsp; &boxtimes; csanterio@hotmail.com </h4>
                     </div>
                 </section>
             </div>
