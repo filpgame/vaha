@@ -1,5 +1,5 @@
 <?php
-include("./includes/info_logado.php");
+include './includes/info_logado.php';
 
 $usuario = "$nome $sobrenome";
 ?>
