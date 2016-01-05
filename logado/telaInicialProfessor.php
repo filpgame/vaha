@@ -1,7 +1,7 @@
 <?php
-include("./includes/info_logado.php");
-include("./includes/banco.php");
-include("./includes/consultaDados.php");
+include './includes/info_logado.php';
+include './includes/banco.php';
+include './includes/consultaDados.php';
 
 $usuario = "$nome $sobrenome";
 $data = converteData($dt_nasc);

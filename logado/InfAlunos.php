@@ -1,11 +1,11 @@
 <?php
-include("./includes/info_logado.php");
-include("./includes/banco.php");
+include './includes/info_logado.php';
+include './includes/banco.php';
 
 $usuario = "$nome $sobrenome";
 
 $query = "SELECT distinct CONCAT(us.nome,' ',us.sobrenome) as Nome, us.ID_usuario, acertos, erros, pontuacao_geral, (erros+acertos) as total_perguntas, CONCAT(ROUND((acertos)/(acertos+erros)*100,1),'%') as Razao FROM usuario us INNER JOIN Tp_usuario tpus ON (us.ID_tp_usuario = tpus.ID_tp_usuario) INNER JOIN estatiticas est ON(est.ID_usuario = us.ID_usuario) WHERE us.ID_tp_usuario = 1 and acertos > 0;";
-$result = mysqli_query($conn, $query) or die("erro na consulta");
+$result = mysqli_query($conn, $query) or die('erro na consulta');
 ?>
 <html lang="pt-br">
     <head>
@@ -72,14 +72,14 @@ $result = mysqli_query($conn, $query) or die("erro na consulta");
                         <td>Taxa de Acertos</td>
                     </tr>
                     
-                    <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
+                    <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
                     <tr style="height: 30px; ">
-                        <td><?php echo $row["Nome"] ?></td>
-                        <td><?php echo $row["acertos"] ?></td>
-                        <td><?php echo $row["erros"] ?></td>
-                        <td><?php echo $row["pontuacao_geral"] ?></td>
-                        <td><?php echo $row["total_perguntas"] ?></td>
-                        <td><?php echo $row["Razao"] ?></td>
+                        <td><?php echo $row['Nome'] ?></td>
+                        <td><?php echo $row['acertos'] ?></td>
+                        <td><?php echo $row['erros'] ?></td>
+                        <td><?php echo $row['pontuacao_geral'] ?></td>
+                        <td><?php echo $row['total_perguntas'] ?></td>
+                        <td><?php echo $row['Razao'] ?></td>
                     </tr>
                     <?php endwhile; ?>
                 </table>

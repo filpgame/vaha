@@ -1,19 +1,18 @@
 <?php
-    include("./includes/info_logado.php");
-    include("./includes/banco.php");
-    
+    include './includes/info_logado.php';
+    include './includes/banco.php';
+
     $usuario = "$nome $sobrenome";
     $data = converteData($dt_nasc);
-    
+
     $result = mysqli_query($conn, "SELECT * FROM estatiticas WHERE ID_usuario = $ID_usuario");
-    
-    while($row = mysqli_fetch_array($result)){
+
+    while ($row = mysqli_fetch_array($result)) {
         $acertos = $row['acertos'];
         $erros = $row['erros'];
         $pontuacao = $row['pontuacao_geral'];
     }
-    
-    
+
 ?>
 <html lang="pt-br">
     <head>

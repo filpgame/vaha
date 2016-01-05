@@ -7,15 +7,14 @@
  */
 
     include 'includes/banco.php';
-    
-    $comboBox = $_GET["comboResposta"];
-    
-    $query = "SELECT nome FROM comp_pc";
-    
+
+    $comboBox = $_GET['comboResposta'];
+
+    $query = 'SELECT nome FROM comp_pc';
+
     mysql_query($query);
-    
+
     while ($row = mysql_fetch_array($query)) {
-        $comboBox = $row["nome"];
+        $comboBox = $row['nome'];
         echo "$row";
     }
-

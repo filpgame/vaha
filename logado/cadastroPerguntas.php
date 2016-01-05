@@ -1,12 +1,12 @@
 <?php
-include("./includes/info_logado.php");
-include ("./includes/banco.php");
+include './includes/info_logado.php';
+include './includes/banco.php';
 
 mysqli_set_charset($conn, 'utf8');
 ini_set('default_charset', 'UTF-8');
 
 $usuario = "$nome $sobrenome";
-$query = mysqli_query($conn, "SELECT resposta FROM resposta");
+$query = mysqli_query($conn, 'SELECT resposta FROM resposta');
 ?>
 <html lang="pt-br">
     <head>
@@ -124,7 +124,7 @@ $query = mysqli_query($conn, "SELECT resposta FROM resposta");
                     <br><select id="resposta" name="resposta">
                         <?php
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-                            echo "<option>" . $row['resposta'] . "</option>";
+                            echo '<option>'.$row['resposta'].'</option>';
                         }
                         ?>
                     </select><br>
@@ -139,9 +139,9 @@ $query = mysqli_query($conn, "SELECT resposta FROM resposta");
                     <span>Selecione o componente que deseja alterar o conteúdo:</span>
                     <br><select id="respostaConteudo" name="respostaConteudo">
                         <?php
-                        $query = mysqli_query($conn, "SELECT nome FROM comp_pc");
+                        $query = mysqli_query($conn, 'SELECT nome FROM comp_pc');
                         while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-                            echo "<option>" . $row['nome'] . "</option>";
+                            echo '<option>'.$row['nome'].'</option>';
                         }
                         ?>
                     </select><br>
